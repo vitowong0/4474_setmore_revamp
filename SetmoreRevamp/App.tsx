@@ -2,6 +2,8 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  *
+ * AUTHOR: VITO WONG, 251031305
+ *
  * @format
  */
 
