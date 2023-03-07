@@ -7,18 +7,20 @@ import {
   StatusBar,
 } from 'react-native';
 
-function HomeScreen() {
+import Header from '../components/headers/Header';
+
+function SearchScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
-      {/* <View style={styles.header}>{<HomeHeader />}</View> */}
+      <View style={styles.header}>{<Header />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <TouchableOpacity
             onPress={() => {
               alert('You found this button!');
             }}>
-            <Text style={styles.bodyText}>ON HOME SCREEN</Text>
+            <Text style={styles.bodyText}>on SearchScreen</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -57,4 +59,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default SearchScreen;
