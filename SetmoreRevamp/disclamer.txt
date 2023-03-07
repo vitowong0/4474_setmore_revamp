@@ -1,0 +1,4 @@
+This app is for Computer Science 4474 - Human Computer Interaction
+
+The authors are:
+Vito Wong, 251031305
