@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+
+    borderColor: 'cyan',
+    borderWidth: 1,
   },
 
   infoContainer: {

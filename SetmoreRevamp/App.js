@@ -7,10 +7,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import IonIcon from 'react-native-ionicons';
-import {IonIcon} from '@expo/vector-icons';
 // import IonIcon from 'react-native-vector-icons/Ionicons';
+import IonIcon from '@expo/vector-icons/Ionicons';
 
-import demo_picture from './assets/images/ProfileImage.png';
+import homeIcon from './assets/images/boywhatthehell.png';
+import searchIcon from './assets/images/briar.png';
+import favouritesIcon from './assets/images/liv.png';
+import calendarIcon from './assets/images/pink_logo.png';
+import notificationIcon from './assets/images/bell.png';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -18,6 +22,8 @@ import SearchScreen from './screens/SearchScreen';
 import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
+
+import {Colors} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,8 +33,8 @@ function MyTabs() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarInactiveTintColor: 'darkgrey',
-        tabBarActiveTintColor: '#5756B3',
+        tabBarInactiveTintColor: Colors.westerngrey,
+        tabBarActiveTintColor: Colors.westernpurple,
       }}>
       <Tab.Group>
         <Tab.Screen
@@ -37,13 +43,11 @@ function MyTabs() {
           options={{
             tabBarIcon: () => {
               return (
-                <View>
-                  <Image
-                    source={demo_picture}
-                    resizeMode="contain"
-                    style={{width: 25}}
-                  />
-                </View>
+                <Image
+                  source={homeIcon}
+                  resizeMode="contain"
+                  style={{width: 25}}
+                />
               );
             },
           }}
@@ -51,19 +55,62 @@ function MyTabs() {
         <Tab.Screen
           name="Search"
           component={SearchScreen}
-          // options={{
-          //   tabBarIcon: () => (
-          //     <IonIcon name="search-outline" size={28} color="black" />
-          //   ),
-          // }}
+          options={{
+            tabBarIcon: () => {
+              return (
+                <Image
+                  source={searchIcon}
+                  resizeMode="contain"
+                  style={{width: 25}}
+                />
+              );
+            },
+          }}
         />
-        <Tab.Screen name="Favourites" component={FavouritesScreen} />
-        <Tab.Screen name="Calendar" component={CalendarScreen} />
         <Tab.Screen
-          name="Notification"
+          name="Favourites"
+          component={FavouritesScreen}
+          options={{
+            tabBarIcon: () => {
+              return (
+                <Image
+                  source={favouritesIcon}
+                  resizeMode="contain"
+                  style={{width: 25}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Calendar"
+          component={CalendarScreen}
+          options={{
+            tabBarIcon: () => {
+              return (
+                <Image
+                  source={calendarIcon}
+                  resizeMode="contain"
+                  style={{width: 25}}
+                />
+              );
+            },
+          }}
+        />
+        <Tab.Screen
+          name="Notifications"
           component={NotificationsScreen}
           options={{
-            tabBarBadge: 3,
+            tabBarIcon: () => {
+              return (
+                <Image
+                  source={notificationIcon}
+                  resizeMode="contain"
+                  style={{width: 30}}
+                />
+              );
+            },
+            tabBarBadge: 69,
           }}
         />
       </Tab.Group>

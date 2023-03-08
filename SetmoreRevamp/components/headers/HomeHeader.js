@@ -5,7 +5,7 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 // text and image
 // and render them accordingly
 
-import ProfilePicture from '../../assets/images/ProfileImage.png';
+import ProfilePicture from '../../assets/images/boywhatthehell.png';
 
 // take user fname and store in async -- or just hardcode it lol
 
@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+
+    borderColor: 'cyan',
+    borderWidth: 1,
   },
 
   infoContainer: {
@@ -50,6 +53,8 @@ const styles = StyleSheet.create({
     flex: 1.5,
     paddingLeft: 10,
     justifyContent: 'center',
+    borderColor: 'orange',
+    borderWidth: 1,
   },
 
   imageContainer: {
