@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1,
+    flex: 1.5,
     width: '100%',
   },
 
@@ -43,18 +43,12 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
 
   bodyTextContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-
-    borderWidth: 1,
-    borderColor: 'green',
   },
 
   bodyText: {
