@@ -7,11 +7,13 @@ import {
   StatusBar,
 } from 'react-native';
 
+import Header from '../components/headers/Header';
+
 function CalendarScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
-      {/* <View style={styles.header}>{<HomeHeader />}</View> */}
+      <View style={styles.header}>{<Header />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <TouchableOpacity
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 2.5,
+    flex: 1.5,
     width: '100%',
   },
 

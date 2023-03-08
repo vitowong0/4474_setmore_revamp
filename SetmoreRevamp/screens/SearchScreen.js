@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 2.5,
+    flex: 1.5,
     width: '100%',
   },
 
