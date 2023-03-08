@@ -5,12 +5,12 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 // just text
 // and render them accordingly (depending on which page we're on)
 
-function Header() {
+function Header({headerTitle}) {
   return (
     <View style={styles.headerContainer}>
       <View style={styles.infoContainer}>
         <View style={styles.textContainer}>
-          <Text style={styles.text}>Hello, fname!</Text>
+          <Text style={styles.text}>{headerTitle}</Text>
         </View>
       </View>
     </View>

@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {View, StatusBar} from 'react-native';
+import {View, Image, StatusBar} from 'react-native';
 import {StatusBarStyle} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
@@ -8,6 +9,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import IonIcon from 'react-native-ionicons';
 import {IonIcon} from '@expo/vector-icons';
 // import IonIcon from 'react-native-vector-icons/Ionicons';
+
+import demo_picture from './assets/images/ProfileImage.png';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -32,10 +35,17 @@ function MyTabs() {
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarBadge: 3,
-            // tabBarIcon: () => (
-            //   <IonIcon name="home-outline" size={28} color="black" />
-            // ),
+            tabBarIcon: () => {
+              return (
+                <View>
+                  <Image
+                    source={demo_picture}
+                    resizeMode="contain"
+                    style={{width: 25}}
+                  />
+                </View>
+              );
+            },
           }}
         />
         <Tab.Screen
@@ -49,7 +59,13 @@ function MyTabs() {
         />
         <Tab.Screen name="Favourites" component={FavouritesScreen} />
         <Tab.Screen name="Calendar" component={CalendarScreen} />
-        <Tab.Screen name="Notification" component={NotificationsScreen} />
+        <Tab.Screen
+          name="Notification"
+          component={NotificationsScreen}
+          options={{
+            tabBarBadge: 3,
+          }}
+        />
       </Tab.Group>
     </Tab.Navigator>
   );

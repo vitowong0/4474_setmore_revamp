@@ -50,8 +50,6 @@ const styles = StyleSheet.create({
     flex: 1.5,
     paddingLeft: 10,
     justifyContent: 'center',
-    borderColor: 'orange',
-    borderWidth: 1,
   },
 
   imageContainer: {
