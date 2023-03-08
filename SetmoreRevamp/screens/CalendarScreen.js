@@ -44,6 +44,9 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
+
+    borderColor: 'red',
+    borderWidth: 1,
   },
 
   bodyTextContainer: {

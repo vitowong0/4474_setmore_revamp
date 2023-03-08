@@ -15,14 +15,21 @@ function HomeScreen() {
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>{<HomeHeader />}</View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
+        <View style={styles.topContainer}>
+          <Text>upper container</Text>
+        </View>
+        <View style={styles.bottomContainer}>
+          <Text>bottom container</Text>
+        </View>
+
+        {/* <View style={styles.bodyTextContainer}>
           <TouchableOpacity
             onPress={() => {
               alert('You found this button!');
             }}>
             <Text style={styles.bodyText}>on HomeScreen</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -43,6 +50,18 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
+  },
+
+  topContainer: {
+    flex: 1,
+    borderColor: 'orange',
+    borderWidth: 1,
+  },
+
+  bottomContainer: {
+    flex: 1,
+    borderColor: 'red',
+    borderWidth: 1,
   },
 
   bodyTextContainer: {
