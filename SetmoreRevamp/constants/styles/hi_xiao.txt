@@ -1,1 +1,17 @@
-hello put ur colours in here
+Darker Turquoise
+#6FAEB
+
+
+Lighter Turquoise
+#B3D5CF
+
+
+Light Green
+#BFD6BD
+
+
+Yellow
+#FBE098
+
+Dark Grey
+#5E5E5E
