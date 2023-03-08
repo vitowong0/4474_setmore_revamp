@@ -13,7 +13,9 @@ function NotificationsScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
-      <View style={styles.header}>{<Header />}</View>
+      <View style={styles.header}>
+        <Header headerTitle={'Notifications'} />
+      </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <TouchableOpacity

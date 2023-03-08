@@ -13,7 +13,9 @@ function FavouritesScreen() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'light-content'} />
-      <View style={styles.header}>{<Header />}</View>
+      <View style={styles.header}>
+        <Header headerTitle={"fname's favourites"} />
+      </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <TouchableOpacity

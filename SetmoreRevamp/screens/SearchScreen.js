@@ -12,8 +12,10 @@ import Header from '../components/headers/Header';
 function SearchScreen() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'light-content'} />
-      <View style={styles.header}>{<Header />}</View>
+      <StatusBar barStyle={'default'} />
+      <View style={styles.header}>
+        <Header headerTitle={'Get to booking'} />
+      </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <TouchableOpacity
