@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {View, Image, StatusBar} from 'react-native';
-import {StatusBarStyle} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -23,7 +22,7 @@ import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 
-import {Colors} from './constants/styles';
+import {Colours} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,8 +32,8 @@ function MyTabs() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarInactiveTintColor: Colors.westerngrey,
-        tabBarActiveTintColor: Colors.westernpurple,
+        tabBarInactiveTintColor: Colours.westerngrey,
+        tabBarActiveTintColor: Colours.darkturqouise,
       }}>
       <Tab.Group>
         <Tab.Screen
