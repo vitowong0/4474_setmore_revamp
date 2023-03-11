@@ -1,5 +1,6 @@
 /**
  * @format
+ * Artiem Babaryko - 251042080
  */
 
 import 'react-native';
