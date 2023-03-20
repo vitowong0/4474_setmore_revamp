@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {View, Image, StatusBar} from 'react-native';
-import {StatusBarStyle} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -16,6 +15,18 @@ import favouritesIcon from './assets/images/liv.png';
 import calendarIcon from './assets/images/pink_logo.png';
 import notificationIcon from './assets/images/bell.png';
 
+import newHomeIcon from './assets//images/setmore_icons/home.png';
+import newSearchIcon from './assets//images/setmore_icons/search.png';
+import newFavouritesIcon from './assets//images/setmore_icons/favourites.png';
+import newCalendarIcon from './assets//images/setmore_icons/calendar.png';
+import newNotificationIcon from './assets//images/setmore_icons/notification.png';
+
+import newHomeIconGreen from './assets//images/setmore_icons/home_green.png';
+import newSearchIconGreen from './assets//images/setmore_icons/search_green.png';
+import newFavouritesIconGreen from './assets//images/setmore_icons/favourites_green.png';
+import newCalendarIconGreen from './assets//images/setmore_icons/calendar_green.png';
+import newNotificationsIconGreen from './assets//images/setmore_icons/notification_green.png';
+
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
@@ -23,7 +34,7 @@ import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 
-import {Colors} from './constants/styles';
+import {Colours} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,83 +44,122 @@ function MyTabs() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarInactiveTintColor: Colors.westerngrey,
-        tabBarActiveTintColor: Colors.westernpurple,
+        tabBarInactiveTintColor: Colours.westerngrey,
+        tabBarActiveTintColor: Colours.darkturqouise,
       }}>
       <Tab.Group>
         <Tab.Screen
           name="Home"
           component={HomeScreen}
           options={{
-            tabBarIcon: () => {
-              return (
+            // tabBarIcon: () => {
+            //   return (
+            //     <Image
+            //       source={newHomeIcon}
+            //       resizeMode="contain"
+            //       style={{width: 25}}
+            //     />
+            //   );
+            // },
+
+            tabBarIcon: ({focused}) =>
+              focused ? (
                 <Image
-                  source={homeIcon}
-                  resizeMode="contain"
-                  style={{width: 25}}
+                  source={newHomeIconGreen}
+                  style={{width: 20, height: 20}}
                 />
-              );
-            },
+              ) : (
+                <Image source={newHomeIcon} style={{width: 20, height: 20}} />
+              ),
           }}
         />
         <Tab.Screen
           name="Search"
           component={SearchScreen}
           options={{
-            tabBarIcon: () => {
-              return (
+            // tabBarIcon: () => {
+            //   return (
+            //     <Image
+            //       source={newSearchIcon}
+            //       resizeMode="contain"
+            //       style={{width: 25}}
+            //     />
+            //   );
+            // },
+
+            tabBarIcon: ({focused}) =>
+              focused ? (
                 <Image
-                  source={searchIcon}
-                  resizeMode="contain"
-                  style={{width: 25}}
+                  source={newSearchIconGreen}
+                  style={{width: 20, height: 20}}
                 />
-              );
-            },
+              ) : (
+                <Image source={newSearchIcon} style={{width: 20, height: 20}} />
+              ),
           }}
         />
         <Tab.Screen
           name="Favourites"
           component={FavouritesScreen}
           options={{
-            tabBarIcon: () => {
-              return (
+            // tabBarIcon: () => {
+            //   return (
+            //     <Image
+            //       source={newFavouritesIcon}
+            //       resizeMode="contain"
+            //       style={{width: 25}}
+            //     />
+            //   );
+            // },
+
+            tabBarIcon: ({focused}) =>
+              focused ? (
                 <Image
-                  source={favouritesIcon}
-                  resizeMode="contain"
-                  style={{width: 25}}
+                  source={newFavouritesIconGreen}
+                  style={{width: 20, height: 20}}
                 />
-              );
-            },
+              ) : (
+                <Image
+                  source={newFavouritesIcon}
+                  style={{width: 20, height: 20}}
+                />
+              ),
           }}
         />
         <Tab.Screen
           name="Calendar"
           component={CalendarScreen}
           options={{
-            tabBarIcon: () => {
-              return (
+            tabBarIcon: ({focused}) =>
+              focused ? (
                 <Image
-                  source={calendarIcon}
-                  resizeMode="contain"
-                  style={{width: 25}}
+                  source={newCalendarIconGreen}
+                  style={{width: 20, height: 20}}
                 />
-              );
-            },
+              ) : (
+                <Image
+                  source={newCalendarIcon}
+                  style={{width: 20, height: 20}}
+                />
+              ),
           }}
         />
         <Tab.Screen
           name="Notifications"
           component={NotificationsScreen}
           options={{
-            tabBarIcon: () => {
-              return (
+            tabBarIcon: ({focused}) =>
+              focused ? (
                 <Image
-                  source={notificationIcon}
-                  resizeMode="contain"
-                  style={{width: 30}}
+                  source={newNotificationsIconGreen}
+                  style={{width: 20, height: 20}}
                 />
-              );
-            },
+              ) : (
+                <Image
+                  source={newNotificationIcon}
+                  style={{width: 20, height: 20}}
+                />
+              ),
             tabBarBadge: 69,
           }}
         />

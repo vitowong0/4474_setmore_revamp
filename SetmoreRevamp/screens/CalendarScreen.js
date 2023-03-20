@@ -7,12 +7,13 @@ import {
   StatusBar,
 } from 'react-native';
 
+import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 
 function CalendarScreen() {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={"fname's calendar"} />
       </View>
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   bodyText: {
     fontWeight: 'bold',
     fontSize: 28,
-    color: 'purple',
+    color: Colours.darkturqouise,
     paddingHorizontal: 20,
     textAlign: 'center',
   },

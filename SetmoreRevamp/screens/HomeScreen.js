@@ -7,6 +7,7 @@ import {
   StatusBar,
 } from 'react-native';
 
+import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
 
 function HomeScreen() {
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
   bodyText: {
     fontWeight: 'bold',
     fontSize: 28,
-    color: 'purple',
+    color: Colours.darkturqouise,
     paddingHorizontal: 20,
     textAlign: 'center',
   },
