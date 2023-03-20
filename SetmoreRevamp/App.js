@@ -9,23 +9,17 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import IonIcon from 'react-native-vector-icons/Ionicons';
 import IonIcon from '@expo/vector-icons/Ionicons';
 
-import homeIcon from './assets/images/boywhatthehell.png';
-import searchIcon from './assets/images/briar.png';
-import favouritesIcon from './assets/images/liv.png';
-import calendarIcon from './assets/images/pink_logo.png';
-import notificationIcon from './assets/images/bell.png';
+import homeIcon from './assets/setmore_icons/home_grey.png';
+import searchIcon from './assets/setmore_icons/search_grey.png';
+import favouritesIcon from './assets/setmore_icons/favourites_grey.png';
+import calendarIcon from './assets/setmore_icons/calendar_grey.png';
+import notificationsIcon from './assets/setmore_icons/notifications_grey.png';
 
-import newHomeIcon from './assets//images/setmore_icons/home.png';
-import newSearchIcon from './assets//images/setmore_icons/search.png';
-import newFavouritesIcon from './assets//images/setmore_icons/favourites.png';
-import newCalendarIcon from './assets//images/setmore_icons/calendar.png';
-import newNotificationIcon from './assets//images/setmore_icons/notification.png';
-
-import newHomeIconGreen from './assets//images/setmore_icons/home_green.png';
-import newSearchIconGreen from './assets//images/setmore_icons/search_green.png';
-import newFavouritesIconGreen from './assets//images/setmore_icons/favourites_green.png';
-import newCalendarIconGreen from './assets//images/setmore_icons/calendar_green.png';
-import newNotificationsIconGreen from './assets//images/setmore_icons/notification_green.png';
+import homeIconGreen from './assets/setmore_icons/home_green.png';
+import searchIconGreen from './assets/setmore_icons/search_green.png';
+import favouritesIconGreen from './assets/setmore_icons/favourites_green.png';
+import calendarIconGreen from './assets/setmore_icons/calendar_green.png';
+import notificationsIconGreen from './assets/setmore_icons/notifications_green.png';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -52,24 +46,11 @@ function MyTabs() {
           name="Home"
           component={HomeScreen}
           options={{
-            // tabBarIcon: () => {
-            //   return (
-            //     <Image
-            //       source={newHomeIcon}
-            //       resizeMode="contain"
-            //       style={{width: 25}}
-            //     />
-            //   );
-            // },
-
             tabBarIcon: ({focused}) =>
               focused ? (
-                <Image
-                  source={newHomeIconGreen}
-                  style={{width: 20, height: 20}}
-                />
+                <Image source={homeIconGreen} style={{width: 22, height: 22}} />
               ) : (
-                <Image source={newHomeIcon} style={{width: 20, height: 20}} />
+                <Image source={homeIcon} style={{width: 22, height: 22}} />
               ),
           }}
         />
@@ -77,24 +58,14 @@ function MyTabs() {
           name="Search"
           component={SearchScreen}
           options={{
-            // tabBarIcon: () => {
-            //   return (
-            //     <Image
-            //       source={newSearchIcon}
-            //       resizeMode="contain"
-            //       style={{width: 25}}
-            //     />
-            //   );
-            // },
-
             tabBarIcon: ({focused}) =>
               focused ? (
                 <Image
-                  source={newSearchIconGreen}
-                  style={{width: 20, height: 20}}
+                  source={searchIconGreen}
+                  style={{width: 22, height: 25}}
                 />
               ) : (
-                <Image source={newSearchIcon} style={{width: 20, height: 20}} />
+                <Image source={searchIcon} style={{width: 22, height: 25}} />
               ),
           }}
         />
@@ -102,26 +73,16 @@ function MyTabs() {
           name="Favourites"
           component={FavouritesScreen}
           options={{
-            // tabBarIcon: () => {
-            //   return (
-            //     <Image
-            //       source={newFavouritesIcon}
-            //       resizeMode="contain"
-            //       style={{width: 25}}
-            //     />
-            //   );
-            // },
-
             tabBarIcon: ({focused}) =>
               focused ? (
                 <Image
-                  source={newFavouritesIconGreen}
-                  style={{width: 20, height: 20}}
+                  source={favouritesIconGreen}
+                  style={{width: 25, height: 20}}
                 />
               ) : (
                 <Image
-                  source={newFavouritesIcon}
-                  style={{width: 20, height: 20}}
+                  source={favouritesIcon}
+                  style={{width: 25, height: 20}}
                 />
               ),
           }}
@@ -133,14 +94,11 @@ function MyTabs() {
             tabBarIcon: ({focused}) =>
               focused ? (
                 <Image
-                  source={newCalendarIconGreen}
-                  style={{width: 20, height: 20}}
+                  source={calendarIconGreen}
+                  style={{width: 22, height: 22}}
                 />
               ) : (
-                <Image
-                  source={newCalendarIcon}
-                  style={{width: 20, height: 20}}
-                />
+                <Image source={calendarIcon} style={{width: 22, height: 22}} />
               ),
           }}
         />
@@ -151,13 +109,13 @@ function MyTabs() {
             tabBarIcon: ({focused}) =>
               focused ? (
                 <Image
-                  source={newNotificationsIconGreen}
-                  style={{width: 20, height: 20}}
+                  source={notificationsIconGreen}
+                  style={{width: 22, height: 22}}
                 />
               ) : (
                 <Image
-                  source={newNotificationIcon}
-                  style={{width: 20, height: 20}}
+                  source={notificationsIcon}
+                  style={{width: 22, height: 22}}
                 />
               ),
             tabBarBadge: 69,
