@@ -9,17 +9,17 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import IonIcon from 'react-native-vector-icons/Ionicons';
 import IonIcon from '@expo/vector-icons/Ionicons';
 
-import homeIcon from './assets/setmore_icons/home_grey.png';
-import searchIcon from './assets/setmore_icons/search_grey.png';
-import favouritesIcon from './assets/setmore_icons/favourites_grey.png';
-import calendarIcon from './assets/setmore_icons/calendar_grey.png';
-import notificationsIcon from './assets/setmore_icons/notifications_grey.png';
+import homeIcon from './assets/icons/home_grey.png';
+import searchIcon from './assets/icons/search_grey.png';
+import favouritesIcon from './assets/icons/favourites_grey.png';
+import calendarIcon from './assets/icons/calendar_grey.png';
+import notificationsIcon from './assets/icons/notifications_grey.png';
 
-import homeIconGreen from './assets/setmore_icons/home_green.png';
-import searchIconGreen from './assets/setmore_icons/search_green.png';
-import favouritesIconGreen from './assets/setmore_icons/favourites_green.png';
-import calendarIconGreen from './assets/setmore_icons/calendar_green.png';
-import notificationsIconGreen from './assets/setmore_icons/notifications_green.png';
+import homeIconGreen from './assets/icons/home_green.png';
+import searchIconGreen from './assets/icons/search_green.png';
+import favouritesIconGreen from './assets/icons/favourites_green.png';
+import calendarIconGreen from './assets/icons/calendar_green.png';
+import notificationsIconGreen from './assets/icons/notifications_green.png';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
