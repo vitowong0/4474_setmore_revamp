@@ -1,0 +1,15 @@
+{
+
+"businessName": "Mochi Hair Co.", "about": "Welcome to Mochi Hair Co., the ultimate luxury hair salon experience. Our salon boasts a sleek and modern interior design, with plush leather chairs and marble countertops to make you feel like royalty from the moment you step inside.
+Our team of expert stylists are all trained at prestigious hair academies in Paris, New York, and Milan, and are up-to-date with the latest hair trends and techniques. We use only the highest quality products from luxury brands like Oribe, Bumble and Bumble, and Kerastase, ensuring that your hair receives the best care possible.
+As you sit back and relax, sipping on a glass of champagne, our stylists will consult with you to determine the perfect hairstyle for your face shape and personal style. From balayage highlights to intricate updos, we will make sure you leave feeling confident and beautiful.
+At Mochi Hair Co., we understand that your time is valuable, which is why we offer a range of premium services, including a private styling room for VIP clients and a concierge service that will take care of your every need.
+Experience the ultimate indulgence at Mochi Hair Co. and let us transform your hair into a work of art.", 
+
+"reviews":4.7, 
+"services": ["Cutting & Styling , Hair Colouring, 
+Extensions Treatments"],
+
+"staff": ["Angela, David"]
+
+)
