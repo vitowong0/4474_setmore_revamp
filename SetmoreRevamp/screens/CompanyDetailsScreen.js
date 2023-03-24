@@ -11,21 +11,21 @@ import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 import CustomButton from '../components/CustomButton';
 
-function CalendarScreen() {
+function CompanyDetailsScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"Gort's calendar"} />
+        <Header headerTitle={'Company Details'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               alert('You found this button!');
             }}>
-            <Text style={styles.bodyText}>on CalendarScreen</Text>
-          </TouchableOpacity>
+            <Text style={styles.bodyText}>on SearchScreen</Text>
+          </TouchableOpacity> */}
         </View>
       </View>
     </View>
@@ -33,7 +33,7 @@ function CalendarScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  container: {
     flex: 1,
   },
 
@@ -47,9 +47,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
+    borderColor: 'red',
     borderWidth: 1,
-    borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
@@ -67,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CalendarScreen;
+export default CompanyDetailsScreen;

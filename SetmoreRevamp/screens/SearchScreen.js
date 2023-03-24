@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -9,22 +9,32 @@ import {
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
+import CustomButton from '../components/CustomButton';
+import SearchBar from '../components/SearchBar';
 
 function SearchScreen() {
+  const [query, setQuery] = useState('');
+
+  // Perform search with new query value
+  const handleQueryChange = newQuery => {
+    setQuery(newQuery);
+  };
+
   return (
-    <View style={styles.container}>
+    <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Get to booking'} />
+        <Header headerTitle={'Get to searching'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on SearchScreen</Text>
-          </TouchableOpacity>
+          <SearchBar query={query} onQueryChange={handleQueryChange} />
+          <CustomButton
+            text="on searchScreen"
+            textColour="white"
+            backgroundColour={Colours.westernpurple}
+            onPress={() => alert('Button pressed')}
+          />
         </View>
       </View>
     </View>
@@ -32,7 +42,7 @@ function SearchScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
   },
 
@@ -46,8 +56,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: 'red',
+    borderColor: Colours.darkturqouise,
     borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
