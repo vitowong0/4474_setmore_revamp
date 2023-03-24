@@ -9,10 +9,11 @@ import {
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
+import CustomButton from '../components/CustomButton';
 
 function NotificationsScreen() {
   return (
-    <View style={styles.container}>
+    <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={'Notifications'} />
@@ -32,7 +33,7 @@ function NotificationsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
   },
 
@@ -46,8 +47,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: 'red',
+    borderColor: Colours.darkturqouise,
     borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
