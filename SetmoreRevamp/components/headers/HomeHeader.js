@@ -5,7 +5,7 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 // and render both accordingly
 
 import {Colours} from '../../constants/styles';
-import ProfilePicture from '../../assets/images/gort2.png';
+import ProfilePicture from '../../assets/images/gortini.png';
 
 // take user first_name and store in async -- or just hardcode it lol
 function HomeHeader({first_name}) {

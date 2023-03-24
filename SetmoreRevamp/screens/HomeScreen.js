@@ -11,7 +11,35 @@ import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
 import CustomButton from '../components/CustomButton';
 
-function HomeScreen() {
+import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
+import ServiceInfo from '../components/data/ServiceInfo.json';
+
+const HomeScreen = () => {
+  const serviceItems = ServiceInfo.map(service => {
+    const serviceOverview = new ServiceInfoOverview(
+      service.id,
+      service.name,
+      service.description,
+      service.rating,
+      service.services,
+      service.staff,
+      service.timesAvailable,
+    );
+
+    return (
+      <View key={service.id}>
+        <Text>{serviceOverview.name}</Text>
+        <Text>{serviceOverview.description}</Text>
+        <Text>Rating: {serviceOverview.rating}</Text>
+        <Text>Services: {serviceOverview.services.join(', ')}</Text>
+        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
+        <Text>
+          Times Available: {serviceOverview.timesAvailable.join(', ')}
+        </Text>
+      </View>
+    );
+  });
+
   return (
     <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
@@ -22,18 +50,20 @@ function HomeScreen() {
           <View style={styles.buttonContainer}>
             <CustomButton
               text="hello"
-              textColour={Colours.lightgreen}
-              backgroundColour={Colours.darkturqouise}
+              textColour={Colours.darkturqouise}
+              backgroundColour={Colours.lightgreen}
             />
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <Text>bottom container</Text>
+          <View>{serviceItems}</View>
         </View>
       </View>
     </View>
   );
-}
+};
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   rootContainer: {
@@ -93,5 +123,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default HomeScreen;

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Majesty Nail Bar",
+    "description": "Here is a description of the Majesty Nail Bar",
+    "rating": 4.5,
+    "services": ["Manicure", "Pedicure", "Nail Art"],
+    "staff": ["Sarah", "Emily", "Alex"],
+    "timesAvailable": ["9am", "11am", "1pm"]
+  },
+  {
+    "id": 2,
+    "name": "Serenity Spa",
+    "description": "Here ia s description of the Serenity Spa",
+    "rating": 4.0,
+    "services": ["Facial", "Massage", "Body Treatment"],
+    "staff": ["Jessica", "Bella", "John"],
+    "timesAvailable": ["10am", "12pm", "2pm"]
+  }
+]
