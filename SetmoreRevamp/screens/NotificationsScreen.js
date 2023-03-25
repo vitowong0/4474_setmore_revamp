@@ -13,7 +13,7 @@ import CustomButton from '../components/CustomButton';
 
 function NotificationsScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={'Notifications'} />
@@ -33,7 +33,7 @@ function NotificationsScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 

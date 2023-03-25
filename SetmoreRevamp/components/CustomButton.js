@@ -17,7 +17,7 @@ export default CustomButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    borderRadius: 15,
+    borderRadius: 8,
     paddingVertical: 10,
     paddingHorizontal: 15,
     marginHorizontal: 5,

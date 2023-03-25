@@ -13,7 +13,7 @@ import CustomButton from '../components/CustomButton';
 
 function FavouritesScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={"Gort's favourites"} />
@@ -29,13 +29,13 @@ function FavouritesScreen() {
           <View style={styles.buttonContainer}>
             <CustomButton
               text="Confirm"
-              textColour={'white'}
-              backgroundColour={'green'}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttonconfirm}
             />
             <CustomButton
               text="Cancel"
-              textColour={'white'}
-              backgroundColour={'red'}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttoncancel}
             />
           </View>
         </View>
@@ -45,7 +45,7 @@ function FavouritesScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 

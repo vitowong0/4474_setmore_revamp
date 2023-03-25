@@ -24,13 +24,14 @@ import SearchScreen from './screens/SearchScreen';
 import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 import {Colours} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+function HomeTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -41,7 +42,7 @@ function MyTabs() {
       <Tab.Group>
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -123,10 +124,21 @@ function MyTabs() {
   );
 }
 
+function HomeStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen name="Home2" component={HomeScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+}
+
 function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <HomeTabs />
     </NavigationContainer>
   );
 }

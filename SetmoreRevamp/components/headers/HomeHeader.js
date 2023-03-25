@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 // This HomeHeader should take in 1 prop, first_name
 // and render both accordingly
@@ -9,6 +10,8 @@ import ProfilePicture from '../../assets/images/gortini.png';
 
 // take user first_name and store in async -- or just hardcode it lol
 function HomeHeader({first_name}) {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.headerContainer}>
       <View style={styles.infoContainer}>
@@ -17,8 +20,12 @@ function HomeHeader({first_name}) {
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity
+            // onPress={() => {
+            //   alert('Will navigate to settings');
+
+            // }}
             onPress={() => {
-              alert('Will navigate to settings');
+              navigation.navigate('Settings');
             }}>
             <Image source={ProfilePicture} style={styles.image} />
           </TouchableOpacity>

@@ -13,7 +13,7 @@ import CustomButton from '../components/CustomButton';
 
 function CalendarScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={"Gort's calendar"} />
@@ -33,7 +33,7 @@ function CalendarScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
