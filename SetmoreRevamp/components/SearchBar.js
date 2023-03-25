@@ -20,11 +20,11 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   searchBarContainer: {
+    flex: 1,
     borderWidth: 1,
     borderColor: Colours.westerngrey,
     borderRadius: 8,
-    marginHorizontal: 16,
-    marginVertical: 8,
+    margin: 8,
     paddingHorizontal: 8,
   },
 

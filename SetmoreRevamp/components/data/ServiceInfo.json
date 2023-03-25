@@ -2,19 +2,28 @@
   {
     "id": 1,
     "name": "Majesty Nail Bar",
-    "description": "Here is a description of the Majesty Nail Bar",
+    "description": "description 1",
     "rating": 4.5,
     "services": ["Manicure", "Pedicure", "Nail Art"],
     "staff": ["Sarah", "Emily", "Alex"],
-    "timesAvailable": ["9am", "11am", "1pm"]
+    "timesAvailable": ["9:00 AM", "11:00 AM", "1:00 PM"]
   },
   {
     "id": 2,
     "name": "Serenity Spa",
-    "description": "Here ia s description of the Serenity Spa",
+    "description": "description 2",
     "rating": 4.0,
     "services": ["Facial", "Massage", "Body Treatment"],
     "staff": ["Jessica", "Bella", "John"],
-    "timesAvailable": ["10am", "12pm", "2pm"]
+    "timesAvailable": ["10:00 AM", "12:45 PM", "2:30 PM"]
+  },
+  {
+    "id": 3,
+    "name": "Skin Artistry Medical Aesthetics",
+    "description": "description 3",
+    "rating": 4.3,
+    "services": ["HydraFacial", "PRP", "Cool Peel"],
+    "staff":  ["Sae Eun", "Alyssa", "Rachel"],
+    "timesAvailable": ["10:30 AM", "12:15 PM", "2:55 PM"]
   }
 ]

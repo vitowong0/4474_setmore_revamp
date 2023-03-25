@@ -5,12 +5,16 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 import CustomButton from '../components/CustomButton';
 import SearchBar from '../components/SearchBar';
+
+import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
+import ServiceInfo from '../components/data/ServiceInfo.json';
 
 function SearchScreen() {
   const [query, setQuery] = useState('');
@@ -20,29 +24,62 @@ function SearchScreen() {
     setQuery(newQuery);
   };
 
+  const serviceItems = ServiceInfo.map(service => {
+    const serviceOverview = new ServiceInfoOverview(
+      service.id,
+      service.name,
+      service.description,
+      service.rating,
+      service.services,
+      service.staff,
+      service.timesAvailable,
+    );
+
+    return (
+      <View key={service.id}>
+        <Text>{serviceOverview.name}</Text>
+        <Text>{serviceOverview.description}</Text>
+        <Text>Rating: {serviceOverview.rating}</Text>
+        <Text>Services: {serviceOverview.services.join(', ')}</Text>
+        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
+        <Text>
+          Times Available: {serviceOverview.timesAvailable.join(', ')}
+        </Text>
+      </View>
+    );
+  });
+
   return (
-    <View style={styles.rootContainer}>
+    // <ScrollView style={{flex: 1}}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <Header headerTitle={'Get to searching'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
+        <View style={styles.searchContainer}>
           <SearchBar query={query} onQueryChange={handleQueryChange} />
           <CustomButton
-            text="on searchScreen"
+            text="Search"
             textColour="white"
             backgroundColour={Colours.westernpurple}
             onPress={() => alert('Button pressed')}
+            // onPress={setQuery(' ')}
           />
+        </View>
+
+        <View style={styles.bodyTextContainer}>
+          {/* <Text style={styles.bodyText}>hi</Text> */}
+          <View>{serviceItems}</View>
         </View>
       </View>
     </View>
+    // </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
@@ -61,10 +98,21 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
   },
 
+  searchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+  },
+
   bodyTextContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+
+    borderColor: 'orange',
+    borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bodyText: {
