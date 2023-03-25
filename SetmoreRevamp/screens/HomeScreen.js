@@ -32,6 +32,23 @@ const HomeScreen = () => {
       service.timesAvailable,
     );
 
+    return (
+      <View key={service.id}>
+        <Text>{serviceOverview.name}</Text>
+        <Text>{serviceOverview.description}</Text>
+        <Text>Rating: {serviceOverview.rating}</Text>
+        <Text>Services: {serviceOverview.services.join(', ')}</Text>
+        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
+        <Text>
+          Times Available: {serviceOverview.timesAvailable.join(', ')}
+        </Text>
+      </View>
+    );
+  });
+
+  return (
+
+    
     const data = [
       {
         tabLabel: 'First Image',
@@ -50,21 +67,6 @@ const HomeScreen = () => {
       }
     ];
 
-    return (
-      <View key={service.id}>
-        <Text>{serviceOverview.name}</Text>
-        <Text>{serviceOverview.description}</Text>
-        <Text>Rating: {serviceOverview.rating}</Text>
-        <Text>Services: {serviceOverview.services.join(', ')}</Text>
-        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
-        <Text>
-          Times Available: {serviceOverview.timesAvailable.join(', ')}
-        </Text>
-      </View>
-    );
-  });
-
-  return (
     <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
