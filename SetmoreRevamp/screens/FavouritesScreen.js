@@ -9,13 +9,14 @@ import {
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
+import CustomButton from '../components/CustomButton';
 
 function FavouritesScreen() {
   return (
-    <View style={styles.container}>
+    <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"fname's favourites"} />
+        <Header headerTitle={"Gort's favourites"} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
@@ -25,6 +26,18 @@ function FavouritesScreen() {
             }}>
             <Text style={styles.bodyText}>on FavouritesScreen</Text>
           </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <CustomButton
+              text="Confirm"
+              textColour={'white'}
+              backgroundColour={'green'}
+            />
+            <CustomButton
+              text="Cancel"
+              textColour={'white'}
+              backgroundColour={'red'}
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -32,7 +45,7 @@ function FavouritesScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
   },
 
@@ -46,14 +59,20 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: 'red',
+    borderColor: Colours.darkturqouise,
     borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 
   bodyText: {

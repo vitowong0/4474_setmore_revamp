@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
 
-// header should take in 1 prop
-// just text
-// and render them accordingly (depending on which page we're on)
+// This regular Header should take in 1 prop (just the header text)
+// and render it accordingly (depending on which page we're on)
 
 function Header({headerTitle}) {
   return (
@@ -27,9 +26,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-
-    borderColor: 'cyan',
-    borderWidth: 1,
   },
 
   infoContainer: {
@@ -41,8 +37,6 @@ const styles = StyleSheet.create({
     flex: 1.5,
     paddingLeft: 10,
     justifyContent: 'center',
-    borderColor: 'orange',
-    borderWidth: 1,
   },
 
   text: {

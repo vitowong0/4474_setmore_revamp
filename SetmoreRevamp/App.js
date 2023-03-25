@@ -5,9 +5,6 @@ import {View, Image, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-// import IonIcon from 'react-native-ionicons';
-// import IonIcon from 'react-native-vector-icons/Ionicons';
-import IonIcon from '@expo/vector-icons/Ionicons';
 
 import homeIcon from './assets/icons/home_grey.png';
 import searchIcon from './assets/icons/search_grey.png';
@@ -48,9 +45,9 @@ function MyTabs() {
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
-                <Image source={homeIconGreen} style={{width: 22, height: 22}} />
+                <Image source={homeIconGreen} style={{width: 27, height: 27}} />
               ) : (
-                <Image source={homeIcon} style={{width: 22, height: 22}} />
+                <Image source={homeIcon} style={{width: 27, height: 27}} />
               ),
           }}
         />
@@ -62,10 +59,10 @@ function MyTabs() {
               focused ? (
                 <Image
                   source={searchIconGreen}
-                  style={{width: 22, height: 25}}
+                  style={{width: 24, height: 27}}
                 />
               ) : (
-                <Image source={searchIcon} style={{width: 22, height: 25}} />
+                <Image source={searchIcon} style={{width: 24, height: 27}} />
               ),
           }}
         />
@@ -77,12 +74,12 @@ function MyTabs() {
               focused ? (
                 <Image
                   source={favouritesIconGreen}
-                  style={{width: 25, height: 20}}
+                  style={{width: 27, height: 25}}
                 />
               ) : (
                 <Image
                   source={favouritesIcon}
-                  style={{width: 25, height: 20}}
+                  style={{width: 27, height: 25}}
                 />
               ),
           }}
@@ -95,10 +92,10 @@ function MyTabs() {
               focused ? (
                 <Image
                   source={calendarIconGreen}
-                  style={{width: 22, height: 22}}
+                  style={{width: 27, height: 27}}
                 />
               ) : (
-                <Image source={calendarIcon} style={{width: 22, height: 22}} />
+                <Image source={calendarIcon} style={{width: 27, height: 27}} />
               ),
           }}
         />
@@ -110,12 +107,12 @@ function MyTabs() {
               focused ? (
                 <Image
                   source={notificationsIconGreen}
-                  style={{width: 22, height: 22}}
+                  style={{width: 27, height: 27}}
                 />
               ) : (
                 <Image
                   source={notificationsIcon}
-                  style={{width: 22, height: 22}}
+                  style={{width: 27, height: 27}}
                 />
               ),
             tabBarBadge: 69,

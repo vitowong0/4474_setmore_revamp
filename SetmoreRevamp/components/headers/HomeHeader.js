@@ -1,20 +1,19 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 
-// home header should take in 2 props
-// text and image
-// and render them accordingly
+// This HomeHeader should take in 1 prop, first_name
+// and render both accordingly
 
-import ProfilePicture from '../../assets/images/boywhatthehell.png';
+import {Colours} from '../../constants/styles';
+import ProfilePicture from '../../assets/images/gortini.png';
 
-// take user fname and store in async -- or just hardcode it lol
-
-function HomeHeader() {
+// take user first_name and store in async -- or just hardcode it lol
+function HomeHeader({first_name}) {
   return (
     <View style={styles.headerContainer}>
       <View style={styles.infoContainer}>
         <View style={styles.textContainer}>
-          <Text style={styles.text}>Hello, fname!</Text>
+          <Text style={styles.text}>Hello, {first_name}</Text>
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity
@@ -39,9 +38,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-
-    borderColor: 'cyan',
-    borderWidth: 1,
   },
 
   infoContainer: {
@@ -53,15 +49,12 @@ const styles = StyleSheet.create({
     flex: 1.5,
     paddingLeft: 10,
     justifyContent: 'center',
-    borderColor: 'orange',
-    borderWidth: 1,
   },
 
   imageContainer: {
     flex: 0.75,
     alignItems: 'center',
-    borderColor: 'green',
-    borderWidth: 1,
+    // make a coloured border around the picture
   },
 
   text: {
@@ -73,5 +66,8 @@ const styles = StyleSheet.create({
     height: 70,
     width: 70,
     borderRadius: 35,
+
+    borderColor: Colours.darkturqouise,
+    borderWidth: 1,
   },
 });

@@ -9,35 +9,64 @@ import {
 
 import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
+import CustomButton from '../components/CustomButton';
 
-function HomeScreen() {
+import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
+import ServiceInfo from '../components/data/ServiceInfo.json';
+
+const HomeScreen = () => {
+  const serviceItems = ServiceInfo.map(service => {
+    const serviceOverview = new ServiceInfoOverview(
+      service.id,
+      service.name,
+      service.description,
+      service.rating,
+      service.services,
+      service.staff,
+      service.timesAvailable,
+    );
+
+    return (
+      <View key={service.id}>
+        <Text>{serviceOverview.name}</Text>
+        <Text>{serviceOverview.description}</Text>
+        <Text>Rating: {serviceOverview.rating}</Text>
+        <Text>Services: {serviceOverview.services.join(', ')}</Text>
+        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
+        <Text>
+          Times Available: {serviceOverview.timesAvailable.join(', ')}
+        </Text>
+      </View>
+    );
+  });
+
   return (
-    <View style={styles.container}>
+    <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
-      <View style={styles.header}>{<HomeHeader />}</View>
+      <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <Text>upper container</Text>
+          <Text>in top container</Text>
+          <View style={styles.buttonContainer}>
+            <CustomButton
+              text="hello"
+              textColour={Colours.darkturqouise}
+              backgroundColour={Colours.lightgreen}
+            />
+          </View>
         </View>
         <View style={styles.bottomContainer}>
-          <Text>bottom container</Text>
+          <View>{serviceItems}</View>
         </View>
-
-        {/* <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on HomeScreen</Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
     </View>
   );
-}
+};
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {
+  rootContainer: {
     flex: 1,
     width: '100%',
   },
@@ -51,22 +80,37 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
+
+    borderColor: Colours.darkturqouise,
+    borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   topContainer: {
     flex: 1,
+    padding: 10,
+
     borderColor: 'orange',
     borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bottomContainer: {
     flex: 1,
+    padding: 10,
+
     borderColor: 'red',
     borderWidth: 1,
+    borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  buttonContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -79,5 +123,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default HomeScreen;
