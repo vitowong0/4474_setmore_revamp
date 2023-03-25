@@ -14,6 +14,12 @@ import CustomButton from '../components/CustomButton';
 import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
 import ServiceInfo from '../components/data/ServiceInfo.json';
 
+import Swiper from "react-native-screens-swiper";
+import ServiceInfo from '../components/data/ServiceInfo.json';
+import FirstImage from '../assets/images/salon_dream.png'
+import SecondImage from '../assets/images/salon_hair.png'
+import ThirdImage from '../assets/images/salon_hup.png'
+
 const HomeScreen = () => {
   const serviceItems = ServiceInfo.map(service => {
     const serviceOverview = new ServiceInfoOverview(
@@ -25,6 +31,24 @@ const HomeScreen = () => {
       service.staff,
       service.timesAvailable,
     );
+
+    const data = [
+      {
+        tabLabel: 'First Image',
+        componenet: FirstImage,
+        props: {} // Optional properties
+      },
+      {
+        tabLabel: 'Second Image',
+        componenet: SecondImage,
+        props: {} // Optional properties
+      },
+      {
+        tabLabel: 'Third Image',
+        componenet: ThirdImage,
+        props: {} // Optional properties
+      }
+    ];
 
     return (
       <View key={service.id}>
@@ -54,6 +78,13 @@ const HomeScreen = () => {
               backgroundColour={Colours.lightgreen}
             />
           </View>
+        </View>
+        <View style={styles.bodyContainer}>
+          <Swiper
+            data={data}
+            isStaticPills={true}
+            style={styles}
+          />
         </View>
         <View style={styles.bottomContainer}>
           <View>{serviceItems}</View>
