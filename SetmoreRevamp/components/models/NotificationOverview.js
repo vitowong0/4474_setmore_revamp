@@ -1,10 +1,10 @@
 class Overview {
-  constructor(id, title, detail, image) {
+  constructor(id, postImage, companyName, titleText, detailText, timeAgo) {
     this.id = id;
-    this.title = title;
-    this.detail = detail;
-    this.image = image;
+    this.postImage = postImage;
+    this.companyName = companyName;
+    this.detailText = detailText;
+    this.timeAgo = timeAgo;
   }
 }
-
 export default Overview;
