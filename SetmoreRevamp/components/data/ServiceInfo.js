@@ -1,4 +1,4 @@
-import ServiceInfoOverview from '../models/ServiceInfoOverview';
+import ServiceInfoOverview from '../models/CompanyInfoOverview';
 
 export const SERVICEINFO = [
   new ServiceInfoOverview(

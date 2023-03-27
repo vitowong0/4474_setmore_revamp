@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, Settings} from 'react-native';
 import Header from '../components/headers/Header';
 import SubHeader from '../components/headers/SubHeader';
 
-const SettingsScreen = () => {
+function SettingsScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
@@ -15,7 +15,7 @@ const SettingsScreen = () => {
       </View>
     </View>
   );
-};
+}
 
 export default SettingsScreen;
 

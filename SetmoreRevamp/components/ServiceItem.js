@@ -7,10 +7,9 @@ const ServiceItem = ({serviceName, duration, cost}) => {
   return (
     <TouchableOpacity>
       <View style={styles.root}>
-        {/* <View style={styles.button}></View> */}
-        {/* <View style={{alignItems: 'center'}}> */}
         <View>
           <Text style={styles.serviceName}>{serviceName}</Text>
+          <View style={{paddingVertical: 3}} />
           <Text style={styles.duration}>{duration}</Text>
         </View>
         <View>

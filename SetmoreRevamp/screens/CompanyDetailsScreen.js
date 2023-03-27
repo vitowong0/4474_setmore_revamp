@@ -3,11 +3,11 @@ import {View, Text, StyleSheet} from 'react-native';
 
 import {Colours} from '../constants/styles';
 
-const CompanyDetailsScreen = () => {
+function CompanyDetailsScreen() {
   <View style={styles.root}>
-    <Text style={styles.text}>hi, inside BookingScreen</Text>
+    <Text style={styles.text}>hi, inside CompanyDetailsScreen</Text>
   </View>;
-};
+}
 
 export default CompanyDetailsScreen;
 

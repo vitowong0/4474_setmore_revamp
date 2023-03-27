@@ -14,7 +14,7 @@ const SearchBar = ({query, onQueryChange, placeholder}) => {
       <Text> </Text>
       <TextInput
         style={styles.input}
-        placeholder="Search"
+        placeholder="Search..."
         value={query}
         onChangeText={onQueryChange}
       />

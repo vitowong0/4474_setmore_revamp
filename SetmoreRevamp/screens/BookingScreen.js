@@ -100,9 +100,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     // flexDirection: 'row',
 
-    borderColor: 'green',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    // borderColor: 'green',
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
   },
 
   providerImage: {
