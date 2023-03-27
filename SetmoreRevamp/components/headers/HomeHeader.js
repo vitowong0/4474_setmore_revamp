@@ -20,10 +20,6 @@ function HomeHeader({first_name}) {
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity
-            // onPress={() => {
-            //   alert('Will navigate to settings');
-
-            // }}
             onPress={() => {
               navigation.navigate('Settings');
             }}>
@@ -39,7 +35,7 @@ export default HomeHeader;
 
 const styles = StyleSheet.create({
   headerContainer: {
-    paddingTop: 30,
+    paddingTop: 40,
     flex: 1,
     backgroundColor: '#ffffff',
     justifyContent: 'center',
@@ -53,15 +49,13 @@ const styles = StyleSheet.create({
   },
 
   textContainer: {
-    flex: 1.5,
+    flex: 1,
     paddingLeft: 10,
     justifyContent: 'center',
   },
 
   imageContainer: {
-    flex: 0.75,
     alignItems: 'center',
-    // make a coloured border around the picture
   },
 
   text: {
@@ -70,9 +64,9 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    height: 70,
-    width: 70,
-    borderRadius: 35,
+    height: 60,
+    width: 60,
+    borderRadius: 30,
 
     borderColor: Colours.darkturqouise,
     borderWidth: 1,

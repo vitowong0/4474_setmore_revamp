@@ -2,13 +2,13 @@ import React from 'react';
 import {View, Text, StyleSheet, Settings} from 'react-native';
 
 import Header from '../components/headers/Header';
-import SettingsHeader from '../components/headers/SettingsHeader';
+import SubHeader from '../components/headers/SubHeader';
 
 const SettingsScreen = () => {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <SettingsHeader headerTitle={'Settings'} />
+        <SubHeader headerTitle={'Settings'} />
       </View>
       <View style={styles.body}>
         <Text style={styles.text}>inside SettingsScreen.js</Text>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
   },
 
   body: {
