@@ -1,18 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { Colours } from "../../constants/styles";
-import { NOTIFICATIONSDATA } from "../data/DummyNotificationData";
-function NotificationItem({ id, postImage,  companyName, notification, time }) {
-  
-    return (
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {Colours} from '../../constants/styles';
+
+function NotificationItem({id, postImage, companyName, detailText, timeAgo}) {
+  return (
     <View style={styles.rootContainer}>
       <TouchableOpacity>
-        <View>
-            <Text style={styles.id}>{id}</Text>
-            <Text style={styles.postImage}>{postImage}</Text>
-            <Text style={styles.companyName}>{companyName}</Text>
-            <Text style={styles.notification}>{notification}</Text>
-            <Text style={styles.time}>{time}</Text>
+        <View style={styles.itemContainer}>
+          <Text style={styles.postImage}>{postImage}</Text>
+          <Text style={styles.companyName}>{companyName}</Text>
+          <Text style={styles.detailText}>{detailText}</Text>
+          <Text style={styles.timeAgo}>{timeAgo}</Text>
         </View>
       </TouchableOpacity>
     </View>
@@ -31,18 +29,18 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 10,
 
-    backgroundColor: "white",
-    borderColor: "lightgrey",
+    backgroundColor: 'white',
+    borderColor: 'lightgrey',
     borderWidth: 1,
   },
 
-  notifTitleText: {
-    fontWeight: "600",
+  companyName: {
+    fontWeight: '600',
     fontSize: 20,
   },
 
-  notifDetailText: {
-    fontWeight: "200",
+  detailText: {
+    fontWeight: '200',
     fontSize: 15,
   },
 });
