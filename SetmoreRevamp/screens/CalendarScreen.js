@@ -16,7 +16,7 @@ function CalendarScreen() {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"Gort's calendar"} />
+        <Header headerTitle={'Calendar'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
   },
 

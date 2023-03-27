@@ -8,6 +8,7 @@ export const Colours = {
   lightgreen: '#BFD6BD',
   darkgreen: '#31532F',
 
+  pastelturquoise: '#C7E9E6',
   pastelyellow: '#FBE098',
   pastelorange: '#FFB449',
   pastelblue: '#789ffC',

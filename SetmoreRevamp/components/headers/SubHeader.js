@@ -3,17 +3,19 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import BackButton from '../BackButton';
+import {Colours} from '../../constants/styles';
 
-// This regular Header should take in 1 prop (just the header text)
+// This SubHeader should take in 1 prop (just the header text)
 // and render it accordingly (depending on which page we're on)
+// back button will navigate to the previous screen
 
-function SettingsHeader({headerTitle}) {
+function SubHeader({headerTitle}) {
   const navigation = useNavigation();
 
   return (
     <View style={styles.headerContainer}>
       <View style={styles.infoContainer}>
-        <View>
+        <View style={styles.buttonContainer}>
           <TouchableOpacity
             onPress={() => {
               navigation.goBack();
@@ -29,13 +31,13 @@ function SettingsHeader({headerTitle}) {
   );
 }
 
-export default SettingsHeader;
+export default SubHeader;
 
 const styles = StyleSheet.create({
   headerContainer: {
     paddingTop: 30,
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: Colours.white,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
@@ -44,14 +46,25 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     paddingHorizontal: 15,
+  },
 
+  buttonContainer: {
+    justifyContent: 'center',
     alignItems: 'center',
+
+    // borderColor: 'black',
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
   },
 
   textContainer: {
-    flex: 1.5,
+    flex: 1,
     paddingLeft: 10,
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    // paddingVertical: 5,
+    // borderColor: 'black',
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
   },
 
   text: {

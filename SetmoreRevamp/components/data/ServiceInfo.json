@@ -23,7 +23,7 @@
     "description": "description 3",
     "rating": 4.3,
     "services": ["HydraFacial", "PRP", "Cool Peel"],
-    "staff":  ["Sae Eun", "Alyssa", "Rachel"],
+    "staff": ["Sae Eun", "Alyssa", "Rachel"],
     "timesAvailable": ["10:30 AM", "12:15 PM", "2:55 PM"]
   }
 ]

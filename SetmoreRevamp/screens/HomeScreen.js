@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
   },
 
   bodyContainer: {

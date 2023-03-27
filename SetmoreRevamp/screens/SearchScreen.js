@@ -5,18 +5,23 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
-  ScrollView,
+  Image,
 } from 'react-native';
+
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 import CustomButton from '../components/CustomButton';
 import SearchBar from '../components/SearchBar';
+import scanIcon from '../assets/icons/squared-scan.png';
 
 import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
 import ServiceInfo from '../components/data/ServiceInfo.json';
 
 function SearchScreen() {
+  const navigation = useNavigation();
+
   const [query, setQuery] = useState('');
 
   // Perform search with new query value
@@ -50,7 +55,6 @@ function SearchScreen() {
   });
 
   return (
-    // <ScrollView style={{flex: 1}}>
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
@@ -59,22 +63,37 @@ function SearchScreen() {
       <View style={styles.bodyContainer}>
         <View style={styles.searchContainer}>
           <SearchBar query={query} onQueryChange={handleQueryChange} />
-          <CustomButton
+          <TouchableOpacity>
+            <View>
+              <Image style={styles.scan} source={scanIcon} />
+            </View>
+          </TouchableOpacity>
+          {/* <CustomButton
             text="Search"
-            textColour="white"
-            backgroundColour={Colours.westernpurple}
+            textColour={Colours.darkgreen}
+            backgroundColour={Colours.lightturqouise}
+            borderRadius={30}
             onPress={() => alert('Button pressed')}
             // onPress={setQuery(' ')}
-          />
+          /> */}
         </View>
 
         <View style={styles.bodyTextContainer}>
-          {/* <Text style={styles.bodyText}>hi</Text> */}
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('BookingScreen');
+            }}>
+            <Text>Navigate to company detials screen demo button</Text>
+            {/* <CustomButton
+              text={'navigate button'}
+              backgroundColor={Colours.pastelblue}
+            /> */}
+          </TouchableOpacity>
+
           <View>{serviceItems}</View>
         </View>
       </View>
     </View>
-    // </ScrollView>
   );
 }
 
@@ -84,7 +103,7 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
   },
 
@@ -105,14 +124,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
 
+  scan: {
+    width: 40,
+    height: 40,
+  },
+
   bodyTextContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
 
-    borderColor: 'orange',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    //   borderColor: 'orange',
+    //   borderWidth: 1,
+    //   borderStyle: 'dashed',
   },
 
   bodyText: {
