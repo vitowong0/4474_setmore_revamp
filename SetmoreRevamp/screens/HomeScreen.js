@@ -13,7 +13,7 @@ import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
 import CustomButton from '../components/CustomButton';
 
-const HomeScreen = () => {
+function HomeScreen() {
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
@@ -33,7 +33,7 @@ const HomeScreen = () => {
       </View>
     </View>
   );
-};
+}
 
 export default HomeScreen;
 

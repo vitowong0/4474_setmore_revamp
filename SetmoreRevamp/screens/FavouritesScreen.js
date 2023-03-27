@@ -10,6 +10,7 @@ import {
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 import CustomButton from '../components/CustomButton';
+import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
 
 function FavouritesScreen() {
   return (
@@ -19,14 +20,7 @@ function FavouritesScreen() {
         <Header headerTitle={'Favourites'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on FavouritesScreen</Text>
-          </TouchableOpacity>
-          <View style={styles.buttonContainer}>
+        {/* <View style={styles.buttonContainer}>
             <CustomButton
               text="Confirm"
               textColour={Colours.white}
@@ -37,8 +31,8 @@ function FavouritesScreen() {
               textColour={Colours.white}
               backgroundColour={Colours.buttoncancel}
             />
-          </View>
-        </View>
+          </View> */}
+        <CompanyGridTile />
       </View>
     </View>
   );
@@ -62,25 +56,6 @@ const styles = StyleSheet.create({
     borderColor: Colours.darkturqouise,
     borderWidth: 1,
     borderStyle: 'dashed',
-  },
-
-  bodyTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-
-  bodyText: {
-    fontWeight: 'bold',
-    fontSize: 28,
-    color: Colours.darkturqouise,
-    paddingHorizontal: 20,
-    textAlign: 'center',
   },
 });
 
