@@ -5,43 +5,17 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
 import CustomButton from '../components/CustomButton';
 
-import ServiceInfoOverview from '../components/models/ServiceInfoOverview';
-import ServiceInfo from '../components/data/ServiceInfo.json';
-
-const HomeScreen = () => {
-  const serviceItems = ServiceInfo.map(service => {
-    const serviceOverview = new ServiceInfoOverview(
-      service.id,
-      service.name,
-      service.description,
-      service.rating,
-      service.services,
-      service.staff,
-      service.timesAvailable,
-    );
-
-    return (
-      <View key={service.id}>
-        <Text>{serviceOverview.name}</Text>
-        <Text>{serviceOverview.description}</Text>
-        <Text>Rating: {serviceOverview.rating}</Text>
-        <Text>Services: {serviceOverview.services.join(', ')}</Text>
-        <Text>Staff: {serviceOverview.staff.join(', ')}</Text>
-        <Text>
-          Times Available: {serviceOverview.timesAvailable.join(', ')}
-        </Text>
-      </View>
-    );
-  });
-
+function HomeScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
       <View style={styles.bodyContainer}>
@@ -50,30 +24,26 @@ const HomeScreen = () => {
           <View style={styles.buttonContainer}>
             <CustomButton
               text="hello"
-              textColour={Colours.darkturqouise}
-              backgroundColour={Colours.lightgreen}
+              textColour={Colours.darkgreen}
+              backgroundColour={Colours.lightturqouise}
             />
           </View>
         </View>
-        <View style={styles.bottomContainer}>
-          <View>{serviceItems}</View>
-        </View>
+        <View style={styles.bottomContainer}></View>
       </View>
     </View>
   );
-};
+}
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
-    width: '100%',
   },
 
   header: {
-    flex: 1.5,
-    width: '100%',
+    flex: 1.2,
   },
 
   bodyContainer: {
@@ -81,9 +51,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    // borderColor: Colours.darkturqouise,
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
   },
 
   topContainer: {

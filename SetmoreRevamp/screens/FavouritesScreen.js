@@ -10,47 +10,41 @@ import {
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 import CustomButton from '../components/CustomButton';
+import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
 
 function FavouritesScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"Gort's favourites"} />
+        <Header headerTitle={'Favourites'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on FavouritesScreen</Text>
-          </TouchableOpacity>
-          <View style={styles.buttonContainer}>
+        {/* <View style={styles.buttonContainer}>
             <CustomButton
               text="Confirm"
-              textColour={'white'}
-              backgroundColour={'green'}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttonconfirm}
             />
             <CustomButton
               text="Cancel"
-              textColour={'white'}
-              backgroundColour={'red'}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttoncancel}
             />
-          </View>
-        </View>
+          </View> */}
+        <CompanyGridTile />
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
   },
 
@@ -62,25 +56,6 @@ const styles = StyleSheet.create({
     borderColor: Colours.darkturqouise,
     borderWidth: 1,
     borderStyle: 'dashed',
-  },
-
-  bodyTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-
-  bodyText: {
-    fontWeight: 'bold',
-    fontSize: 28,
-    color: Colours.darkturqouise,
-    paddingHorizontal: 20,
-    textAlign: 'center',
   },
 });
 

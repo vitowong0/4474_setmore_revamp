@@ -5,36 +5,53 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  Image,
 } from 'react-native';
+import SearchBar from 'react-native-dynamic-search-bar';
+import {useNavigation} from '@react-navigation/native';
 
-import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
-import CustomButton from '../components/CustomButton';
-import SearchBar from '../components/SearchBar';
+import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
+import {Colours} from '../constants/styles';
+import scanIcon from '../assets/icons/squared-scan.png';
 
 function SearchScreen() {
-  const [query, setQuery] = useState('');
+  const navigation = useNavigation();
 
-  // Perform search with new query value
-  const handleQueryChange = newQuery => {
-    setQuery(newQuery);
+  const [search, setSearch] = useState('');
+
+  const updateSearch = search => {
+    setSearch(search);
   };
 
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Get to searching'} />
+        <Header headerTitle={'Start searching'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
-          <SearchBar query={query} onQueryChange={handleQueryChange} />
-          <CustomButton
-            text="on searchScreen"
-            textColour="white"
-            backgroundColour={Colours.westernpurple}
-            onPress={() => alert('Button pressed')}
+        <View style={styles.searchContainer}>
+          <SearchBar
+            placeholder="Search..."
+            // onPress={() => alert('onPress')}
+            onChangeText={text => console.log(text)}
           />
+          <TouchableOpacity>
+            <View>
+              <Image style={styles.scanIcon} source={scanIcon} />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.bodyTextContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('BookingScreen');
+            }}>
+            <Text style={styles.bodyText}>Gort Salon</Text>
+            <Text>(going to BookingScreen. everything is hardcoded)</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -42,12 +59,12 @@ function SearchScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
   },
 
@@ -61,15 +78,31 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
   },
 
+  searchContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+  },
+
+  scanIcon: {
+    width: 35,
+    height: 35,
+  },
+
   bodyTextContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+
+    //   borderColor: 'orange',
+    //   borderWidth: 1,
+    //   borderStyle: 'dashed',
   },
 
   bodyText: {
     fontWeight: 'bold',
-    fontSize: 28,
+    fontSize: 18,
     color: Colours.darkturqouise,
     paddingHorizontal: 20,
     textAlign: 'center',

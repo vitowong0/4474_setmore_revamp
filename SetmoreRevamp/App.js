@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
-import {View, Image, StatusBar} from 'react-native';
+import {Image} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -18,19 +19,23 @@ import favouritesIconGreen from './assets/icons/favourites_green.png';
 import calendarIconGreen from './assets/icons/calendar_green.png';
 import notificationsIconGreen from './assets/icons/notifications_green.png';
 
-import LoginScreen from './screens/LoginScreen';
+// import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
+import SettingsScreen from './screens/SettingsScreen';
+
+import BookingScreen from './screens/BookingScreen';
+import CompanyDetailsScreen from './screens/CompanyDetailsScreen';
 
 import {Colours} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+function HomeTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -41,7 +46,7 @@ function MyTabs() {
       <Tab.Group>
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={HomeStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -53,7 +58,7 @@ function MyTabs() {
         />
         <Tab.Screen
           name="Search"
-          component={SearchScreen}
+          component={SearchStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -115,7 +120,7 @@ function MyTabs() {
                   style={{width: 27, height: 27}}
                 />
               ),
-            tabBarBadge: 69,
+            tabBarBadge: 5,
           }}
         />
       </Tab.Group>
@@ -123,10 +128,36 @@ function MyTabs() {
   );
 }
 
+function HomeStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen name="Home2" component={HomeScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+}
+
+function SearchStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen
+          name="CompanyDetailsScreen"
+          component={CompanyDetailsScreen}
+        />
+        <Stack.Screen name="BookingScreen" component={BookingScreen} />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+}
+
 function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <HomeTabs />
     </NavigationContainer>
   );
 }

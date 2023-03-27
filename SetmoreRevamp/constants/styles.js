@@ -1,15 +1,21 @@
 export const Colours = {
-  darkturqouise: '#6FAEAB',
+  white: '#FFF',
+  black: '#000',
+
   lightturqouise: '#B3D5CF',
+  darkturqouise: '#6FAEAB',
+
   lightgreen: '#BFD6BD',
+  darkgreen: '#31532F',
+
+  pastelturquoise: '#C7E9E6',
   pastelyellow: '#FBE098',
-  mediumgrey: '#5E5E5E',
+  pastelorange: '#FFB449',
+  pastelblue: '#789ffC',
+
+  buttonconfirm: '#03C03C',
+  buttoncancel: '#FF392E',
+
   westernpurple: '#4F2683',
   westerngrey: '#807F83',
-
-  primary100: 'white',
-  primary500: 'white',
-  primary800: 'white',
-  error100: '#fcdcbf',
-  error500: '#f37c13',
 };
