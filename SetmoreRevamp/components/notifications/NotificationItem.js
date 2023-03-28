@@ -1,18 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { Colours } from "../../constants/styles";
-import { NOTIFICATIONSDATA } from "../data/DummyNotificationData";
-function NotificationItem({ id, postImage,  companyName, notification, time }) {
-  
-    return (
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {Colours} from '../../constants/styles';
+
+function NotificationItem({id, postImage, companyName, detailText, timeAgo}) {
+  return (
     <View style={styles.rootContainer}>
       <TouchableOpacity>
-        <View>
-            <Text style={styles.id}>{id}</Text>
-            <Text style={styles.postImage}>{postImage}</Text>
+        <View style={styles.notificationContainer}>
+          <View style={styles.imageContainer}>
+            <Image style={styles.image} source={postImage} />
+          </View>
+          <View style={styles.textContainer}>
             <Text style={styles.companyName}>{companyName}</Text>
-            <Text style={styles.notification}>{notification}</Text>
-            <Text style={styles.time}>{time}</Text>
+            <Text style={styles.detailText}>{detailText}</Text>
+          </View>
         </View>
       </TouchableOpacity>
     </View>
@@ -26,23 +27,48 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  itemContainer: {
+  notificationContainer: {
+    flex: 1,
+    flexDirection: 'row',
     borderRadius: 15,
     padding: 10,
-    marginBottom: 10,
-
-    backgroundColor: "white",
-    borderColor: "lightgrey",
-    borderWidth: 1,
+    marginBottom: 6,
+    borderBottomColor: 'grey',
+    borderBottomWidth: 0.2,
   },
 
-  notifTitleText: {
-    fontWeight: "600",
-    fontSize: 20,
+  imageContainer: {
+    flex: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // borderColor: 'red',
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
   },
 
-  notifDetailText: {
-    fontWeight: "200",
-    fontSize: 15,
+  image: {
+    height: 75,
+    width: 75,
+  },
+
+  textContainer: {
+    flex: 5,
+    justifyContent: 'center',
+
+    // borderColor: 'green',
+    // borderWidth: 1,
+    // borderStyle: 'dashed',
+  },
+
+  companyName: {
+    fontWeight: '700',
+    paddingVertical:3,
+    fontSize: 12,
+  },
+
+  detailText: {
+    fontWeight: '300',
+    paddingVertical:3,
+    fontSize: 14,
   },
 });
