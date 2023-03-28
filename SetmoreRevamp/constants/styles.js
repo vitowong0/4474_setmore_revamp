@@ -18,4 +18,6 @@ export const Colours = {
 
   westernpurple: '#4F2683',
   westerngrey: '#807F83',
+
+  lightgrey: '#F6F6F6',
 };
