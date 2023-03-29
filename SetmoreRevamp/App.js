@@ -171,21 +171,17 @@ function FavouritesStack() {
 }
 
 function CalendarStack() {
-    return (
-        // Create a stack navigator with the header hidden
-        <Stack.Navigator>
-            <Stack.Screen
-                name="CalendarScreen"
-                component={CalendarScreen}
-                options={{headerShown: false}}
-            />
-            <Stack.Screen
-                name="BookingOverview"
-                component={BookingOverviewScreen}
-                options={{headerShown: false}}
-            />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
+        <Stack.Screen
+          name="BookingOverview"
+          component={BookingOverviewScreen}
+        />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
 }
 
 function App() {
