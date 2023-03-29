@@ -33,7 +33,7 @@ function NotificationsScreen() {
         <Header headerTitle={'Notifications'} />
       </View>
 
-      <View style={styles.container}>
+      {/* <View style={styles.container}> */}
         <View style={styles.bodyContainer}>
           <FlatList
             data={NOTIFICATIONSDATA}
@@ -43,7 +43,7 @@ function NotificationsScreen() {
           />
         </View>
       </View>
-    </View>
+    // </View>
   );
 }
 
@@ -58,9 +58,6 @@ const styles = StyleSheet.create({
     marginBottom: -20,
   },
 
-  container: {
-    flex: 7,
-  },
 
   bodyContainer: {
     flex: 7,
