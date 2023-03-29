@@ -2,6 +2,7 @@ import Overview from '../models/CompanyOverview';
 import salon1 from '../../assets/images/salon1.png';
 import salon2 from '../../assets/images/salon2.png';
 import salon3 from '../../assets/images/salon5.png';
+import salon4 from '../../assets/images/salon4.png';
 
 export const COMPANYDATA = [
   new Overview(
@@ -39,5 +40,17 @@ export const COMPANYDATA = [
     ['10:30 AM', '12:15 PM', '2:55 PM'],
     ['1 hour', '1 hour', '45 minutes'],
     ['$150', '$425', '$425'],
+  ),
+  new Overview(
+    4,
+    "Vito's Mystery Restaurant",
+    salon4,
+    "enjoy vito's delicious meat for free",
+    4.3,
+    ['Facial', 'Massage', 'Back Breaking'],
+    ['Vito'],
+    ['12:30 AM', '1:15 AM', '2:55 AM'],
+    ['15 minutes', '25 minutes', '1 hour'],
+    ['$0', '$0', '$0'],
   ),
 ];

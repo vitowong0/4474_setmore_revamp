@@ -33,8 +33,7 @@ function SearchScreen() {
       <View style={styles.bodyContainer}>
         <View style={styles.searchContainer}>
           <SearchBar
-            placeholder="Search..."
-            // onPress={() => alert('onPress')}
+            placeholder="Search for anything"
             onChangeText={text => console.log(text)}
           />
           <TouchableOpacity>
@@ -66,6 +65,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1.2,
     width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
@@ -73,9 +73,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   searchContainer: {
@@ -86,8 +85,8 @@ const styles = StyleSheet.create({
   },
 
   scanIcon: {
-    width: 35,
-    height: 35,
+    width: 32,
+    height: 32,
   },
 
   bodyTextContainer: {

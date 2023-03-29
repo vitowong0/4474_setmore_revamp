@@ -28,21 +28,21 @@ function CompanyGridTile({
           </View>
           <TouchableOpacity
             onPress={() => {
-              alert('hi');
+              alert('eat my capy');
             }}>
             <View>
               <Image style={styles.dotdotdot} source={dotdotdot} />
             </View>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('CompanyDetailsScreen');
-          }}>
-          <View style={styles.imageContainer}>
+        <View style={styles.imageContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('CompanyDetailsScreen');
+            }}>
             <Image style={styles.image} source={image} />
-          </View>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -58,12 +58,8 @@ const styles = StyleSheet.create({
   gridTileContainer: {
     flex: 1,
     justifyContent: 'center',
-    paddingVertical: 15,
-    paddingHorizontal: 18,
-
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    paddingTop: 10,
+    paddingBottom: 10,
   },
 
   topRow: {
@@ -71,7 +67,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     marginBottom: 2,
     justifyContent: 'space-between',
-    paddingHorizontal: 10,
+    paddingHorizontal: 8,
   },
 
   titleText: {
@@ -94,15 +90,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 250,
     borderRadius: 30,
-  },
-
-  test: {
-    paddingVertical: 10,
-  },
-
-  text: {
-    fontSize: 20,
-    color: 'green',
   },
 });
 

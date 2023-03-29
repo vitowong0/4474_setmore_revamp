@@ -5,7 +5,6 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
-  ScrollView,
 } from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
@@ -20,16 +19,31 @@ function HomeScreen() {
       <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <Text>in top container</Text>
           <View style={styles.buttonContainer}>
             <CustomButton
-              text="hello"
+              text="in top container"
               textColour={Colours.darkgreen}
               backgroundColour={Colours.lightturqouise}
             />
           </View>
         </View>
-        <View style={styles.bottomContainer}></View>
+        <View style={styles.bottomContainer}>
+          <View style={styles.buttonContainer}>
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('eat my booty');
+                }}>
+                <Text>hi</Text>
+                <CustomButton
+                  text="in bottom container"
+                  textColour={Colours.darkgreen}
+                  backgroundColour={Colours.lightturqouise}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -51,18 +65,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    // borderColor: Colours.darkturqouise,
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   topContainer: {
     flex: 1,
     padding: 10,
-
-    borderColor: 'orange',
-    borderWidth: 1,
-    borderStyle: 'dashed',
   },
 
   bottomContainer: {
@@ -70,8 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
 
     borderColor: 'red',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {

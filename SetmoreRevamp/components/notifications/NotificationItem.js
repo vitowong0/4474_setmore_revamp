@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderRadius: 15,
-    padding: 10,
-    marginBottom: 6,
+    marginHorizontal: 6,
+    paddingVertical: 15,
 
-    borderBottomColor: Colours.westerngrey,
-    borderBottomWidth: 0.2,
+    borderColor: Colours.westerngrey,
+    borderBottomWidth: 0.45,
   },
 
   imageContainer: {
