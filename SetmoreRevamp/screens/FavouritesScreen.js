@@ -13,7 +13,6 @@ import {COMPANYDATA} from '../components/data/DummyCompanyData';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
-import CustomButton from '../components/CustomButton';
 
 function FavouritesScreen() {
   function renderCompanyGridTile(itemData) {
@@ -58,16 +57,16 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1.2,
-    width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
     flex: 7,
-    backgroundColor: 'white',
+    backgroundColor: Colours.white,
+    paddingHorizontal: 20,
 
-    // borderColor: Colours.darkturqouise,
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 });
 

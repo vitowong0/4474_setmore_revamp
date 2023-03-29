@@ -51,20 +51,11 @@ const styles = StyleSheet.create({
   buttonContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-
-    // borderColor: 'black',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   textContainer: {
     flex: 1,
     paddingLeft: 10,
-    // justifyContent: 'center',
-    // paddingVertical: 5,
-    // borderColor: 'black',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   text: {
