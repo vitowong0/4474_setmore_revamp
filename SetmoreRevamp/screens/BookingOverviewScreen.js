@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 
 import {Colours} from '../constants/styles';
-import Header from '../components/headers/Header';
+import SubHeader from '../components/headers/SubHeader';
 import CustomButton from '../components/CustomButton';
 import TimeButton from '../components/TimeButton';
 
@@ -18,7 +18,7 @@ function BookingOverviewScreen() {
     <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Linnaean, Battersea'} />
+        <SubHeader headerTitle={'Linnaean, Battersea'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
@@ -48,7 +48,7 @@ function BookingOverviewScreen() {
           <Text style={styles.bigGreenText}>Friday, March 10</Text>
           <Text style={styles.boldText}>Time Selected</Text>
           <View style={styles.timeContainer}>
-            <TimeButton text={'4:20 pm'} disableButton={true} />
+            <TimeButton text={'4:20 PM'} disableButton={true} />
           </View>
           <View style={styles.buttonContainer}>
             <CustomButton
@@ -68,6 +68,8 @@ function BookingOverviewScreen() {
   );
 }
 
+export default BookingOverviewScreen;
+
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
@@ -84,15 +86,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
 
     borderColor: Colours.darkturqouise,
-    borderWidth: 1,
+    borderWidth: 3,
     borderStyle: 'dashed',
   },
 
   bodyTextContainer: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: 20,
   },
 
   bodyText: {
@@ -161,5 +161,3 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
-
-export default BookingOverviewScreen;
