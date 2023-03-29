@@ -29,6 +29,7 @@ import SettingsScreen from './screens/SettingsScreen';
 
 import BookingScreen from './screens/BookingScreen';
 import CompanyDetailsScreen from './screens/CompanyDetailsScreen';
+import BookingOverviewScreen from './screens/BookingOverviewScreen';
 
 import {Colours} from './constants/styles';
 
@@ -91,7 +92,7 @@ function HomeTabs() {
         />
         <Tab.Screen
           name="Calendar"
-          component={CalendarScreen}
+          component={CalendarStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -120,7 +121,7 @@ function HomeTabs() {
                   style={{width: 27, height: 27}}
                 />
               ),
-            tabBarBadge: 5,
+            tabBarBadge: 69,
           }}
         />
       </Tab.Group>
@@ -167,6 +168,24 @@ function FavouritesStack() {
       </Stack.Group>
     </Stack.Navigator>
   );
+}
+
+function CalendarStack() {
+    return (
+        // Create a stack navigator with the header hidden
+        <Stack.Navigator>
+            <Stack.Screen
+                name="CalendarScreen"
+                component={CalendarScreen}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name="BookingOverview"
+                component={BookingOverviewScreen}
+                options={{headerShown: false}}
+            />
+        </Stack.Navigator>
+    );
 }
 
 function App() {
