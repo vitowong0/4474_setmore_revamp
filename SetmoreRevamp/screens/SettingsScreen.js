@@ -11,6 +11,8 @@ import help from '../assets/icons/help.png';
 import terms from '../assets/icons/terms.png';
 import language from '../assets/icons/language.png';
 
+import CustomButton from '../components/CustomButton';
+
 function SettingsScreen() {
   return (
     <View style={styles.root}>
@@ -19,19 +21,65 @@ function SettingsScreen() {
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.personContainer}>
-          <View>
+          <View style={styles.imageContainer}>
             <Image style={styles.profileImage} source={profilePic} />
           </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.fullNameText}>Xiaoyun Bonato</Text>
+            <View style={styles.buttonContainer}>
+              <CustomButton
+                text={'Edit profile'}
+                textColour={Colours.white}
+                backgroundColour={Colours.pastelyellow}
+              />
+            </View>
+          </View>
         </View>
+
         <View style={styles.settingsContainer}>
-          <Image style={styles.settingIcons} source={details} />
-          <Image style={styles.settingIcons} source={communications} />
-          <Image style={styles.settingIcons} source={paymentMethods} />
-          <Image style={styles.settingIcons} source={help} />
-          <Image style={styles.settingIcons} source={terms} />
+          <View style={styles.settingsRow}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={details} />
+            </View>
+            <Text style={styles.settingsText}>Details</Text>
+          </View>
+
+          <View style={styles.settingsRow}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={communications} />
+            </View>
+            <Text style={styles.settingsText}>Communications</Text>
+          </View>
+
+          <View style={styles.settingsRow}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={paymentMethods} />
+            </View>
+            <Text style={styles.settingsText}>Payment Methods</Text>
+          </View>
+
+          <View style={styles.settingsRow}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={help} />
+            </View>
+            <Text style={styles.settingsText}>Help</Text>
+          </View>
+
+          <View style={styles.settingsRow}>
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={terms} />
+            </View>
+            <Text style={styles.settingsText}>Terms & Conditions</Text>
+          </View>
         </View>
+
         <View style={styles.preferencesContainer}>
-          <Image style={styles.settingIcons} source={language} />
+          <View style={styles.settingsRow}>
+          <View style={styles.iconContainer}>
+            <Image style={styles.settingIcons} source={language} />
+            </View>
+            <Text style={styles.settingsText}>Language</Text>
+          </View>
         </View>
       </View>
     </View>
@@ -63,18 +111,49 @@ const styles = StyleSheet.create({
 
   personContainer: {
     flex: 1,
-    width: '100%',
+    flexDirection: 'row',
+
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
     marginBottom: 20,
 
-    // borderColor: 'green',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
+    borderColor: 'green',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+  },
+
+  imageContainer: {
+    paddingHorizontal: 10,
+    justifyContent: 'center',
+    // alignItems: 'center',
+
+    borderColor: 'red',
+    borderWidth: 1,
+  },
+
+  textContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+
+    borderColor: 'orange',
+    borderWidth: 1,
+  },
+
+  fullNameText: {
+    fontSize: 20,
+    fontWeight: 800,
+    color: Colours.westerngrey,
+  },
+
+  buttonContainer: {
+    width: 140,
+
+    borderColor: 'red',
+    borderWidth: 1,
   },
 
   settingsContainer: {
-    flex: 2,
     width: '100%',
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
@@ -83,6 +162,16 @@ const styles = StyleSheet.create({
     // borderColor: 'orange',
     // borderWidth: 1,
     // borderStyle: 'dashed',
+  },
+
+  settingsRow: {
+    flexDirection: 'row',
+    // justifyContent: 'center',
+    paddingVertical: 5,
+    alignItems: 'center',
+
+    borderColor: 'red',
+    borderWidth: 1,
   },
 
   preferencesContainer: {
@@ -101,9 +190,20 @@ const styles = StyleSheet.create({
     height: 100,
   },
 
+  iconContainer: {
+    paddingHorizontal: 20,
+  },
+
+  settingsText: {
+    fontWeight: 700,
+    fontSize: 16,
+    color: Colours.westerngrey,
+  },
+
   settingIcons: {
     width: 50,
     height: 50,
+    justifyContent: 'center',
   },
 
   text: {
