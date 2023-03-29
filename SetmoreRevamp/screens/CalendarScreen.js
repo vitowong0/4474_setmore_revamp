@@ -7,10 +7,10 @@ import Header from '../components/headers/Header';
 
 function CalendarScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"Gort's Calendar"} />
+        <Header headerTitle={"Calendar"} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
@@ -25,13 +25,14 @@ function CalendarScreen() {
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
@@ -39,9 +40,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {

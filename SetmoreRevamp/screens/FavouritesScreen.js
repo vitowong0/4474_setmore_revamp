@@ -5,82 +5,68 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  FlatList,
 } from 'react-native';
+
+import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
+import {COMPANYDATA} from '../components/data/DummyCompanyData';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
-import CustomButton from '../components/CustomButton';
 
 function FavouritesScreen() {
+  function renderCompanyGridTile(itemData) {
+    return (
+      <CompanyGridTile
+        id={itemData.item.id}
+        name={itemData.item.name}
+        image={itemData.item.image}
+        description={itemData.item.description}
+        rating={itemData.item.rating}
+        services={itemData.item.services}
+        staff={itemData.item.staff}
+        timesAvailable={itemData.item.timesAvailable}
+        duration={itemData.item.duration}
+        cost={itemData.item.cost}
+      />
+    );
+  }
+
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={"Gort's favourites"} />
+        <Header headerTitle={'Favourites'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on FavouritesScreen</Text>
-          </TouchableOpacity>
-          <View style={styles.buttonContainer}>
-            <CustomButton
-              text="Confirm"
-              textColour={'white'}
-              backgroundColour={'green'}
-            />
-            <CustomButton
-              text="Cancel"
-              textColour={'white'}
-              backgroundColour={'red'}
-            />
-          </View>
-        </View>
+        <FlatList
+          data={COMPANYDATA}
+          keyExtractor={item => item.id}
+          renderItem={renderCompanyGridTile}
+          numColumns={1}
+        />
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
   header: {
-    flex: 1.5,
-    width: '100%',
+    flex: 1.2,
+    marginBottom: -20,
   },
 
   bodyContainer: {
     flex: 7,
-    flexDirection: 'column',
-    backgroundColor: 'white',
-
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
-  },
-
-  bodyTextContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-
-  bodyText: {
-    fontWeight: 'bold',
-    fontSize: 28,
-    color: Colours.darkturqouise,
+    backgroundColor: Colours.white,
     paddingHorizontal: 20,
-    textAlign: 'center',
+
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 });
 

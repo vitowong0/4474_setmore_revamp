@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StatusBar,
 } from 'react-native';
+import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
@@ -13,37 +14,50 @@ import CustomButton from '../components/CustomButton';
 
 function HomeScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <Text>in top container</Text>
           <View style={styles.buttonContainer}>
             <CustomButton
-              text="hello"
-              textColour={Colours.lightgreen}
-              backgroundColour={Colours.darkturqouise}
+              text="in top container"
+              textColour={Colours.darkgreen}
+              backgroundColour={Colours.lightturqouise}
             />
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <Text>bottom container</Text>
+          <View style={styles.buttonContainer}>
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('eat my booty');
+                }}>
+                <Text>hi</Text>
+                <CustomButton
+                  text="in bottom container"
+                  textColour={Colours.darkgreen}
+                  backgroundColour={Colours.lightturqouise}
+                />
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
       </View>
     </View>
   );
 }
 
+export default HomeScreen;
+
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
-    width: '100%',
   },
 
   header: {
-    flex: 1.5,
-    width: '100%',
+    flex: 1.2,
   },
 
   bodyContainer: {
@@ -51,18 +65,13 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   topContainer: {
     flex: 1,
     padding: 10,
-
-    borderColor: 'orange',
-    borderWidth: 1,
-    borderStyle: 'dashed',
   },
 
   bottomContainer: {
@@ -70,8 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
 
     borderColor: 'red',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {
@@ -93,5 +101,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default HomeScreen;
