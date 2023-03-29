@@ -24,11 +24,30 @@ import SearchScreen from './screens/SearchScreen';
 import FavouritesScreen from './screens/FavouritesScreen';
 import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
+import BookingOverviewScreen from './screens/BookingOverviewScreen';
 
 import {Colours} from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+function CalendarStack() {
+  return (
+    // Create a stack navigator with the header hidden
+    <Stack.Navigator>
+      <Stack.Screen
+        name="CalendarScreen"
+        component={CalendarScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="BookingOverview"
+        component={BookingOverviewScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
+  );
+}
 
 function MyTabs() {
   return (
@@ -86,7 +105,7 @@ function MyTabs() {
         />
         <Tab.Screen
           name="Calendar"
-          component={CalendarScreen}
+          component={CalendarStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
