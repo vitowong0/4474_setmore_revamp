@@ -5,14 +5,33 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  FlatList,
 } from 'react-native';
+
+import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
+import {COMPANYDATA} from '../components/data/DummyCompanyData';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
-import CustomButton from '../components/CustomButton';
-import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
 
 function FavouritesScreen() {
+  function renderCompanyGridTile(itemData) {
+    return (
+      <CompanyGridTile
+        id={itemData.item.id}
+        name={itemData.item.name}
+        image={itemData.item.image}
+        description={itemData.item.description}
+        rating={itemData.item.rating}
+        services={itemData.item.services}
+        staff={itemData.item.staff}
+        timesAvailable={itemData.item.timesAvailable}
+        duration={itemData.item.duration}
+        cost={itemData.item.cost}
+      />
+    );
+  }
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
@@ -20,19 +39,12 @@ function FavouritesScreen() {
         <Header headerTitle={'Favourites'} />
       </View>
       <View style={styles.bodyContainer}>
-        {/* <View style={styles.buttonContainer}>
-            <CustomButton
-              text="Confirm"
-              textColour={Colours.white}
-              backgroundColour={Colours.buttonconfirm}
-            />
-            <CustomButton
-              text="Cancel"
-              textColour={Colours.white}
-              backgroundColour={Colours.buttoncancel}
-            />
-          </View> */}
-        <CompanyGridTile />
+        <FlatList
+          data={COMPANYDATA}
+          keyExtractor={item => item.id}
+          renderItem={renderCompanyGridTile}
+          numColumns={1}
+        />
       </View>
     </View>
   );
@@ -45,17 +57,16 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1.2,
-    width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
     flex: 7,
-    flexDirection: 'column',
-    backgroundColor: 'white',
+    backgroundColor: Colours.white,
+    paddingHorizontal: 20,
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 });
 

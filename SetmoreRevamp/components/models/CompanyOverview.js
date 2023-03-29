@@ -1,7 +1,8 @@
-class CompanyInfoOverview {
+class CompanyOverview {
   constructor(
     id,
     name,
+    image,
     description,
     rating,
     services,
@@ -12,6 +13,7 @@ class CompanyInfoOverview {
   ) {
     this.id = id;
     this.name = name;
+    this.image = image;
     this.description = description;
     this.rating = rating;
     this.services = services;
@@ -22,4 +24,4 @@ class CompanyInfoOverview {
   }
 }
 
-export default CompanyInfoOverview;
+export default CompanyOverview;

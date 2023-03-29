@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1.2,
     width: '100%',
+    marginBottom: -20,
   },
 
 
@@ -63,9 +64,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {

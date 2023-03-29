@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1.2,
-    width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
@@ -72,11 +72,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    // padding: 20, //remove this if redundante
-
-    // borderColor: 'red',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
+    borderTopColor: 'red',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {
@@ -98,11 +95,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingVertical: 10,
     paddingHorizontal: 15,
-    // flexDirection: 'row',
-
-    // borderColor: 'green',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   providerImage: {
@@ -118,28 +110,16 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     backgroundColor: Colours.pastelturquoise,
-
-    // borderColor: 'orange',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   carouselContinaer: {
     flexDirection: 'row',
     marginVertical: 10,
-
-    // borderColor: 'black',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   servicesContainer: {
     flex: 3,
     paddingHorizontal: 15,
-
-    // borderColor: 'red',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   boldGrey: {

@@ -1,31 +1,23 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import {View, StyleSheet, StatusBar, Dimensions} from 'react-native';
+import Calendar from '../components/Calendar';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
-import CustomButton from '../components/CustomButton';
 
 function CalendarScreen() {
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Calendar'} />
+        <Header headerTitle={"Calendar"} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('You found this button!');
-            }}>
-            <Text style={styles.bodyText}>on CalendarScreen</Text>
-          </TouchableOpacity>
+          <Calendar
+            width={Dimensions.get('window').width}
+            daysBooked={['2023-04-02']}
+          />
         </View>
       </View>
     </View>
@@ -40,6 +32,7 @@ const styles = StyleSheet.create({
   header: {
     flex: 1.2,
     width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
@@ -47,9 +40,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {
