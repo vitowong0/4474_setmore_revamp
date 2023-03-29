@@ -5,7 +5,7 @@ import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
 import CustomButton from '../components/CustomButton';
 import ServiceItem from '../components/ServiceItem';
-import ProviderImage from '../assets/images/gort.png';
+import ProviderImage from '../assets/images/briar.png';
 
 function BookingScreen() {
   return (
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
 
   employee: {
-    fontSize: 15,
+    fontSize: 14,
     color: Colours.westerngrey,
     fontWeight: 800,
   },
