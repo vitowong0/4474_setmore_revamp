@@ -73,7 +73,7 @@ function HomeTabs() {
         />
         <Tab.Screen
           name="Favourites"
-          component={FavouritesScreen}
+          component={FavouritesStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -144,6 +144,21 @@ function SearchStack() {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Group>
         <Stack.Screen name="SearchScreen" component={SearchScreen} />
+        <Stack.Screen
+          name="CompanyDetailsScreen"
+          component={CompanyDetailsScreen}
+        />
+        <Stack.Screen name="BookingScreen" component={BookingScreen} />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+}
+
+function FavouritesStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen name="FavouritesScreen" component={FavouritesScreen} />
         <Stack.Screen
           name="CompanyDetailsScreen"
           component={CompanyDetailsScreen}
