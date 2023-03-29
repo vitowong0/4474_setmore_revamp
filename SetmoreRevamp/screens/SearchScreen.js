@@ -36,7 +36,10 @@ function SearchScreen() {
             placeholder="Search for anything"
             onChangeText={text => console.log(text)}
           />
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              alert('scan a QR code!');
+            }}>
             <View>
               <Image style={styles.scanIcon} source={scanIcon} />
             </View>

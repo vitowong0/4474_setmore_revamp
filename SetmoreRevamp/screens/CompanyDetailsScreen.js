@@ -16,6 +16,8 @@ import salon1 from '../assets/images/salon1.png';
 import profilePic1 from '../assets/images/boywhatthehell.png';
 import profilePic2 from '../assets/images/liv.png';
 import profilePic3 from '../assets/images/briar.png';
+import profilePic4 from '../assets/images/capy.png';
+import star from '../assets/icons/star.png';
 
 function CompanyDetailsScreen({
   name,
@@ -44,9 +46,13 @@ function CompanyDetailsScreen({
             </Text>
           </View>
           <View style={styles.ratingContainer}>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={styles.headerText}>Ratings</Text>
               <Text style={styles.ratingNumberText}>4.5{rating}</Text>
+              <Image
+                style={{width: 20, height: 20, marginLeft: 3, marginBottom: 2}}
+                source={star}
+              />
             </View>
             <View>
               <TouchableOpacity
@@ -60,27 +66,36 @@ function CompanyDetailsScreen({
           <View style={styles.byStaffContainer}>
             <Text style={styles.headerText}>Book by staff</Text>
             <View style={{flexDirection: 'row'}}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BookingScreen')}>
-                <View style={styles.staffImageTextContainer}>
-                  <Image style={styles.profileImage} source={profilePic1} />
-                  <Text style={styles.staffName}>Xiaoyun</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BookingScreen')}>
-                <View style={styles.staffImageTextContainer}>
-                  <Image style={styles.profileImage} source={profilePic2} />
-                  <Text style={styles.staffName}>Liv</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BookingScreen')}>
-                <View style={styles.staffImageTextContainer}>
-                  <Image style={styles.profileImage} source={profilePic3} />
-                  <Text style={styles.staffName}>Briar</Text>
-                </View>
-              </TouchableOpacity>
+              <ScrollView horizontal={true}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('BookingScreen')}>
+                  <View style={styles.staffImageTextContainer}>
+                    <Image style={styles.profileImage} source={profilePic1} />
+                    <Text style={styles.staffName}>Annoying</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('BookingScreen')}>
+                  <View style={styles.staffImageTextContainer}>
+                    <Image style={styles.profileImage} source={profilePic2} />
+                    <Text style={styles.staffName}>Mommy 1</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('BookingScreen')}>
+                  <View style={styles.staffImageTextContainer}>
+                    <Image style={styles.profileImage} source={profilePic3} />
+                    <Text style={styles.staffName}>Mommy 2</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('BookingScreen')}>
+                  <View style={styles.staffImageTextContainer}>
+                    <Image style={styles.profileImage} source={profilePic4} />
+                    <Text style={styles.staffName}>God</Text>
+                  </View>
+                </TouchableOpacity>
+              </ScrollView>
             </View>
           </View>
         </ScrollView>
@@ -98,7 +113,7 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1.2,
-    marginBottom: -10,
+    marginBottom: -13,
   },
 
   bodyContainer: {

@@ -5,7 +5,7 @@
   "editor.renderWhitespace": "selection",
   "editor.wordWrap": "off",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.minimap.autohide": false,
+  "editor.minimap.autohide": true,
   "editor.minimap.enabled": true,
   "editor.minimap.maxColumn": 150,
   "editor.minimap.renderCharacters": false,
@@ -27,5 +27,8 @@
   "scm.defaultViewMode": "list",
   "scm.diffDecorations": "all",
   "scm.diffDecorationsGutterWidth": 3,
-  "diffEditor.wordWrap": "off"
+  "diffEditor.wordWrap": "off",
+  "breadcrumbs.showNumbers": true,
+  "editor.lineNumbers": "on",
+  "editor.stickyScroll.maxLineCount": 10
 }
