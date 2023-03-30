@@ -10,6 +10,7 @@ import paymentMethods from '../assets/icons/paymentMethods.png';
 import help from '../assets/icons/help.png';
 import terms from '../assets/icons/terms.png';
 import language from '../assets/icons/language.png';
+import arrow from '../assets/icons/right.png';
 
 import CustomButton from '../components/CustomButton';
 
@@ -42,6 +43,9 @@ function SettingsScreen() {
               <Image style={styles.settingIcons} source={details} />
             </View>
             <Text style={styles.settingsText}>Details</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
 
           <View style={styles.settingsRow}>
@@ -49,6 +53,9 @@ function SettingsScreen() {
               <Image style={styles.settingIcons} source={communications} />
             </View>
             <Text style={styles.settingsText}>Communications</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
 
           <View style={styles.settingsRow}>
@@ -56,6 +63,9 @@ function SettingsScreen() {
               <Image style={styles.settingIcons} source={paymentMethods} />
             </View>
             <Text style={styles.settingsText}>Payment Methods</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
 
           <View style={styles.settingsRow}>
@@ -63,6 +73,9 @@ function SettingsScreen() {
               <Image style={styles.settingIcons} source={help} />
             </View>
             <Text style={styles.settingsText}>Help</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
 
           <View style={styles.settingsRow}>
@@ -70,15 +83,21 @@ function SettingsScreen() {
               <Image style={styles.settingIcons} source={terms} />
             </View>
             <Text style={styles.settingsText}>Terms & Conditions</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
         </View>
 
         <View style={styles.preferencesContainer}>
           <View style={styles.settingsRow}>
-          <View style={styles.iconContainer}>
-            <Image style={styles.settingIcons} source={language} />
+            <View style={styles.iconContainer}>
+              <Image style={styles.settingIcons} source={language} />
             </View>
             <Text style={styles.settingsText}>Language</Text>
+            <View style={styles.rightArrow}>
+              <Image style={styles.arrowIcon} source={arrow} />
+            </View>
           </View>
         </View>
       </View>
@@ -209,5 +228,16 @@ const styles = StyleSheet.create({
   text: {
     color: 'red',
     fontSize: 20,
+  },
+
+  arrowIcon: {
+    width: 15,
+    height: 15,
+    justifyContent: 'center',
+  },
+
+  rightArrow: {
+    position: 'absolute',
+    paddingHorizontal: 315,
   },
 });
