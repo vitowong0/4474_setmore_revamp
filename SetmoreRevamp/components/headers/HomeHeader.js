@@ -6,7 +6,7 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 // and render both accordingly
 
 import {Colours} from '../../constants/styles';
-import ProfilePicture from '../../assets/images/gortini.png';
+import ProfilePicture from '../../assets/images/capy.png';
 
 // take user first_name and store in async -- or just hardcode it lol
 function HomeHeader({first_name}) {
@@ -67,8 +67,5 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     borderRadius: 30,
-
-    borderColor: Colours.darkturqouise,
-    borderWidth: 1,
   },
 });

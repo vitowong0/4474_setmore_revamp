@@ -25,7 +25,7 @@ export const NOTIFICATIONSDATA = [
     3,
     pottery,
     'Takashis Pottery',
-    'Limited Offer: BOGO classes',
+    'Booked: Apr 1, 2023, 1:30 PM Confirmation code: C4PY193$',
     '3:00 AM',
   ),
   new Overview(

@@ -121,7 +121,7 @@ function HomeTabs() {
                   style={{width: 27, height: 27}}
                 />
               ),
-            tabBarBadge: 69,
+            tabBarBadge: 5,
           }}
         />
       </Tab.Group>
@@ -135,6 +135,7 @@ function HomeStack() {
       <Stack.Group>
         <Stack.Screen name="Home2" component={HomeScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="CompanyDetails" component={CompanyDetailsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -176,7 +177,7 @@ function CalendarStack() {
       <Stack.Group>
         <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
         <Stack.Screen
-          name="BookingOverview"
+          name="BookingOverviewScreen"
           component={BookingOverviewScreen}
         />
       </Stack.Group>

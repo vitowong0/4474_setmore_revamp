@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   StatusBar,
   FlatList,
+  ScrollView,
 } from 'react-native';
 
 import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';

@@ -18,7 +18,7 @@ function BookingOverviewScreen() {
     <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Linnaean, Battersea'} />
+        <SubHeader headerTitle={'Your appointment'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
@@ -53,13 +53,13 @@ function BookingOverviewScreen() {
           <View style={styles.buttonContainer}>
             <CustomButton
               text={'Modify'}
-              textColour={Colours.primary800}
-              backgroundColour={Colours.lightgrey}
+              textColour={Colours.black}
+              backgroundColour={Colours.lightergrey}
             />
             <CustomButton
               text={'Cancel'}
-              textColour={Colours.primary800}
-              backgroundColour={Colours.mediumorange}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttoncancel}
             />
           </View>
         </View>
@@ -76,8 +76,9 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    flex: 1.5,
+    flex: 1.2,
     width: '100%',
+    marginBottom: -20,
   },
 
   bodyContainer: {
@@ -85,9 +86,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: 'white',
 
-    borderColor: Colours.darkturqouise,
-    borderWidth: 3,
-    borderStyle: 'dashed',
+    borderColor: 'red',
+    borderTopWidth: 1,
   },
 
   bodyTextContainer: {

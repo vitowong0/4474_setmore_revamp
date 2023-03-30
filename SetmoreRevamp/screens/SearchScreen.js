@@ -13,7 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 import Header from '../components/headers/Header';
 import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
 import {Colours} from '../constants/styles';
-import scanIcon from '../assets/icons/squared-scan.png';
+import scanIcon from '../assets/icons/og-scan.png';
 
 function SearchScreen() {
   const navigation = useNavigation();
@@ -28,15 +28,18 @@ function SearchScreen() {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Start searching'} />
+        <Header headerTitle={'Get to Booking'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.searchContainer}>
           <SearchBar
-            placeholder="Search for anything"
+            placeholder="Search Setmore"
             onChangeText={text => console.log(text)}
           />
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              alert('scan a QR code!');
+            }}>
             <View>
               <Image style={styles.scanIcon} source={scanIcon} />
             </View>
@@ -44,13 +47,13 @@ function SearchScreen() {
         </View>
 
         <View style={styles.bodyTextContainer}>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => {
               navigation.navigate('BookingScreen');
             }}>
             <Text style={styles.bodyText}>Gort Salon</Text>
             <Text>(going to BookingScreen. everything is hardcoded)</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </View>
