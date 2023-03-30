@@ -7,6 +7,7 @@ import {
   StatusBar,
   ScrollView,
   FlatList,
+  TouchableNativeFeedback,
 } from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
@@ -14,13 +15,13 @@ import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
 import CustomButton from '../components/CustomButton';
 
-import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
+import MiniCompanyGridTile from '../components/grid-tiles/MiniCompanyGridTile';
 import {COMPANYDATA} from '../components/data/DummyCompanyData';
 
 function HomeScreen() {
-  function renderCompanyGridTile(itemData) {
+  function renderMiniCompanyGridTile(itemData) {
     return (
-      <CompanyGridTile
+      <MiniCompanyGridTile
         id={itemData.item.id}
         name={itemData.item.name}
         image={itemData.item.image}
@@ -41,15 +42,20 @@ function HomeScreen() {
       <View style={styles.header}>{<HomeHeader first_name={'fname'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text>Available now</Text>
-            <Text>View all</Text>
+          <View style={(style = styles.topTextContainer)}>
+            <Text style={styles.bigGreyText}>Available now</Text>
+            <TouchableOpacity
+              onPress={() => {
+                alert('bringing you to View all page');
+              }}>
+              <Text style={styles.smallGreenText}>View all</Text>
+            </TouchableOpacity>
           </View>
           <ScrollView horizontal={true}>
             <FlatList
               data={COMPANYDATA}
               keyExtractor={item => item.id}
-              renderItem={renderCompanyGridTile}
+              renderItem={renderMiniCompanyGridTile}
               numColumns={4}
             />
             {/* <CompanyGridTile /> */}
@@ -105,8 +111,31 @@ const styles = StyleSheet.create({
   },
 
   topContainer: {
-    flex: 1,
-    padding: 10,
+    paddingVertical: 10,
+  },
+
+  topTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 20,
+
+    // borderColor: 'blue',
+    // borderWidth: 1,
+  },
+
+  bigGreyText: {
+    fontSize: 20,
+    fontWeight: 800,
+    color: Colours.westerngrey,
+  },
+
+  smallGreenText: {
+    fontSize: 16,
+    fontWeight: 700,
+    color: Colours.darkturqouise,
   },
 
   bottomContainer: {

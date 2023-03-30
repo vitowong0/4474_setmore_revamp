@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   Image,
   Alert,
-  Button,
 } from 'react-native';
 import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
@@ -28,7 +27,7 @@ function CompanyGridTile({
 }) {
   const navigation = useNavigation();
 
-  const createTwoButtonAlert = () =>
+  const createTwoButtonAlert = () => {
     Alert.alert('Alert Title', 'My Alert Msg', [
       {
         text: 'Cancel',
@@ -37,6 +36,7 @@ function CompanyGridTile({
       },
       {text: 'OK', onPress: () => console.log('OK Pressed')},
     ]);
+  };
 
   return (
     <View style={styles.root}>
@@ -45,9 +45,14 @@ function CompanyGridTile({
           <View style={{alignItems: 'center'}}>
             <Text style={styles.titleText}>{name}</Text>
           </View>
-          {/* <View>
-            <Image style={styles.dotdotdot} source={dotdotdot} />
-          </View> */}
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                alert('Hide and shit');
+              }}>
+              <Image style={styles.dotdotdot} source={dotdotdot} />
+            </TouchableOpacity>
+          </View>
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity

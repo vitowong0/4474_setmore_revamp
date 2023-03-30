@@ -31,7 +31,7 @@ export const COMPANYDATA = [
   ),
   new Overview(
     3,
-    'Skin Artistry Medical Aesthetics',
+    'Skin  Medical Aesthetics',
     salon3,
     'blah blah description 3',
     4.3,
