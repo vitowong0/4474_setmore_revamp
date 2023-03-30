@@ -42,7 +42,7 @@ function HomeTabs() {
       screenOptions={{
         headerShown: false,
         tabBarInactiveTintColor: Colours.westerngrey,
-        tabBarActiveTintColor: Colours.darkturqouise,
+        tabBarActiveTintColor: Colours.lightturqouise,
       }}>
       <Tab.Group>
         <Tab.Screen
