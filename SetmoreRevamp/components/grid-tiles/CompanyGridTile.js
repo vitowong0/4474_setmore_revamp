@@ -1,9 +1,18 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Alert,
+  Button,
+} from 'react-native';
 import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
+import whiteHeartFill from '../../assets/icons/white_heart_fill.png';
 
 function CompanyGridTile({
   id,
@@ -19,6 +28,16 @@ function CompanyGridTile({
 }) {
   const navigation = useNavigation();
 
+  const createTwoButtonAlert = () =>
+    Alert.alert('Alert Title', 'My Alert Msg', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
+
   return (
     <View style={styles.root}>
       <View style={styles.gridTileContainer}>
@@ -26,14 +45,9 @@ function CompanyGridTile({
           <View style={{alignItems: 'center'}}>
             <Text style={styles.titleText}>{name}</Text>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              alert('eat my capy');
-            }}>
-            <View>
-              <Image style={styles.dotdotdot} source={dotdotdot} />
-            </View>
-          </TouchableOpacity>
+          {/* <View>
+            <Image style={styles.dotdotdot} source={dotdotdot} />
+          </View> */}
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity
@@ -41,6 +55,12 @@ function CompanyGridTile({
               navigation.navigate('CompanyDetailsScreen');
             }}>
             <Image style={styles.image} source={image} />
+            <TouchableOpacity
+              onPress={() => {
+                alert('Remove from favourites?');
+              }}>
+              <Image style={styles.whiteHeart} source={whiteHeartFill} />
+            </TouchableOpacity>
           </TouchableOpacity>
         </View>
       </View>
@@ -90,6 +110,14 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 250,
     borderRadius: 30,
+  },
+
+  whiteHeart: {
+    position: 'absolute',
+    width: 20,
+    height: 20,
+    bottom: 15,
+    right: 15,
   },
 });
 

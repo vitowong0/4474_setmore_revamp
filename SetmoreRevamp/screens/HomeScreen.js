@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from 'react-native';
 import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
@@ -19,6 +20,7 @@ function HomeScreen() {
       <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
+          <Text>top container</Text>
           <View style={styles.buttonContainer}>
             <CustomButton
               text="in top container"

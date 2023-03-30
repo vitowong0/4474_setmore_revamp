@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {Colours} from '../constants/styles';
 import {Calendar as NativeCalendar} from 'react-native-calendars';
@@ -48,7 +48,7 @@ const Calendar = ({width, daysBooked, daysAvailable}) => {
             // console.log('selected day', date.day);
             // console.log(date);
             if (isAvailable || isBooked) {
-              navigation.navigate('Calendar', {screen: 'BookingOverview'});
+              navigation.navigate('BookingOverviewScreen');
             }
           }}>
           <Text style={styles.dayText}>{date.day}</Text>
@@ -67,15 +67,17 @@ const Calendar = ({width, daysBooked, daysAvailable}) => {
       minDate={new Date().toISOString().slice(0, 10)}
       theme={{
         monthTextColor: Colours.lightturqouise,
-        textMonthFontSize: 28,
+        textMonthFontSize: 26,
         textMonthFontWeight: '800',
         textSectionTitleColor: Colours.darkturqouise,
-        textDayHeaderFontWeight: '800',
+        textDayHeaderFontWeight: '600',
         arrowColor: Colours.darkturqouise,
       }}
     />
   );
 };
+
+export default Calendar;
 
 const styles = StyleSheet.create({
   dayView: {
@@ -102,5 +104,3 @@ const styles = StyleSheet.create({
     backgroundColor: Colours.lightergrey,
   },
 });
-
-export default Calendar;

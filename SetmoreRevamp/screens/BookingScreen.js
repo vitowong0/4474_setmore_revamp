@@ -5,7 +5,7 @@ import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
 import CustomButton from '../components/CustomButton';
 import ServiceItem from '../components/ServiceItem';
-import ProviderImage from '../assets/images/briar.png';
+import staff from '../assets/images/briar.png';
 
 function BookingScreen() {
   return (
@@ -17,14 +17,18 @@ function BookingScreen() {
       <View style={styles.bodyContainer}>
         <View style={styles.bookingWithContainer}>
           <Text style={styles.boldGrey}>Booking with:</Text>
-          <View style={{justifyContent: 'center', paddingLeft: 10}}>
-            <Image source={ProviderImage} style={styles.providerImage} />
-            <Text style={styles.employee}>Briar</Text>
+          <View style={styles.imageAndTextContainer}>
+            <View>
+              <View style={{alignItems: 'center'}}>
+                <Image source={staff} style={styles.staffImage} />
+                <Text style={styles.employee}>Briar</Text>
+              </View>
+            </View>
           </View>
         </View>
         <View style={styles.serviceSelectionContainer}>
           <Text style={styles.boldGrey}>Select services</Text>
-          <View style={styles.carouselContinaer}>
+          <View style={styles.carouselContainer}>
             <CustomButton
               text={'Featured'}
               textColour={Colours.westerngrey}
@@ -91,17 +95,20 @@ const styles = StyleSheet.create({
   },
 
   bookingWithContainer: {
-    flex: 1,
-    justifyContent: 'center',
     paddingVertical: 10,
     paddingHorizontal: 15,
   },
 
-  providerImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    marginVertical: 5,
+  imageAndTextContainer: {
+    alignItems: 'flex-start',
+    paddingLeft: 10,
+  },
+
+  staffImage: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginVertical: 10,
   },
 
   serviceSelectionContainer: {
@@ -112,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colours.pastelturquoise,
   },
 
-  carouselContinaer: {
+  carouselContainer: {
     flexDirection: 'row',
     marginVertical: 10,
   },
