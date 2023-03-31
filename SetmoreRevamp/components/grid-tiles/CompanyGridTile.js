@@ -11,7 +11,6 @@ import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
-import whiteHeartFill from '../../assets/icons/white_heart_fill.png';
 
 function CompanyGridTile({
   id,
@@ -56,17 +55,12 @@ function CompanyGridTile({
           </View>
         </View>
         <View style={styles.imageContainer}>
+          <Image style={styles.image} source={image} />
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('CompanyDetailsScreen');
+              alert('Remove from favourites?');
             }}>
-            <Image style={styles.image} source={image} />
-            <TouchableOpacity
-              onPress={() => {
-                alert('Remove from favourites?');
-              }}>
-              <Image style={styles.whiteHeart} source={heartIcon} />
-            </TouchableOpacity>
+            <Image style={styles.whiteHeart} source={heartIcon} />
           </TouchableOpacity>
         </View>
       </View>

@@ -16,13 +16,15 @@ import Header from '../components/headers/Header';
 function NotificationsScreen() {
   function renderNotificationItem(itemData) {
     return (
-      <NotificationItem
-        id={itemData.item.id}
-        postImage={itemData.item.postImage}
-        companyName={itemData.item.companyName}
-        detailText={itemData.item.detailText}
-        timeAgo={itemData.item.timeAgo}
-      />
+      <TouchableOpacity>
+        <NotificationItem
+          id={itemData.item.id}
+          image={itemData.item.image}
+          companyName={itemData.item.companyName}
+          detailText={itemData.item.detailText}
+          timeAgo={itemData.item.timeAgo}
+        />
+      </TouchableOpacity>
     );
   }
 
@@ -34,15 +36,15 @@ function NotificationsScreen() {
       </View>
 
       {/* <View style={styles.container}> */}
-        <View style={styles.bodyContainer}>
-          <FlatList
-            data={NOTIFICATIONSDATA}
-            keyExtractor={item => item.id}
-            renderItem={renderNotificationItem}
-            numColumns={1}
-          />
-        </View>
+      <View style={styles.bodyContainer}>
+        <FlatList
+          data={NOTIFICATIONSDATA}
+          keyExtractor={item => item.id}
+          renderItem={renderNotificationItem}
+          numColumns={1}
+        />
       </View>
+    </View>
     // </View>
   );
 }
@@ -57,7 +59,6 @@ const styles = StyleSheet.create({
     width: '100%',
     marginBottom: -20,
   },
-
 
   bodyContainer: {
     flex: 7,

@@ -15,6 +15,7 @@ import {Colours} from '../constants/styles';
 import MiniCompanyGridTile from '../components/grid-tiles/MiniCompanyGridTile';
 import {COMPANYDATATWO} from '../components/data/DummyCompanyDataTwo';
 import {COMPANYDATATHREE} from '../components/data/DummyCompanyDataThree';
+import {COMPANYDATAFOUR} from '../components/data/DummyCompanyDataFour';
 
 function HomeScreen() {
   function renderMiniCompanyGridTile(itemData) {
@@ -56,7 +57,7 @@ function HomeScreen() {
             scrollEventThrottle={200}
             decelerationRate={'normal'}>
             <FlatList
-              data={COMPANYDATATWO}
+              data={COMPANYDATAFOUR}
               keyExtractor={item => item.id}
               renderItem={renderMiniCompanyGridTile}
               numColumns={4}

@@ -6,6 +6,8 @@ import {
   StatusBar,
   Image,
   ScrollView,
+  FlatList,
+  TouchableOpacity,
 } from 'react-native';
 
 import {Colours} from '../constants/styles';
@@ -14,12 +16,26 @@ import CustomButton from '../components/CustomButton';
 import ServiceItem from '../components/ServiceItem';
 import staff from '../assets/images/briar.png';
 
+import SelectServiceItem from '../components/SelectServiceItem';
+import {SERVICESDATA} from '../components/data/DummyServices';
+
 function BookingScreen() {
+  function renderSelectServiceItem(itemData) {
+    return (
+      <TouchableOpacity>
+        <SelectServiceItem
+          id={itemData.item.id}
+          serviceName={itemData.item.serviceName}
+        />
+      </TouchableOpacity>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Gort Salon'} />
+        <SubHeader headerTitle={'Booking Screen'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bookingWithContainer}>
@@ -36,26 +52,14 @@ function BookingScreen() {
         <View style={styles.serviceSelectionContainer}>
           <Text style={styles.boldGrey}>Select services</Text>
           <View style={styles.carouselContainer}>
-            {/* <View style={{flexDirection: 'row'}}>
-              <ScrollView horizontal={'true'}> */}
-            <CustomButton
-              style={styles.customButtonStyle}
-              text={'Featured'}
-              textColour={Colours.westerngrey}
-              backgroundColour={Colours.white}
-            />
-            <CustomButton
-              text={'Hair'}
-              textColour={Colours.westerngrey}
-              backgroundColour={Colours.white}
-            />
-            <CustomButton
-              text={'Nails'}
-              textColour={Colours.westerngrey}
-              backgroundColour={Colours.white}
-            />
-            {/* </ScrollView>
-            </View> */}
+            <ScrollView horizontal={true}>
+              <FlatList
+                data={SERVICESDATA}
+                keyExtractor={item => item.id}
+                renderItem={renderSelectServiceItem}
+                numColumns={5}
+              />
+            </ScrollView>
           </View>
         </View>
         <View style={styles.servicesContainer}>

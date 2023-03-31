@@ -1,21 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
+
 import {Colours} from '../../constants/styles';
 
-function NotificationItem({id, postImage, companyName, detailText}) {
+function NotificationItem({id, image, companyName, detailText}) {
   return (
     <View style={styles.root}>
-      <TouchableOpacity>
-        <View style={styles.notificationContainer}>
-          <View style={styles.imageContainer}>
-            <Image style={styles.image} source={postImage} />
-          </View>
-          <View style={styles.textContainer}>
-            <Text style={styles.companyName}>{companyName}</Text>
-            <Text style={styles.detailText}>{detailText}</Text>
-          </View>
+      <View style={styles.notificationContainer}>
+        <View style={styles.imageContainer}>
+          <Image style={styles.image} source={image} />
         </View>
-      </TouchableOpacity>
+        <View style={styles.textContainer}>
+          <Text style={styles.companyName}>{companyName}</Text>
+          <Text style={styles.detailText}>{detailText}</Text>
+        </View>
+      </View>
     </View>
   );
 }

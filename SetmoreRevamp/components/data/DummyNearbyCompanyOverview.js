@@ -23,22 +23,22 @@ export const COMPANYDATA = [
     '3:35 PM',
     '5:20 PM',
   ]),
-  new Overview(4, 'Refresh', salon4, 4.1, '3 km', '$$', 'Salon', [
+  new Overview(4, "Vito's Salon", salon4, 4.1, '3 km', '$$', 'Salon', [
     '9:00 AM',
     '4:45 PM',
     '7:55 PM',
   ]),
-  new Overview(5, 'Refresh', salon5, 4.4, '3 km', '$$', 'Salon', [
+  new Overview(5, 'La Casa', salon5, 4.4, '3 km', '$$', 'Salon', [
     '10:00 AM',
     '11:45 AM',
     '4:55 PM',
   ]),
-  new Overview(6, 'Refresh', salon6, 4.6, '3 km', '$$', 'Nail Salon', [
+  new Overview(6, 'Ristorante', salon6, 4.6, '3 km', '$$', 'Nail Salon', [
     '10:00 AM',
     '1:45 PM',
     '5:55 PM',
   ]),
-  new Overview(7, 'Refresh', salon7, 4.8, '3 km', '$$', 'spa', 'Nail Salon', [
+  new Overview(7, 'Mani Pedi', salon7, 4.8, '3 km', '$$', 'spa', 'Nail Salon', [
     '9:00 AM',
     '4:45 PM',
     '7:55 PM',

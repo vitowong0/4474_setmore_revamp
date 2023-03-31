@@ -32,6 +32,7 @@ import CompanyDetailsScreen from './screens/CompanyDetailsScreen';
 import BookingOverviewScreen from './screens/BookingOverviewScreen';
 
 import {Colours} from './constants/styles';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -139,6 +140,7 @@ function HomeStack() {
           name="CompanyDetailsScreen"
           component={CompanyDetailsScreen}
         />
+        <Stack.Screen name="BookingScreen" component={BookingScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

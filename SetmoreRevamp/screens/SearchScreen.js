@@ -37,6 +37,7 @@ function SearchScreen() {
       />
     );
   }
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
