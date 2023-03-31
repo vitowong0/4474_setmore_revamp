@@ -6,34 +6,36 @@ import {
   TouchableOpacity,
   StatusBar,
   Image,
-  ScrollView,
+  // ScrollView,
   FlatList,
 } from 'react-native';
 import SearchBar from 'react-native-dynamic-search-bar';
 import {useNavigation} from '@react-navigation/native';
+import {ScrollView} from 'react-native-virtualized-view';
 
 import Header from '../components/headers/Header';
 import {Colours} from '../constants/styles';
 import scanIcon from '../assets/icons/og-scan.png';
 
+import NearbyCompanyItem from '../components/NearbyCompanyItem';
+import {NEARBYCOMPANYDATA} from '../components/data/DummyNearbyCompanyData';
+
 import MiniCompanyGridTile from '../components/grid-tiles/MiniCompanyGridTile';
 import {COMPANYDATAFOUR} from '../components/data/DummyCompanyDataFour';
 
 function SearchScreen() {
-  function renderMiniCompanyGridTile(itemData) {
+  function renderNearbyCompanyItem(itemData) {
     return (
-      <MiniCompanyGridTile
+      <NearbyCompanyItem
         id={itemData.item.id}
         name={itemData.item.name}
         image={itemData.item.image}
-        description={itemData.item.description}
         rating={itemData.item.rating}
-        services={itemData.item.services}
-        staff={itemData.item.staff}
+        numReviews={itemData.item.numReviews}
+        distance={itemData.item.distance}
+        dollarSign={itemData.item.dollarSign}
+        style={itemData.item.style}
         timesAvailable={itemData.item.timesAvailable}
-        duration={itemData.item.duration}
-        cost={itemData.item.cost}
-        heartIcon={itemData.item.heartIcon}
       />
     );
   }
@@ -61,29 +63,15 @@ function SearchScreen() {
         </View>
 
         <View style={styles.topContainer}>
-          <Text>um hi</Text>
-        </View>
-
-        <View style={styles.bottomContainer}>
-          <View style={(style = styles.topTextContainer)}>
-            <Text style={styles.bigGreyText}>Recommended for you</Text>
-            <TouchableOpacity
-              onPress={() => {
-                alert('bringing you to View all page');
-              }}>
-              <Text style={styles.smallGreenText}>View all</Text>
-            </TouchableOpacity>
+          <View
+            style={{paddingHorizontal: 10, paddingTop: 10, paddingBottom: 5}}>
+            <Text style={styles.nearbyText}>7 companies nearby</Text>
           </View>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={true}
-            scrollEventThrottle={200}
-            decelerationRate={'normal'}>
+          <ScrollView>
             <FlatList
-              data={COMPANYDATAFOUR}
+              data={NEARBYCOMPANYDATA}
               keyExtractor={item => item.id}
-              renderItem={renderMiniCompanyGridTile}
-              numColumns={4}
+              renderItem={renderNearbyCompanyItem}
             />
           </ScrollView>
         </View>
@@ -127,6 +115,13 @@ const styles = StyleSheet.create({
 
   topContainer: {
     flex: 1,
+  },
+
+  nearbyText: {
+    fontWeight: 700,
+    fontSize: 18,
+
+    color: Colours.westerngrey,
   },
 
   bottomContainer: {
