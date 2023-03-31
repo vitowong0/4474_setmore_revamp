@@ -24,6 +24,7 @@ function CompanyGridTile({
   timesAvailable,
   duration,
   cost,
+  heartIcon,
 }) {
   const navigation = useNavigation();
 
@@ -64,7 +65,7 @@ function CompanyGridTile({
               onPress={() => {
                 alert('Remove from favourites?');
               }}>
-              <Image style={styles.whiteHeart} source={whiteHeartFill} />
+              <Image style={styles.whiteHeart} source={heartIcon} />
             </TouchableOpacity>
           </TouchableOpacity>
         </View>
@@ -121,8 +122,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 20,
     height: 20,
-    bottom: 15,
-    right: 15,
+    bottom: 20,
+    right: 20,
   },
 });
 

@@ -29,6 +29,7 @@ function FavouritesScreen() {
         timesAvailable={itemData.item.timesAvailable}
         duration={itemData.item.duration}
         cost={itemData.item.cost}
+        heartIcon={itemData.item.heartIcon}
       />
     );
   }

@@ -51,11 +51,12 @@ const styles = StyleSheet.create({
   buttonContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: 5,
   },
 
   textContainer: {
     flex: 1,
-    paddingLeft: 10,
+    paddingLeft: 5,
   },
 
   text: {

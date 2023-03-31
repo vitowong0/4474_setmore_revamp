@@ -11,8 +11,8 @@ import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
-import whiteheartfill from '../../assets/icons/white_heart_fill.png';
-import whiteheartoutline from '../../assets/icons/white_heart_outline.png';
+// import whiteheartfill from '../../assets/icons/white_heart_fill.png';
+// import whiteheartoutline from '../../assets/icons/white_heart_outline.png';
 
 function MiniCompanyGridTile({
   id,
@@ -25,6 +25,7 @@ function MiniCompanyGridTile({
   timesAvailable,
   duration,
   cost,
+  heartIcon,
 }) {
   const navigation = useNavigation();
 
@@ -63,9 +64,9 @@ function MiniCompanyGridTile({
             <Image style={styles.image} source={image} />
             <TouchableOpacity
               onPress={() => {
-                alert('Remove from favourites?');
+                alert('Remove/add from favourites?');
               }}>
-              <Image style={styles.whiteHeart} source={whiteheartfill} />
+              <Image style={styles.heartIcon} source={heartIcon} />
             </TouchableOpacity>
           </TouchableOpacity>
         </View>
@@ -83,10 +84,6 @@ const styles = StyleSheet.create({
 
   gridTileContainer: {
     flex: 1,
-    justifyContent: 'center',
-    // paddingTop: 5,
-    paddingBottom: 10,
-    // paddingRight: 5,
     paddingLeft: 20,
   },
 
@@ -106,7 +103,7 @@ const styles = StyleSheet.create({
 
   dotdotdot: {
     height: 18,
-    width: 35,
+    width: 30,
     opacity: 0.5,
   },
 
@@ -115,17 +112,17 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 260,
-    height: 200,
+    width: 300,
+    height: 215,
     borderRadius: 30,
   },
 
-  whiteHeart: {
+  heartIcon: {
     position: 'absolute',
     width: 20,
     height: 20,
-    bottom: 15,
-    right: 15,
+    bottom: 20,
+    right: 20,
   },
 });
 
