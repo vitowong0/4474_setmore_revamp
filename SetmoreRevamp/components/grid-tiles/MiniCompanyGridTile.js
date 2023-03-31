@@ -11,9 +11,10 @@ import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
-import whiteHeartFill from '../../assets/icons/white_heart_fill.png';
+// import whiteheartfill from '../../assets/icons/white_heart_fill.png';
+// import whiteheartoutline from '../../assets/icons/white_heart_outline.png';
 
-function CompanyGridTile({
+function MiniCompanyGridTile({
   id,
   name,
   image,
@@ -43,13 +44,13 @@ function CompanyGridTile({
     <View style={styles.root}>
       <View style={styles.gridTileContainer}>
         <View style={styles.topRow}>
-          <View style={{alignItems: 'center'}}>
+          <View style={{alignItems: 'flex-start'}}>
             <Text style={styles.titleText}>{name}</Text>
           </View>
           <View>
             <TouchableOpacity
               onPress={() => {
-                alert('Hide and shit');
+                alert('hide and shit');
               }}>
               <Image style={styles.dotdotdot} source={dotdotdot} />
             </TouchableOpacity>
@@ -63,9 +64,9 @@ function CompanyGridTile({
             <Image style={styles.image} source={image} />
             <TouchableOpacity
               onPress={() => {
-                alert('Remove from favourites?');
+                alert('Remove/add from favourites?');
               }}>
-              <Image style={styles.whiteHeart} source={heartIcon} />
+              <Image style={styles.heartIcon} source={heartIcon} />
             </TouchableOpacity>
           </TouchableOpacity>
         </View>
@@ -74,7 +75,7 @@ function CompanyGridTile({
   );
 }
 
-export default CompanyGridTile;
+export default MiniCompanyGridTile;
 
 const styles = StyleSheet.create({
   root: {
@@ -83,17 +84,15 @@ const styles = StyleSheet.create({
 
   gridTileContainer: {
     flex: 1,
-    justifyContent: 'center',
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingLeft: 20,
   },
 
   topRow: {
+    justifyContent: 'space-between',
     flexDirection: 'row',
     paddingVertical: 5,
-    marginBottom: 2,
-    justifyContent: 'space-between',
     paddingHorizontal: 8,
+    marginBottom: 2,
   },
 
   titleText: {
@@ -104,7 +103,7 @@ const styles = StyleSheet.create({
 
   dotdotdot: {
     height: 18,
-    width: 35,
+    width: 30,
     opacity: 0.5,
   },
 
@@ -113,12 +112,12 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: '100%',
-    height: 250,
+    width: 300,
+    height: 215,
     borderRadius: 30,
   },
 
-  whiteHeart: {
+  heartIcon: {
     position: 'absolute',
     width: 20,
     height: 20,

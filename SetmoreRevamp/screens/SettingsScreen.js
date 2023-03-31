@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, StyleSheet, Image, Switch} from 'react-native';
 import {Colours} from '../constants/styles';
 
 import SubHeader from '../components/headers/SubHeader';
@@ -10,11 +10,14 @@ import paymentMethods from '../assets/icons/paymentMethods.png';
 import help from '../assets/icons/help.png';
 import terms from '../assets/icons/terms.png';
 import language from '../assets/icons/language.png';
-import arrow from '../assets/icons/right.png';
+import rightarrow from '../assets/icons/right-arrow.png';
 
 import CustomButton from '../components/CustomButton';
 
 function SettingsScreen() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
   return (
     <View style={styles.root}>
       <View style={styles.header}>
@@ -30,73 +33,101 @@ function SettingsScreen() {
             <View style={styles.buttonContainer}>
               <CustomButton
                 text={'Edit profile'}
-                textColour={Colours.white}
-                backgroundColour={Colours.pastelyellow}
+                textColour={Colours.darkturqouise}
+                backgroundColour={Colours.pastelturquoise}
               />
             </View>
           </View>
         </View>
 
+        <Text style={styles.containerTitle}>App Settings</Text>
         <View style={styles.settingsContainer}>
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={details} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={details} />
+              </View>
+              <Text style={styles.settingsText}>Details</Text>
             </View>
-            <Text style={styles.settingsText}>Details</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
             </View>
           </View>
 
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={communications} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={communications} />
+              </View>
+              <Text style={styles.settingsText}>Communications</Text>
             </View>
-            <Text style={styles.settingsText}>Communications</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
             </View>
           </View>
 
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={paymentMethods} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={paymentMethods} />
+              </View>
+              <Text style={styles.settingsText}>Payment Methods</Text>
             </View>
-            <Text style={styles.settingsText}>Payment Methods</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
             </View>
           </View>
 
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={help} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={help} />
+              </View>
+              <Text style={styles.settingsText}>Help</Text>
             </View>
-            <Text style={styles.settingsText}>Help</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
             </View>
           </View>
 
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={terms} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={terms} />
+              </View>
+              <Text style={styles.settingsText}>Terms & Conditions</Text>
             </View>
-            <Text style={styles.settingsText}>Terms & Conditions</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
             </View>
           </View>
         </View>
 
+        <Text style={styles.containerTitle}>Preferences</Text>
         <View style={styles.preferencesContainer}>
           <View style={styles.settingsRow}>
-            <View style={styles.iconContainer}>
-              <Image style={styles.settingIcons} source={language} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Image style={styles.settingIcons} source={language} />
+              </View>
+              <Text style={styles.settingsText}>Language</Text>
             </View>
-            <Text style={styles.settingsText}>Language</Text>
             <View style={styles.rightArrow}>
-              <Image style={styles.arrowIcon} source={arrow} />
+              <Image style={styles.arrowIcon} source={rightarrow} />
+            </View>
+          </View>
+          <View style={styles.settingsRow}>
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View style={styles.iconContainer}>
+                <Switch
+                  trackColor={{false: '#767577', true: '#807F83'}}
+                  thumbColor={isEnabled ? '#5E5E5E' : '#f4f3f4'}
+                  ios_backgroundColor={Colours.white}
+                  onValueChange={toggleSwitch}
+                  value={isEnabled}
+                />
+              </View>
+              <Text style={styles.settingsText}>Dark mode</Text>
             </View>
           </View>
         </View>
@@ -115,93 +146,79 @@ const styles = StyleSheet.create({
 
   header: {
     flex: 1.2,
+    marginBottom: -20,
   },
 
   bodyContainer: {
     flex: 7,
-    padding: 20,
+    paddingHorizontal: 20,
+    // paddingVertical: 10,
     justifyContent: 'center',
-    alignItems: 'center',
 
-    borderColor: 'red',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    borderTopColor: 'red',
+    borderTopWidth: 1,
   },
 
   personContainer: {
-    flex: 1,
     flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 20,
 
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
     marginBottom: 20,
 
-    borderColor: 'green',
-    borderWidth: 1,
-    borderStyle: 'dashed',
+    // borderColor: 'blue',
+    // borderWidth: 1,
   },
 
   imageContainer: {
     paddingHorizontal: 10,
     justifyContent: 'center',
-    // alignItems: 'center',
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 
   textContainer: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10,
-
-    borderColor: 'orange',
-    borderWidth: 1,
   },
 
   fullNameText: {
     fontSize: 20,
     fontWeight: 800,
     color: Colours.westerngrey,
+    paddingBottom: 10,
+  },
+
+  containerTitle: {
+    fontWeight: 800,
+    fontSize: 16,
+    color: Colours.westerngrey,
+    paddingBottom: 5,
   },
 
   buttonContainer: {
     width: 140,
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 
   settingsContainer: {
-    width: '100%',
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
     marginBottom: 20,
-
-    // borderColor: 'orange',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   settingsRow: {
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    // justifyContent: 'center',
-    paddingVertical: 5,
+    paddingVertical: 12,
     alignItems: 'center',
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 
   preferencesContainer: {
-    flex: 1,
-    width: '100%',
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
-
-    // borderColor: 'brown',
-    // borderWidth: 1,
-    // borderStyle: 'dashed',
   },
 
   profileImage: {
@@ -220,9 +237,8 @@ const styles = StyleSheet.create({
   },
 
   settingIcons: {
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
+    width: 40,
+    height: 40,
   },
 
   text: {
@@ -237,7 +253,8 @@ const styles = StyleSheet.create({
   },
 
   rightArrow: {
-    position: 'absolute',
-    paddingHorizontal: 315,
+    paddingRight: 30,
+    // position: 'absolute',
+    // paddingHorizontal: 315,
   },
 });

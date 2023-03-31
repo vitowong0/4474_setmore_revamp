@@ -42,7 +42,7 @@ function HomeTabs() {
       screenOptions={{
         headerShown: false,
         tabBarInactiveTintColor: Colours.westerngrey,
-        tabBarActiveTintColor: Colours.darkturqouise,
+        tabBarActiveTintColor: Colours.lightturqouise,
       }}>
       <Tab.Group>
         <Tab.Screen
@@ -135,7 +135,10 @@ function HomeStack() {
       <Stack.Group>
         <Stack.Screen name="Home2" component={HomeScreen} />
         <Stack.Screen name="Settings" component={SettingsScreen} />
-        <Stack.Screen name="CompanyDetails" component={CompanyDetailsScreen} />
+        <Stack.Screen
+          name="CompanyDetailsScreen"
+          component={CompanyDetailsScreen}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );

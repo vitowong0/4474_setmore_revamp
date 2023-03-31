@@ -10,6 +10,7 @@ class CompanyOverview {
     timesAvailable,
     duration,
     cost,
+    heartIcon,
   ) {
     this.id = id;
     this.name = name;
@@ -21,6 +22,7 @@ class CompanyOverview {
     this.timesAvailable = timesAvailable;
     this.duration = duration;
     this.cost = cost;
+    this.heartIcon = heartIcon;
   }
 }
 

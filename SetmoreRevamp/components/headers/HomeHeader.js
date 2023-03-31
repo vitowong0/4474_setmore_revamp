@@ -6,7 +6,8 @@ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 // and render both accordingly
 
 import {Colours} from '../../constants/styles';
-import ProfilePicture from '../../assets/images/capy.png';
+import ProfilePicture from '../../assets/images/boywhatthehell.png';
+import settingsIcon from '../../assets/icons/final-gear.png';
 
 // take user first_name and store in async -- or just hardcode it lol
 function HomeHeader({first_name}) {
@@ -23,7 +24,8 @@ function HomeHeader({first_name}) {
             onPress={() => {
               navigation.navigate('Settings');
             }}>
-            <Image source={ProfilePicture} style={styles.image} />
+            <Image style={styles.image} source={ProfilePicture} />
+            <Image style={styles.settingsIcon} source={settingsIcon} />
           </TouchableOpacity>
         </View>
       </View>
@@ -67,5 +69,18 @@ const styles = StyleSheet.create({
     height: 60,
     width: 60,
     borderRadius: 30,
+  },
+
+  settingsIcon: {
+    position: 'absolute',
+    width: 20,
+    height: 20,
+    right: -5,
+    bottom: -0,
+
+    backgroundColor: Colours.white,
+    borderRadius: 10,
+    borderColor: 'black',
+    borderWidth: 0.5,
   },
 });

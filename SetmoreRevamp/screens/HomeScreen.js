@@ -6,45 +6,85 @@ import {
   TouchableOpacity,
   StatusBar,
   ScrollView,
+  FlatList,
 } from 'react-native';
-import {NavigationContainer, useNavigation} from '@react-navigation/native';
 
-import {Colours} from '../constants/styles';
 import HomeHeader from '../components/headers/HomeHeader';
-import CustomButton from '../components/CustomButton';
+import {Colours} from '../constants/styles';
+
+import MiniCompanyGridTile from '../components/grid-tiles/MiniCompanyGridTile';
+import {COMPANYDATATWO} from '../components/data/DummyCompanyDataTwo';
+import {COMPANYDATATHREE} from '../components/data/DummyCompanyDataThree';
 
 function HomeScreen() {
+  function renderMiniCompanyGridTile(itemData) {
+    return (
+      <MiniCompanyGridTile
+        id={itemData.item.id}
+        name={itemData.item.name}
+        image={itemData.item.image}
+        description={itemData.item.description}
+        rating={itemData.item.rating}
+        services={itemData.item.services}
+        staff={itemData.item.staff}
+        timesAvailable={itemData.item.timesAvailable}
+        duration={itemData.item.duration}
+        cost={itemData.item.cost}
+        heartIcon={itemData.item.heartIcon}
+      />
+    );
+  }
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
-      <View style={styles.header}>{<HomeHeader first_name={'Gort'} />}</View>
+      <View style={styles.header}>{<HomeHeader first_name={'fname'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <Text>top container</Text>
-          <View style={styles.buttonContainer}>
-            <CustomButton
-              text="in top container"
-              textColour={Colours.darkgreen}
-              backgroundColour={Colours.lightturqouise}
-            />
+          <View style={(style = styles.topTextContainer)}>
+            <Text style={styles.bigGreyText}>Available now</Text>
+            <TouchableOpacity
+              onPress={() => {
+                alert('bringing you to View all page');
+              }}>
+              <Text style={styles.smallGreenText}>View all</Text>
+            </TouchableOpacity>
           </View>
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={true}
+            scrollEventThrottle={200}
+            decelerationRate={'normal'}>
+            <FlatList
+              data={COMPANYDATATWO}
+              keyExtractor={item => item.id}
+              renderItem={renderMiniCompanyGridTile}
+              numColumns={4}
+            />
+          </ScrollView>
         </View>
         <View style={styles.bottomContainer}>
-          <View style={styles.buttonContainer}>
-            <View>
-              <TouchableOpacity
-                onPress={() => {
-                  alert('eat my booty');
-                }}>
-                <Text>hi</Text>
-                <CustomButton
-                  text="in bottom container"
-                  textColour={Colours.darkgreen}
-                  backgroundColour={Colours.lightturqouise}
-                />
-              </TouchableOpacity>
-            </View>
+          <View style={(style = styles.topTextContainer)}>
+            <Text style={styles.bigGreyText}>Recommended for you</Text>
+            <TouchableOpacity
+              onPress={() => {
+                alert('bringing you to View all page');
+              }}>
+              <Text style={styles.smallGreenText}>View all</Text>
+            </TouchableOpacity>
           </View>
+          <ScrollView
+            horizontal={true}
+            showsHorizontalScrollIndicator={true}
+            scrollEventThrottle={200}
+            decelerationRate={'normal'}>
+            <FlatList
+              data={COMPANYDATATHREE}
+              keyExtractor={item => item.id}
+              renderItem={renderMiniCompanyGridTile}
+              numColumns={4}
+            />
+          </ScrollView>
         </View>
       </View>
     </View>
@@ -72,16 +112,42 @@ const styles = StyleSheet.create({
   },
 
   topContainer: {
-    flex: 1,
-    padding: 10,
+    // flex: 1,
+    paddingVertical: 10,
+
+    // borderColor: 'green',
+    // borderWidth: 1,
+  },
+
+  topTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 5,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+
+    // borderColor: 'blue',
+    // borderWidth: 1,
+  },
+
+  bigGreyText: {
+    fontSize: 20,
+    fontWeight: 800,
+    color: Colours.westerngrey,
+  },
+
+  smallGreenText: {
+    fontSize: 16,
+    fontWeight: 700,
+    color: Colours.darkturqouise,
   },
 
   bottomContainer: {
-    flex: 1,
-    padding: 10,
+    paddingVertical: 10,
 
-    borderColor: 'red',
-    borderTopWidth: 1,
+    // borderColor: 'red',
+    // borderWidth: 1,
   },
 
   bodyTextContainer: {

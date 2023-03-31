@@ -4,8 +4,9 @@ import salon2 from '../../assets/images/place-A2.png';
 import salon3 from '../../assets/images/place-A5.png';
 import salon4 from '../../assets/images/place-A4.png';
 import heartfill from '../../assets/icons/white_heart_fill.png';
+import heartoutline from '../../assets/icons/white_heart_outline.png';
 
-export const COMPANYDATA = [
+export const COMPANYDATATWO = [
   new Overview(
     1,
     'Majesty Nail Bar',

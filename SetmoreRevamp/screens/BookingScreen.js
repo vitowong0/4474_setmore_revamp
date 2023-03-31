@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, StatusBar, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  StatusBar,
+  Image,
+  ScrollView,
+} from 'react-native';
 
 import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
@@ -29,7 +36,10 @@ function BookingScreen() {
         <View style={styles.serviceSelectionContainer}>
           <Text style={styles.boldGrey}>Select services</Text>
           <View style={styles.carouselContainer}>
+            {/* <View style={{flexDirection: 'row'}}>
+              <ScrollView horizontal={'true'}> */}
             <CustomButton
+              style={styles.customButtonStyle}
               text={'Featured'}
               textColour={Colours.westerngrey}
               backgroundColour={Colours.white}
@@ -44,6 +54,8 @@ function BookingScreen() {
               textColour={Colours.westerngrey}
               backgroundColour={Colours.white}
             />
+            {/* </ScrollView>
+            </View> */}
           </View>
         </View>
         <View style={styles.servicesContainer}>

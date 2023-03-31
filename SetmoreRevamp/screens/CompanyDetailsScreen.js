@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
 
-import salon1 from '../assets/images/salon1.png';
+import salon1 from '../assets/images/place-A7.png';
 import profilePic1 from '../assets/images/boywhatthehell.png';
 import profilePic2 from '../assets/images/liv.png';
 import profilePic3 from '../assets/images/briar.png';
