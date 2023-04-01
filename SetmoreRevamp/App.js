@@ -7,19 +7,19 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
+// All icons for tab bar
 import homeIcon from './assets/icons/home_grey.png';
 import searchIcon from './assets/icons/search_grey.png';
 import favouritesIcon from './assets/icons/favourites_grey.png';
 import calendarIcon from './assets/icons/calendar_grey.png';
 import notificationsIcon from './assets/icons/notifications_grey.png';
-
 import homeIconGreen from './assets/icons/home_green.png';
 import searchIconGreen from './assets/icons/search_green.png';
 import favouritesIconGreen from './assets/icons/favourites_green.png';
 import calendarIconGreen from './assets/icons/calendar_green.png';
 import notificationsIconGreen from './assets/icons/notifications_green.png';
 
-// import LoginScreen from './screens/LoginScreen';
+// Importing all main screens
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import FavouritesScreen from './screens/FavouritesScreen';
@@ -27,11 +27,15 @@ import CalendarScreen from './screens/CalendarScreen';
 import NotificationsScreen from './screens/NotificationsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
+// Importing all subscreens
 import BookingScreen from './screens/BookingScreen';
 import DatesAvailableScreen from './screens/DatesAvailableScreen';
 import TimesAvailableScreen from './screens/TimesAvailableScreen';
 import CompanyDetailsScreen from './screens/CompanyDetailsScreen';
 import BookingOverviewScreen from './screens/BookingOverviewScreen';
+import AllCompaniesScreen from './screens/AllCompaniesScreen';
+import AllStaffScreen from './screens/AllStaffScreen';
+import AllRatingsScreen from './screens/AllRatingsScreen';
 
 import {Colours} from './constants/styles';
 import LoginScreen from './screens/LoginScreen';
@@ -151,6 +155,12 @@ function HomeStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
+        <Stack.Screen
+          name="AllCompaniesScreen"
+          component={AllCompaniesScreen}
+        />
+        <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
+        <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -174,6 +184,8 @@ function SearchStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
+        <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
+        <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -197,6 +209,8 @@ function FavouritesStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
+        <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
+        <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

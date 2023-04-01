@@ -18,7 +18,7 @@ import Header from '../components/headers/Header';
 import {Colours} from '../constants/styles';
 import scanIcon from '../assets/icons/og-scan.png';
 
-import NearbyCompanyItem from '../components/NearbyCompanyItem';
+import NearbyCompanyItem from '../components/items/NearbyCompanyItem';
 import {NEARBYCOMPANYDATA} from '../components/data/DummyNearbyCompanyData';
 
 function SearchScreen() {

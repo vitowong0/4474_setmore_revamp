@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import starIcon from '../assets/icons/star.png';
-import locationIcon from '../assets/icons/location-icon.png';
-import {Colours} from '../constants/styles';
+import starIcon from '../../assets/icons/star.png';
+import locationIcon from '../../assets/icons/location-icon.png';
+import {Colours} from '../../constants/styles';
 import {ScrollView} from 'react-native-virtualized-view';
 
 function NearbyCompanyItem({

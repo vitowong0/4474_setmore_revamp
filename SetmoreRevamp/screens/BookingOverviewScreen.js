@@ -13,8 +13,8 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
-import CustomButton from '../components/CustomButton';
-import TimeButton from '../components/TimeButton';
+import CustomButton from '../components/buttons/CustomButton';
+import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
 
 function BookingOverviewScreen() {

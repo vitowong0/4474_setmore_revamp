@@ -12,7 +12,7 @@ import Calendar from '../components/calendar/Calendar';
 import Header from '../components/headers/Header';
 import {Colours} from '../constants/styles';
 
-import BookedAppointmentItem from '../components/BookedAppointmentItem';
+import BookedAppointmentItem from '../components/items/BookedAppointmentItem';
 import {BOOKEDAPPOINTMENTS} from '../components/data/DummyBookedAppointments';
 
 function CalendarScreen() {
@@ -37,12 +37,12 @@ function CalendarScreen() {
       <View style={styles.bodyContainer}>
         <View style={styles.legendContainer}>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <View style={styles.miniCircleBorder} />
-            <Text style={styles.legendText}>Available</Text>
-          </View>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View style={styles.miniCirclePink} />
             <Text style={styles.legendText}>Booked</Text>
+          </View>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={styles.miniCircleBorder} />
+            <Text style={styles.legendText}>No booking</Text>
           </View>
         </View>
         <View style={styles.calendarContainer}>

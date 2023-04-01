@@ -11,7 +11,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import CustomButton from '../components/CustomButton';
+import CustomButton from '../components/buttons/CustomButton';
 import {Colours} from '../constants/styles';
 
 import SubHeader from '../components/headers/SubHeader';

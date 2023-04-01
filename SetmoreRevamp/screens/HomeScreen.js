@@ -8,6 +8,7 @@ import {
   ScrollView,
   FlatList,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import HomeHeader from '../components/headers/HomeHeader';
 import {Colours} from '../constants/styles';
@@ -18,6 +19,8 @@ import {COMPANYDATATHREE} from '../components/data/DummyCompanyDataThree';
 import {COMPANYDATAFOUR} from '../components/data/DummyCompanyDataFour';
 
 function HomeScreen() {
+  const navigation = useNavigation();
+
   function renderMiniCompanyGridTile(itemData) {
     return (
       <MiniCompanyGridTile
@@ -47,7 +50,7 @@ function HomeScreen() {
               <Text style={styles.bigGreyText}>Available now</Text>
               <TouchableOpacity
                 onPress={() => {
-                  alert('bringing you to View all page');
+                  navigation.navigate('AllCompaniesScreen');
                 }}>
                 <Text style={styles.smallGreenText}>View all</Text>
               </TouchableOpacity>

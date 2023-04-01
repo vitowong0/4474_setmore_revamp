@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
-import {Colours} from '../constants/styles';
+import {Colours} from '../../constants/styles';
 
 const SelectServiceItem = ({id, serviceName}) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {Colours} from '../constants/styles';
+import {Colours} from '../../constants/styles';
 
 const TimeButton = ({image, time, onPress, disableButton}) => {
   if (!disableButton) {

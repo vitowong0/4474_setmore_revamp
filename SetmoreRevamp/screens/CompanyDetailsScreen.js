@@ -13,7 +13,7 @@ import {useNavigation} from '@react-navigation/native';
 import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
 
-import StaffItem from '../components/StaffItem';
+import StaffItem from '../components/items/StaffItem';
 import {STAFFDATA} from '../components/data/DummyStaff';
 
 import salon1 from '../assets/images/place-A7.png';
@@ -76,7 +76,7 @@ function CompanyDetailsScreen({
             <View>
               <TouchableOpacity
                 onPress={() => {
-                  alert('bringing you to all ratings page');
+                  navigation.navigate('AllRatingsScreen');
                 }}>
                 <Text style={styles.viewAllText}>View all</Text>
               </TouchableOpacity>
@@ -87,7 +87,7 @@ function CompanyDetailsScreen({
               <Text style={styles.headerText}>Book by staff</Text>
               <TouchableOpacity
                 onPress={() => {
-                  alert('bringing you to all staff page');
+                  navigation.navigate('AllStaffScreen');
                 }}>
                 <Text style={styles.viewAllText}>View all</Text>
               </TouchableOpacity>
@@ -102,7 +102,7 @@ function CompanyDetailsScreen({
                   data={STAFFDATA}
                   keyExtractor={item => item.id}
                   renderItem={renderStaffItem}
-                  numColumns={4}
+                  numColumns={5}
                 />
               </ScrollView>
             </View>

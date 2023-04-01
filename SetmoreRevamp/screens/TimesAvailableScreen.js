@@ -12,11 +12,10 @@ import {useNavigation} from '@react-navigation/native';
 
 import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
-import TimeButton from '../components/TimeButton';
-
+import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
-import CustomButton from '../components/CustomButton';
-import CustomImageButton from '../components/CustomImageButton';
+import CustomButton from '../components/buttons/CustomButton';
+import CustomImageButton from '../components/buttons/CustomImageButton';
 import bell_white from '../assets/icons/bell_white.png';
 
 function TimesAvailableScreen() {
@@ -210,8 +209,9 @@ const styles = StyleSheet.create({
   },
 
   unavailableTimeContainer: {
-    // paddingTop: 15,
+    paddingTop: 35,
     paddingLeft: 10,
+    alignItems: 'center',
   },
 
   boldGrey: {

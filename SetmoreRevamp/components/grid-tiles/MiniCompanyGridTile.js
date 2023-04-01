@@ -27,7 +27,7 @@ function MiniCompanyGridTile({
 }) {
   const navigation = useNavigation();
 
-  const createTwoButtonAlert = () =>
+  const favouritesButtonAlert = () =>
     Alert.alert('Add to favourites?', '', [
       {
         text: 'Cancel',
@@ -40,7 +40,7 @@ function MiniCompanyGridTile({
       },
     ]);
 
-  const createSecondTwoButtonAlert = () =>
+  const hideCompanyAlert = () =>
     Alert.alert('Hide this company?', '', [
       {
         text: 'Cancel',
@@ -61,7 +61,7 @@ function MiniCompanyGridTile({
             <Text style={styles.titleText}>{name}</Text>
           </View>
           <View>
-            <TouchableOpacity onPress={createSecondTwoButtonAlert}>
+            <TouchableOpacity onPress={hideCompanyAlert}>
               <Image style={styles.dotdotdot} source={dotdotdot} />
             </TouchableOpacity>
           </View>
@@ -72,7 +72,7 @@ function MiniCompanyGridTile({
               navigation.navigate('CompanyDetailsScreen');
             }}>
             <Image style={styles.image} source={image} />
-            <TouchableOpacity onPress={createTwoButtonAlert}>
+            <TouchableOpacity onPress={favouritesButtonAlert}>
               <Image style={styles.heartIcon} source={heartIcon} />
             </TouchableOpacity>
           </TouchableOpacity>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Image, StyleSheet} from 'react-native';
-import button from '../assets/icons/left.png';
+import button from '../../assets/icons/left.png';
 
 const BackButton = () => {
   return (
