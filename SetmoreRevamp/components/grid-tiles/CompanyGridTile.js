@@ -28,13 +28,16 @@ function CompanyGridTile({
   const navigation = useNavigation();
 
   const createTwoButtonAlert = () => {
-    Alert.alert('Alert Title', 'My Alert Msg', [
+    Alert.alert('Remove from favourites?', '', [
       {
         text: 'Cancel',
         onPress: () => console.log('Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Removing from favourites.'),
+      },
     ]);
   };
 
@@ -56,10 +59,7 @@ function CompanyGridTile({
         </View>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={image} />
-          <TouchableOpacity
-            onPress={() => {
-              alert('Remove from favourites?');
-            }}>
+          <TouchableOpacity onPress={createTwoButtonAlert}>
             <Image style={styles.whiteHeart} source={heartIcon} />
           </TouchableOpacity>
         </View>

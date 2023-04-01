@@ -32,7 +32,11 @@ function CompanyDetailsScreen({
 
   function renderStaffItem(itemData) {
     return (
-      <TouchableOpacity onPress={() => navigation.navigate('BookingScreen')}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('BookingScreen');
+          console.log(`SELECTED STAFF: ${itemData.item.staffName}`);
+        }}>
         <StaffItem
           id={itemData.item.id}
           staffPhoto={itemData.item.staffPhoto}

@@ -7,6 +7,7 @@ import {
   StatusBar,
   Image,
   // ScrollView,
+  Alert,
   FlatList,
 } from 'react-native';
 import SearchBar from 'react-native-dynamic-search-bar';
@@ -22,6 +23,19 @@ import {NEARBYCOMPANYDATA} from '../components/data/DummyNearbyCompanyData';
 
 function SearchScreen() {
   const navigation = useNavigation();
+
+  const scanQRAlert = () =>
+    Alert.alert('Scan QR code', 'Setmore wants to launch the Camera app', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'Open',
+        onPress: () => console.log('OK Pressed. Camera opened.'),
+      },
+    ]);
 
   function renderNearbyCompanyItem(itemData) {
     return (
@@ -51,10 +65,7 @@ function SearchScreen() {
             placeholder="Search Setmore"
             onChangeText={text => console.log(text)}
           />
-          <TouchableOpacity
-            onPress={() => {
-              alert('scan a QR code!');
-            }}>
+          <TouchableOpacity onPress={scanQRAlert}>
             <View>
               <Image style={styles.scanIcon} source={scanIcon} />
             </View>

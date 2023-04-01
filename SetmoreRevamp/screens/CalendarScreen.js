@@ -50,18 +50,15 @@ function CalendarScreen() {
             width={Dimensions.get('window').width}
             daysBooked={[
               '2023-04-01',
-              '2023-04-02',
               '2023-04-07',
-              '2023-04-09',
-              '2023-04-13',
-              '2023-04-24',
+              '2023-04-08',
+              '2023-04-20',
               '2023-04-26',
             ]}
           />
         </View>
         <View style={styles.bottomContainer}>
-          <View
-            style={{paddingHorizontal: 10, paddingTop: 10, paddingBottom: 5}}>
+          <View style={{paddingHorizontal: 10, paddingVertical: 5}}>
             <Text style={styles.upcomingText}>Upcoming appointments</Text>
           </View>
           <FlatList

@@ -9,7 +9,6 @@ import {Colours} from '../../constants/styles';
 import ProfilePicture from '../../assets/images/boywhatthehell.png';
 import settingsIcon from '../../assets/icons/final-gear.png';
 
-// take user first_name and store in async -- or just hardcode it lol
 function HomeHeader({first_name}) {
   const navigation = useNavigation();
 
@@ -22,7 +21,7 @@ function HomeHeader({first_name}) {
         <View style={styles.imageContainer}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Settings');
+              navigation.navigate('SettingsScreen');
             }}>
             <Image style={styles.image} source={ProfilePicture} />
             <Image style={styles.settingsIcon} source={settingsIcon} />

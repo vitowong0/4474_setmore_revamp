@@ -41,52 +41,54 @@ function HomeScreen() {
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>{<HomeHeader first_name={'fname'} />}</View>
       <View style={styles.bodyContainer}>
-        <View style={styles.topContainer}>
-          <View style={styles.topTextContainer}>
-            <Text style={styles.bigGreyText}>Available now</Text>
-            <TouchableOpacity
-              onPress={() => {
-                alert('bringing you to View all page');
-              }}>
-              <Text style={styles.smallGreenText}>View all</Text>
-            </TouchableOpacity>
+        <ScrollView>
+          <View style={styles.topContainer}>
+            <View style={styles.topTextContainer}>
+              <Text style={styles.bigGreyText}>Available now</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('bringing you to View all page');
+                }}>
+                <Text style={styles.smallGreenText}>View all</Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={true}
+              scrollEventThrottle={200}
+              decelerationRate={'normal'}>
+              <FlatList
+                data={COMPANYDATAFOUR}
+                keyExtractor={item => item.id}
+                renderItem={renderMiniCompanyGridTile}
+                numColumns={4}
+              />
+            </ScrollView>
           </View>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={true}
-            scrollEventThrottle={200}
-            decelerationRate={'normal'}>
-            <FlatList
-              data={COMPANYDATAFOUR}
-              keyExtractor={item => item.id}
-              renderItem={renderMiniCompanyGridTile}
-              numColumns={4}
-            />
-          </ScrollView>
-        </View>
-        <View style={styles.bottomContainer}>
-          <View style={(style = styles.topTextContainer)}>
-            <Text style={styles.bigGreyText}>Recommended for you</Text>
-            <TouchableOpacity
-              onPress={() => {
-                alert('bringing you to View all page');
-              }}>
-              <Text style={styles.smallGreenText}>View all</Text>
-            </TouchableOpacity>
+          <View style={styles.bottomContainer}>
+            <View style={(style = styles.topTextContainer)}>
+              <Text style={styles.bigGreyText}>Recommended for you</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  alert('bringing you to View all page');
+                }}>
+                <Text style={styles.smallGreenText}>View all</Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={true}
+              scrollEventThrottle={200}
+              decelerationRate={'normal'}>
+              <FlatList
+                data={COMPANYDATATHREE}
+                keyExtractor={item => item.id}
+                renderItem={renderMiniCompanyGridTile}
+                numColumns={4}
+              />
+            </ScrollView>
           </View>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={true}
-            scrollEventThrottle={200}
-            decelerationRate={'normal'}>
-            <FlatList
-              data={COMPANYDATATHREE}
-              keyExtractor={item => item.id}
-              renderItem={renderMiniCompanyGridTile}
-              numColumns={4}
-            />
-          </ScrollView>
-        </View>
+        </ScrollView>
       </View>
     </View>
   );

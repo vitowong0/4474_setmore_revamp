@@ -1,11 +1,17 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 
 function BookedAppointmentItem({id, name, date, time, image}) {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('BookingOverviewScreen');
+      }}>
       <View style={styles.notificationContainer}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={image} />

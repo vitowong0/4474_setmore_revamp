@@ -68,10 +68,10 @@ function HomeTabs() {
               focused ? (
                 <Image
                   source={searchIconGreen}
-                  style={{width: 24, height: 27}}
+                  style={{width: 21, height: 24}}
                 />
               ) : (
-                <Image source={searchIcon} style={{width: 24, height: 27}} />
+                <Image source={searchIcon} style={{width: 22, height: 25}} />
               ),
           }}
         />
@@ -83,7 +83,7 @@ function HomeTabs() {
               focused ? (
                 <Image
                   source={favouritesIconGreen}
-                  style={{width: 27, height: 25}}
+                  style={{width: 25, height: 23}}
                 />
               ) : (
                 <Image
@@ -116,7 +116,7 @@ function HomeTabs() {
               focused ? (
                 <Image
                   source={notificationsIconGreen}
-                  style={{width: 27, height: 27}}
+                  style={{width: 25, height: 25}}
                 />
               ) : (
                 <Image
@@ -151,10 +151,6 @@ function HomeStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
-        <Stack.Screen
-          name="BookingOverviewScreen"
-          component={BookingOverviewScreen}
-        />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -178,10 +174,6 @@ function SearchStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
-        <Stack.Screen
-          name="BookingOverviewScreen"
-          component={BookingOverviewScreen}
-        />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -204,10 +196,6 @@ function FavouritesStack() {
         <Stack.Screen
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
-        />
-        <Stack.Screen
-          name="BookingOverviewScreen"
-          component={BookingOverviewScreen}
         />
       </Stack.Group>
     </Stack.Navigator>

@@ -11,6 +11,7 @@ const AvailableServiceItem = ({name, duration, cost}) => {
     <TouchableOpacity
       onPress={() => {
         navigation.navigate('DatesAvailableScreen');
+        console.log(`SELECTED SERVICE: ${name}`);
       }}>
       <View style={styles.root}>
         <View>

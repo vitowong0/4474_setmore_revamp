@@ -21,12 +21,6 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingVertical: 10,
     paddingHorizontal: 15,
-    // marginRight: 10,
-    // marginLeft: 10,
-    // width: 170,
-
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
 
   buttonText: {

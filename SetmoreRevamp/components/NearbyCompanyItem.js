@@ -22,7 +22,12 @@ function NearbyCompanyItem({
 
   function renderTimeButton(time) {
     return (
-      <TouchableOpacity key={time} onPress={() => console.log(time)}>
+      <TouchableOpacity
+        key={time}
+        onPress={() => {
+          navigation.navigate('CompanyDetailsScreen');
+          console.log(`SELECTED TIME: ${time}`);
+        }}>
         <View style={styles.individualTime}>
           <Text style={styles.timeText}>{time}</Text>
         </View>
@@ -48,7 +53,6 @@ function NearbyCompanyItem({
             <Text>{rating}</Text>
             <Image style={styles.littleIcons} source={starIcon} />
           </View>
-          {/* <View style={{flex: 0.1}}></View> */}
           <Text>{numReviews}</Text>
         </View>
 
@@ -73,6 +77,7 @@ function NearbyCompanyItem({
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('CompanyDetailsScreen');
+            console.log(`SELECTED COMPANY: ${name}`);
           }}>
           <Image style={styles.companyImage} source={image} />
         </TouchableOpacity>
