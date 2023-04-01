@@ -24,7 +24,7 @@ export default TimeButton;
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    borderRadius: 10,
+    borderRadius: 15,
     paddingVertical: 10,
     // paddingHorizontal: 15,
     // marginHorizontal: 5,
@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     fontSize: 14,
     textAlign: 'center',
-    color: Colours.mediumgrey,
+    color: Colours.westerngrey,
   },
 });

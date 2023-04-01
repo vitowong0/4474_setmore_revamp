@@ -14,27 +14,32 @@ import CustomButton from '../components/CustomButton';
 import TimeButton from '../components/TimeButton';
 
 import staff from '../assets/images/briar.png';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 function BookingOverviewScreen() {
   return (
-    <View style={styles.rootContainer}>
+    <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
         <SubHeader headerTitle={'Booking Overview'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bodyTextContainer}>
-          <Text style={styles.boldText}>Booking with</Text>
-          <View style={styles.staffContainer}>
-            <Image source={staff} style={styles.image} />
-            <Text style={styles.smallBoldText}>Briar</Text>
+        <View style={styles.bookingWithContainer}>
+          <Text style={styles.boldGrey}>Booking with:</Text>
+          <View style={styles.imageAndTextContainer}>
+            <View>
+              <View style={{alignItems: 'center'}}>
+                <Image style={styles.staffImage} source={staff} />
+                <Text style={styles.employee}>Briar</Text>
+              </View>
+            </View>
           </View>
-
-          <Text style={styles.boldText}>Selected services</Text>
-          <View style={styles.inlineView}>
+        </View>
+        <View style={styles.serviceSelectionContainer}>
+          <Text style={styles.boldGrey}>Selected services</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <Text style={styles.smallGreenText}>Baby Glow Facial</Text>
-            <Text
-              style={[styles.smallGreenText, {color: Colours.lightturqouise}]}>
+            <Text style={[styles.smallGreenText, {color: Colours.westerngrey}]}>
               $100
             </Text>
           </View>
@@ -43,24 +48,40 @@ function BookingOverviewScreen() {
             Leave with a skin plan, a serious glow, and a feeling of complete
             elation.
           </Text>
-          <Text style={styles.boldText}>Date Selected</Text>
-          <Text style={styles.bigGreenText}>Friday, March 10</Text>
-          <Text style={styles.boldText}>Time Selected</Text>
+        </View>
+        <View style={styles.dateTimeContainer}>
+          <Text style={styles.boldGreyDateTime}>Date selected</Text>
+          <Text style={styles.boldTurquoise}>Friday, April 7th, 2023</Text>
+          <Text style={styles.boldGreyDateTime}>Time selected</Text>
+
           <View style={styles.timeContainer}>
-            <TimeButton text={'4:20 PM'} disableButton={true} />
+            <TimeButton text={'4:20 PM'} disableButton={false} />
           </View>
-          <View style={styles.buttonContainer}>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            onPress={() => {
+              alert('Modify appointment? Y/N');
+            }}>
             <CustomButton
               text={'Modify'}
               textColour={Colours.black}
               backgroundColour={Colours.lightergrey}
+              buttonWidth={160}
             />
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              alert('Cancel appointment? Y/N');
+            }}>
             <CustomButton
               text={'Cancel'}
               textColour={Colours.white}
               backgroundColour={Colours.buttoncancel}
+              buttonWidth={160}
             />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -70,93 +91,118 @@ function BookingOverviewScreen() {
 export default BookingOverviewScreen;
 
 const styles = StyleSheet.create({
-  rootContainer: {
+  root: {
     flex: 1,
   },
 
   header: {
     flex: 1.2,
-    width: '100%',
     marginBottom: -20,
   },
 
   bodyContainer: {
     flex: 7,
-    flexDirection: 'column',
-    backgroundColor: 'white',
+    backgroundColor: Colours.white,
 
-    borderColor: 'red',
     borderTopWidth: 1,
+    borderTopColor: 'red',
   },
 
-  bodyTextContainer: {
-    flex: 1,
-    paddingHorizontal: 20,
+  bookingWithContainer: {
+    paddingVertical: 10,
+    paddingHorizontal: 15,
   },
 
-  bodyText: {
-    fontWeight: '800',
-    fontSize: 28,
-    color: Colours.darkturqouise,
-    paddingHorizontal: 20,
-    textAlign: 'center',
+  imageAndTextContainer: {
+    alignItems: 'flex-start',
+    paddingLeft: 10,
   },
 
-  boldText: {
-    fontWeight: '800',
+  staffImage: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginVertical: 10,
+  },
+
+  serviceSelectionContainer: {
+    justifyContent: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+    backgroundColor: Colours.pastelturquoise,
+  },
+
+  dateTimeContainer: {
+    paddingVertical: 20,
+    paddingHorizontal: 15,
+  },
+
+  timeContainer: {
+    paddingTop: 15,
+    paddingLeft: 10,
+  },
+
+  buttonContainer: {
+    paddingTop: 30,
+    flexDirection: 'row',
+    paddingLeft: 10,
+    justifyContent: 'space-evenly',
+
+    // borderColor: 'red',
+    // borderWidth: 1,
+  },
+
+  boldGrey: {
+    paddingLeft: 10,
     fontSize: 20,
-    color: Colours.mediumgrey,
-    marginTop: 30,
-    marginBottom: 10,
+    color: Colours.westerngrey,
+    fontWeight: 800,
+  },
+
+  boldGreyDateTime: {
+    fontSize: 20,
+    paddingLeft: 10,
+    paddingTop: 10,
+    color: Colours.westerngrey,
+    fontWeight: 800,
+  },
+
+  boldTurquoise: {
+    fontSize: 24,
+    paddingLeft: 10,
+    paddingVertical: 10,
+    color: Colours.darkturqouise,
+    fontWeight: 800,
   },
 
   smallGreenText: {
+    paddingLeft: 10,
+    paddingTop: 10,
     fontWeight: '800',
     color: Colours.darkturqouise,
     marginBottom: 5,
   },
 
-  bigGreenText: {
-    fontWeight: '800',
-    color: Colours.darkturqouise,
-    fontSize: 28,
+  smallText: {
+    fontSize: 14,
+    fontWeight: '600',
+    paddingLeft: 10,
+    paddingTop: 10,
+    marginBottom: 5,
+    color: Colours.westerngrey,
   },
 
   smallBoldText: {
-    fontWeight: '800',
-    color: Colours.mediumgrey,
-    fontSize: 12,
+    fontSize: 14,
+    fontWeight: '600',
+    paddingLeft: 10,
+    paddingTop: 10,
+    color: Colours.westerngrey,
   },
 
-  smallText: {
-    fontSize: 12,
-    color: Colours.mediumgrey,
-    marginBottom: 10,
-  },
-
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    flex: 1,
-    alignItems: 'center',
-  },
-
-  image: {
-    width: 80,
-    height: 80,
-  },
-
-  staffContainer: {
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-  },
-
-  inlineView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-
-  timeContainer: {
-    flexDirection: 'row',
+  employee: {
+    fontSize: 14,
+    color: Colours.westerngrey,
+    fontWeight: 800,
   },
 });

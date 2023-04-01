@@ -87,21 +87,6 @@ function BookingScreen() {
             renderItem={renderAvailableServiceItem}
             numColumns={1}
           />
-          {/* <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('DatesAvailableScreen');
-            }}>
-            <AvailableServiceItem
-              serviceName={'Baby Glow Facial'}
-              duration={'1 hour'}
-              cost={100}
-            />
-          </TouchableOpacity>
-          <AvailableServiceItem
-            serviceName={'BBL'}
-            duration={'30-45 mins'}
-            cost={420}
-          /> */}
         </View>
       </View>
     </View>
@@ -156,6 +141,7 @@ const styles = StyleSheet.create({
   carouselContainer: {
     flexDirection: 'row',
     marginVertical: 10,
+    paddingLeft: 10,
   },
 
   servicesContainer: {
