@@ -16,10 +16,10 @@ import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
 import staff from '../assets/images/briar.png';
 
-import SelectServiceItem from '../components/SelectServiceItem';
+import SelectServiceItem from '../components/items/SelectServiceItem';
 import {SERVICESDATA} from '../components/data/DummyServices';
 
-import AvailableServiceItem from '../components/AvailableServiceItem';
+import AvailableServiceItem from '../components/items/AvailableServiceItem';
 import {SERVICESAVAILABLEDATA} from '../components/data/DummyServicesAvailable';
 
 function BookingScreen() {

@@ -27,16 +27,31 @@ function MiniCompanyGridTile({
 }) {
   const navigation = useNavigation();
 
-  const createTwoButtonAlert = () => {
-    Alert.alert('Alert Title', 'My Alert Msg', [
+  const favouritesButtonAlert = () =>
+    Alert.alert('Add to favourites?', '', [
       {
         text: 'Cancel',
         onPress: () => console.log('Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Adding to favourites.'),
+      },
     ]);
-  };
+
+  const hideCompanyAlert = () =>
+    Alert.alert('Hide this company?', '', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Hiding company.'),
+      },
+    ]);
 
   return (
     <View style={styles.root}>
@@ -46,10 +61,7 @@ function MiniCompanyGridTile({
             <Text style={styles.titleText}>{name}</Text>
           </View>
           <View>
-            <TouchableOpacity
-              onPress={() => {
-                alert('hide and shit');
-              }}>
+            <TouchableOpacity onPress={hideCompanyAlert}>
               <Image style={styles.dotdotdot} source={dotdotdot} />
             </TouchableOpacity>
           </View>
@@ -60,10 +72,7 @@ function MiniCompanyGridTile({
               navigation.navigate('CompanyDetailsScreen');
             }}>
             <Image style={styles.image} source={image} />
-            <TouchableOpacity
-              onPress={() => {
-                alert('Remove/add from favourites?');
-              }}>
+            <TouchableOpacity onPress={favouritesButtonAlert}>
               <Image style={styles.heartIcon} source={heartIcon} />
             </TouchableOpacity>
           </TouchableOpacity>
@@ -82,7 +91,8 @@ const styles = StyleSheet.create({
 
   gridTileContainer: {
     flex: 1,
-    paddingLeft: 20,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
 
   topRow: {

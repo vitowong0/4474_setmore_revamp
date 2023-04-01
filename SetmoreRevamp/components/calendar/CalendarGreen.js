@@ -45,10 +45,9 @@ const CalendarGreen = ({width, daysBooked, daysAvailable}) => {
             isUnavailable ? styles.unavailableView : {},
           ]}
           onPress={() => {
-            // console.log('selected day', date.day);
-            // console.log(date);
             if (isAvailable || isBooked) {
               navigation.navigate('TimesAvailableScreen');
+              console.log(`SELECTED MONTH/DAY: ${date.month}/${date.day}`);
             }
           }}>
           <Text style={styles.dayText}>{date.day}</Text>

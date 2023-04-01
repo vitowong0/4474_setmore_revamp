@@ -1,20 +1,23 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {Colours} from '../constants/styles';
+import {Colours} from '../../constants/styles';
 
-const TimeButton = ({text, onPress, disableButton}) => {
+const TimeButton = ({image, time, onPress, disableButton}) => {
   if (!disableButton) {
     return (
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          console.log(`SELECTED TIME: ${time}`);
+        }}>
         <View style={styles.buttonContainer} onPress={onPress}>
-          <Text style={styles.buttonText}>{text}</Text>
+          <Text style={styles.buttonText}>{time}</Text>
         </View>
       </TouchableOpacity>
     );
   } else {
     return (
       <View style={styles.buttonContainer} onPress={onPress}>
-        <Text style={styles.buttonText}>{text}</Text>
+        <Text style={styles.buttonText}>{time}</Text>
       </View>
     );
   }
@@ -27,7 +30,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     paddingVertical: 10,
     // paddingHorizontal: 15,
-    // marginHorizontal: 5,
+    marginRight: 10,
     borderWidth: 1,
     width: 90,
   },
@@ -37,5 +40,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     color: Colours.westerngrey,
+  },
+
+  image: {
+    width: 20,
+    height: 20,
   },
 });

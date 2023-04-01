@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import {Colours} from '../constants/styles';
+import {Colours} from '../../constants/styles';
 
 const AvailableServiceItem = ({name, duration, cost}) => {
   const navigation = useNavigation();
@@ -11,6 +11,7 @@ const AvailableServiceItem = ({name, duration, cost}) => {
     <TouchableOpacity
       onPress={() => {
         navigation.navigate('DatesAvailableScreen');
+        console.log(`SELECTED SERVICE: ${name}`);
       }}>
       <View style={styles.root}>
         <View>

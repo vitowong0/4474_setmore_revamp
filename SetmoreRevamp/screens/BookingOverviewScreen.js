@@ -6,17 +6,54 @@ import {
   TouchableOpacity,
   StatusBar,
   Image,
+  Alert,
+  ScrollView,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
-import CustomButton from '../components/CustomButton';
-import TimeButton from '../components/TimeButton';
-
+import CustomButton from '../components/buttons/CustomButton';
+import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 function BookingOverviewScreen() {
+  const navigation = useNavigation();
+
+  const modifyButtonAlert = () =>
+    Alert.alert('Modify appointment', 'Are you sure?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        onPress: () => {
+          console.log('OK Pressed. Jumping to modify appointment.'),
+            navigation.navigate('TimesAvailableScreen', {
+              screen: 'Home',
+              params: {
+                screen: 'TimesAvailableScreen',
+              },
+            });
+        },
+      },
+    ]);
+
+  const cancelButtonAlert = () =>
+    Alert.alert('Cancel appointment', 'Are you sure?', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Appointment cancelled.'),
+      },
+    ]);
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
@@ -24,65 +61,63 @@ function BookingOverviewScreen() {
         <SubHeader headerTitle={'Booking Overview'} />
       </View>
       <View style={styles.bodyContainer}>
-        <View style={styles.bookingWithContainer}>
-          <Text style={styles.boldGrey}>Booking with:</Text>
-          <View style={styles.imageAndTextContainer}>
-            <View>
-              <View style={{alignItems: 'center'}}>
-                <Image style={styles.staffImage} source={staff} />
-                <Text style={styles.employee}>Briar</Text>
+        <ScrollView>
+          <View style={styles.bookingWithContainer}>
+            <Text style={styles.boldGrey}>Booked with</Text>
+            <View style={styles.imageAndTextContainer}>
+              <View>
+                <View style={{alignItems: 'center'}}>
+                  <Image style={styles.staffImage} source={staff} />
+                  <Text style={styles.employee}>Briar</Text>
+                </View>
               </View>
             </View>
           </View>
-        </View>
-        <View style={styles.serviceSelectionContainer}>
-          <Text style={styles.boldGrey}>Selected services</Text>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.smallGreenText}>Baby Glow Facial</Text>
-            <Text style={[styles.smallGreenText, {color: Colours.westerngrey}]}>
-              $100
+          <View style={styles.serviceSelectionContainer}>
+            <Text style={styles.boldGrey}>Selected services</Text>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              <Text style={styles.smallGreenText}>Baby Glow Facial</Text>
+              <Text
+                style={[styles.smallGreenText, {color: Colours.westerngrey}]}>
+                $100
+              </Text>
+            </View>
+            <Text style={styles.smallText}>1 hour</Text>
+            <Text style={styles.smallBoldText}>
+              Leave with a skin plan, a serious glow, and a feeling of complete
+              elation.
             </Text>
           </View>
-          <Text style={styles.smallText}>1 hour</Text>
-          <Text style={styles.smallBoldText}>
-            Leave with a skin plan, a serious glow, and a feeling of complete
-            elation.
-          </Text>
-        </View>
-        <View style={styles.dateTimeContainer}>
-          <Text style={styles.boldGreyDateTime}>Date selected</Text>
-          <Text style={styles.boldTurquoise}>Friday, April 7th, 2023</Text>
-          <Text style={styles.boldGreyDateTime}>Time selected</Text>
+          <View style={styles.dateTimeContainer}>
+            <Text style={styles.boldGreyDateTime}>Date selected</Text>
+            <Text style={styles.boldTurquoise}>Friday, April 7th, 2023</Text>
+            <Text style={styles.boldGreyDateTime}>Time selected</Text>
 
-          <View style={styles.timeContainer}>
-            <TimeButton text={'4:20 PM'} disableButton={false} />
+            <View style={styles.timeContainer}>
+              <TimeButton time={'4:20 PM'} disableButton={false} />
+            </View>
           </View>
-        </View>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => {
-              alert('Modify appointment? Y/N');
-            }}>
-            <CustomButton
-              text={'Modify'}
-              textColour={Colours.black}
-              backgroundColour={Colours.lightergrey}
-              buttonWidth={160}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              alert('Cancel appointment? Y/N');
-            }}>
-            <CustomButton
-              text={'Cancel'}
-              textColour={Colours.white}
-              backgroundColour={Colours.buttoncancel}
-              buttonWidth={160}
-            />
-          </TouchableOpacity>
-        </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity onPress={modifyButtonAlert}>
+              <CustomButton
+                text={'Modify'}
+                textColour={Colours.westerngrey}
+                backgroundColour={Colours.lightergrey}
+                buttonWidth={160}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={cancelButtonAlert}>
+              <CustomButton
+                text={'Cancel'}
+                textColour={Colours.white}
+                backgroundColour={Colours.buttoncancel}
+                buttonWidth={160}
+              />
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -133,7 +168,7 @@ const styles = StyleSheet.create({
   },
 
   dateTimeContainer: {
-    paddingVertical: 20,
+    paddingTop: 20,
     paddingHorizontal: 15,
   },
 

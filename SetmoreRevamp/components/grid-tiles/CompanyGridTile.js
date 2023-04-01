@@ -27,14 +27,30 @@ function CompanyGridTile({
 }) {
   const navigation = useNavigation();
 
-  const createTwoButtonAlert = () => {
-    Alert.alert('Alert Title', 'My Alert Msg', [
+  const hideCompanyAlert = () =>
+    Alert.alert('Hide this company?', '', [
       {
         text: 'Cancel',
         onPress: () => console.log('Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'OK', onPress: () => console.log('OK Pressed')},
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Hiding company.'),
+      },
+    ]);
+
+  const favouritesButtonAlert = () => {
+    Alert.alert('Remove from favourites?', '', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {
+        text: 'OK',
+        onPress: () => console.log('OK Pressed. Removing from favourites.'),
+      },
     ]);
   };
 
@@ -46,21 +62,20 @@ function CompanyGridTile({
             <Text style={styles.titleText}>{name}</Text>
           </View>
           <View>
-            <TouchableOpacity
-              onPress={() => {
-                alert('Hide and shit');
-              }}>
+            <TouchableOpacity onPress={hideCompanyAlert}>
               <Image style={styles.dotdotdot} source={dotdotdot} />
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.imageContainer}>
-          <Image style={styles.image} source={image} />
           <TouchableOpacity
             onPress={() => {
-              alert('Remove from favourites?');
+              navigation.navigate('CompanyDetailsScreen');
             }}>
-            <Image style={styles.whiteHeart} source={heartIcon} />
+            <Image style={styles.image} source={image} />
+            <TouchableOpacity onPress={favouritesButtonAlert}>
+              <Image style={styles.whiteHeart} source={heartIcon} />
+            </TouchableOpacity>
           </TouchableOpacity>
         </View>
       </View>

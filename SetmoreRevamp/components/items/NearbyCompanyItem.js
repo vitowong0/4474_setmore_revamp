@@ -2,9 +2,9 @@ import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import starIcon from '../assets/icons/star.png';
-import locationIcon from '../assets/icons/location-icon.png';
-import {Colours} from '../constants/styles';
+import starIcon from '../../assets/icons/star.png';
+import locationIcon from '../../assets/icons/location-icon.png';
+import {Colours} from '../../constants/styles';
 import {ScrollView} from 'react-native-virtualized-view';
 
 function NearbyCompanyItem({
@@ -22,7 +22,12 @@ function NearbyCompanyItem({
 
   function renderTimeButton(time) {
     return (
-      <TouchableOpacity key={time} onPress={() => console.log(time)}>
+      <TouchableOpacity
+        key={time}
+        onPress={() => {
+          navigation.navigate('CompanyDetailsScreen');
+          console.log(`SELECTED TIME: ${time}`);
+        }}>
         <View style={styles.individualTime}>
           <Text style={styles.timeText}>{time}</Text>
         </View>
@@ -48,7 +53,6 @@ function NearbyCompanyItem({
             <Text>{rating}</Text>
             <Image style={styles.littleIcons} source={starIcon} />
           </View>
-          {/* <View style={{flex: 0.1}}></View> */}
           <Text>{numReviews}</Text>
         </View>
 
@@ -73,6 +77,7 @@ function NearbyCompanyItem({
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('CompanyDetailsScreen');
+            console.log(`SELECTED COMPANY: ${name}`);
           }}>
           <Image style={styles.companyImage} source={image} />
         </TouchableOpacity>

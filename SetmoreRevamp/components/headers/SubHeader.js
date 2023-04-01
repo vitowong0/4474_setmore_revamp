@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import BackButton from '../BackButton';
+import BackButton from '../buttons/BackButton';
 import {Colours} from '../../constants/styles';
 
 // This SubHeader should take in 1 prop (just the header text)
