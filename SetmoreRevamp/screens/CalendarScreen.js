@@ -1,11 +1,33 @@
 import React from 'react';
-import {Text, View, StyleSheet, StatusBar, Dimensions} from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  Dimensions,
+  FlatList,
+} from 'react-native';
 import Calendar from '../components/Calendar';
 
 import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 
+import BookedAppointmentItem from '../components/BookedAppointmentItem';
+import {BOOKEDAPPOINTMENTS} from '../components/data/DummyBookedAppointments';
+
 function CalendarScreen() {
+  function renderBookedAppointmentItem(itemData) {
+    return (
+      <BookedAppointmentItem
+        id={itemData.item.id}
+        name={itemData.item.name}
+        date={itemData.item.date}
+        time={itemData.item.time}
+        image={itemData.item.image}
+      />
+    );
+  }
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
@@ -41,8 +63,12 @@ function CalendarScreen() {
             ]}
           />
         </View>
-        <View style={styles.bookedAppointments}>
-          <Text>Next appointment: Thursday March 30, 2023 at 4:20 PM</Text>
+        <View style={styles.bottomContainer}>
+          <FlatList
+            data={BOOKEDAPPOINTMENTS}
+            keyExtractor={item => item.id}
+            renderItem={renderBookedAppointmentItem}
+          />
         </View>
       </View>
     </View>
@@ -73,9 +99,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingTop: 20,
-
-    // borderColor: 'green',
-    // borderWidth: 1,
   },
 
   miniCirclePink: {
@@ -96,14 +119,13 @@ const styles = StyleSheet.create({
   },
 
   calendarContainer: {
-    // flex: 1,
-    // marginHorizontal: 20,
+    paddingBottom: 20,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Colours.westerngrey,
   },
 
-  bookedAppointments: {
+  bottomContainer: {
     flex: 1,
-    borderColor: 'red',
-    borderTopWidth: 1,
   },
 });
 

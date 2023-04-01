@@ -20,9 +20,6 @@ import scanIcon from '../assets/icons/og-scan.png';
 import NearbyCompanyItem from '../components/NearbyCompanyItem';
 import {NEARBYCOMPANYDATA} from '../components/data/DummyNearbyCompanyData';
 
-import MiniCompanyGridTile from '../components/grid-tiles/MiniCompanyGridTile';
-import {COMPANYDATAFOUR} from '../components/data/DummyCompanyDataFour';
-
 function SearchScreen() {
   function renderNearbyCompanyItem(itemData) {
     return (

@@ -4,6 +4,7 @@ import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import starIcon from '../assets/icons/star.png';
 import locationIcon from '../assets/icons/location-icon.png';
 import {Colours} from '../constants/styles';
+import {ScrollView} from 'react-native-virtualized-view';
 
 function NearbyCompanyItem({
   id,
@@ -82,9 +83,6 @@ const styles = StyleSheet.create({
     padding: 8,
     paddingHorizontal: 18,
     marginTop: 10,
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 
   ratingContainer: {
@@ -115,7 +113,7 @@ const styles = StyleSheet.create({
 
   individualTime: {
     alignItems: 'center',
-    marginRight: 10,
+    marginRight: 7,
     paddingHorizontal: 5,
     paddingVertical: 5,
     backgroundColor: Colours.darkturqouise,
@@ -157,6 +155,6 @@ const styles = StyleSheet.create({
     width: 115,
     height: 115,
 
-    borderRadius: 30,
+    borderRadius: 20,
   },
 });
