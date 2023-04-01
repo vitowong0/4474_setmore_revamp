@@ -1,27 +1,32 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 
-const ServiceItem = ({serviceName, duration, cost}) => {
+const AvailableServiceItem = ({name, duration, cost}) => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('DatesAvailableScreen');
+      }}>
       <View style={styles.root}>
         <View>
-          <Text style={styles.serviceName}>{serviceName}</Text>
+          <Text style={styles.serviceName}>{name}</Text>
           <View style={{paddingVertical: 3}} />
           <Text style={styles.duration}>{duration}</Text>
         </View>
         <View>
-          <Text style={styles.cost}>${cost}</Text>
+          <Text style={styles.cost}>{cost}</Text>
         </View>
       </View>
-      {/* </View> */}
     </TouchableOpacity>
   );
 };
 
-export default ServiceItem;
+export default AvailableServiceItem;
 
 const styles = StyleSheet.create({
   root: {

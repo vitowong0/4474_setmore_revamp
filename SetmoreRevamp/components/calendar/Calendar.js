@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Colours} from '../constants/styles';
+import {Colours} from '../../constants/styles';
 import {Calendar as NativeCalendar} from 'react-native-calendars';
 
 // Usage:

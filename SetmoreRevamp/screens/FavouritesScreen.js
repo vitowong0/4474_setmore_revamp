@@ -8,6 +8,7 @@ import {
   FlatList,
   ScrollView,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
 import {COMPANYDATA} from '../components/data/DummyCompanyData';
@@ -16,21 +17,28 @@ import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
 
 function FavouritesScreen() {
+  const navigation = useNavigation();
+
   function renderCompanyGridTile(itemData) {
     return (
-      <CompanyGridTile
-        id={itemData.item.id}
-        name={itemData.item.name}
-        image={itemData.item.image}
-        description={itemData.item.description}
-        rating={itemData.item.rating}
-        services={itemData.item.services}
-        staff={itemData.item.staff}
-        timesAvailable={itemData.item.timesAvailable}
-        duration={itemData.item.duration}
-        cost={itemData.item.cost}
-        heartIcon={itemData.item.heartIcon}
-      />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('CompanyDetailsScreen');
+        }}>
+        <CompanyGridTile
+          id={itemData.item.id}
+          name={itemData.item.name}
+          image={itemData.item.image}
+          description={itemData.item.description}
+          rating={itemData.item.rating}
+          services={itemData.item.services}
+          staff={itemData.item.staff}
+          timesAvailable={itemData.item.timesAvailable}
+          duration={itemData.item.duration}
+          cost={itemData.item.cost}
+          heartIcon={itemData.item.heartIcon}
+        />
+      </TouchableOpacity>
     );
   }
 

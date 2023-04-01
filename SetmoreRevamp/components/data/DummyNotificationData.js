@@ -1,4 +1,5 @@
 import Overview from '../models/NotificationOverview';
+
 import hairSalon from '../../assets/images/hairSalon.png';
 import capy from '../../assets/images/capy.png';
 import pottery from '../../assets/images/pottery.png';

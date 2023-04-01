@@ -1,31 +1,28 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 
-import {Colours} from '../../constants/styles';
+import {Colours} from '../constants/styles';
 
-function NotificationItem({id, image, companyName, detailText}) {
+function BookedAppointmentItem({id, name, date, time, image}) {
   return (
-    <View style={styles.root}>
+    <TouchableOpacity>
       <View style={styles.notificationContainer}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={image} />
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.companyName}>{companyName}</Text>
-          <Text style={styles.detailText}>{detailText}</Text>
+          <Text style={styles.companyName}>{name}</Text>
+          <Text style={styles.detailText}>{date}</Text>
+          <Text style={styles.detailText}>{time}</Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
-export default NotificationItem;
+export default BookedAppointmentItem;
 
 const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-  },
-
   notificationContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -46,6 +43,7 @@ const styles = StyleSheet.create({
   image: {
     height: 75,
     width: 75,
+    borderRadius: 37.5,
   },
 
   textContainer: {

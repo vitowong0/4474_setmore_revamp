@@ -1,11 +1,33 @@
 import React from 'react';
-import {Text, View, StyleSheet, StatusBar, Dimensions} from 'react-native';
-import Calendar from '../components/Calendar';
+import {
+  Text,
+  View,
+  StyleSheet,
+  StatusBar,
+  Dimensions,
+  FlatList,
+} from 'react-native';
+import Calendar from '../components/calendar/Calendar';
 
-import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
+import {Colours} from '../constants/styles';
+
+import BookedAppointmentItem from '../components/BookedAppointmentItem';
+import {BOOKEDAPPOINTMENTS} from '../components/data/DummyBookedAppointments';
 
 function CalendarScreen() {
+  function renderBookedAppointmentItem(itemData) {
+    return (
+      <BookedAppointmentItem
+        id={itemData.item.id}
+        name={itemData.item.name}
+        date={itemData.item.date}
+        time={itemData.item.time}
+        image={itemData.item.image}
+      />
+    );
+  }
+
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
@@ -27,22 +49,26 @@ function CalendarScreen() {
           <Calendar
             width={Dimensions.get('window').width}
             daysBooked={[
-              '2023-01-15',
-              '2023-02-24',
-              '2023-02-14',
-              '2023-02-28',
-              '2023-03-01',
-              '2023-03-10',
-              '2023-03-29',
-              '2023-03-30',
               '2023-04-01',
               '2023-04-02',
+              '2023-04-07',
+              '2023-04-09',
               '2023-04-13',
+              '2023-04-24',
+              '2023-04-26',
             ]}
           />
         </View>
-        <View style={styles.bookedAppointments}>
-          <Text>Next appointment: Thursday March 30, 2023 at 4:20 PM</Text>
+        <View style={styles.bottomContainer}>
+          <View
+            style={{paddingHorizontal: 10, paddingTop: 10, paddingBottom: 5}}>
+            <Text style={styles.upcomingText}>Upcoming appointments</Text>
+          </View>
+          <FlatList
+            data={BOOKEDAPPOINTMENTS}
+            keyExtractor={item => item.id}
+            renderItem={renderBookedAppointmentItem}
+          />
         </View>
       </View>
     </View>
@@ -73,9 +99,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     paddingTop: 20,
-
-    // borderColor: 'green',
-    // borderWidth: 1,
   },
 
   miniCirclePink: {
@@ -96,14 +119,20 @@ const styles = StyleSheet.create({
   },
 
   calendarContainer: {
-    // flex: 1,
-    // marginHorizontal: 20,
+    paddingBottom: 20,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Colours.westerngrey,
   },
 
-  bookedAppointments: {
+  bottomContainer: {
     flex: 1,
-    borderColor: 'red',
-    borderTopWidth: 1,
+  },
+
+  upcomingText: {
+    fontWeight: 700,
+    fontSize: 18,
+
+    color: Colours.westerngrey,
   },
 });
 

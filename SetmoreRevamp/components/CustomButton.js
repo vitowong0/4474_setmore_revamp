@@ -1,14 +1,16 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 
-const CustomButton = ({text, textColour, backgroundColour}) => {
+const CustomButton = ({text, textColour, backgroundColour, buttonWidth}) => {
   return (
-    <TouchableOpacity>
-      <View
-        style={[styles.buttonContainer, {backgroundColor: backgroundColour}]}>
-        <Text style={[styles.buttonText, {color: textColour}]}>{text}</Text>
-      </View>
-    </TouchableOpacity>
+    <View
+      style={[
+        styles.buttonContainer,
+        {backgroundColor: backgroundColour},
+        {width: buttonWidth},
+      ]}>
+      <Text style={[styles.buttonText, {color: textColour}]}>{text}</Text>
+    </View>
   );
 };
 
@@ -20,7 +22,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     // marginRight: 10,
-    marginLeft: 10,
+    // marginLeft: 10,
+    // width: 170,
+
+    // borderColor: 'red',
+    // borderWidth: 1,
   },
 
   buttonText: {

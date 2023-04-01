@@ -6,20 +6,21 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
 
+import StaffItem from '../components/StaffItem';
+import {STAFFDATA} from '../components/data/DummyStaff';
+
 import salon1 from '../assets/images/place-A7.png';
-import profilePic1 from '../assets/images/boywhatthehell.png';
-import profilePic2 from '../assets/images/liv.png';
-import profilePic3 from '../assets/images/briar.png';
-import profilePic4 from '../assets/images/capy.png';
 import star from '../assets/icons/star.png';
 
 function CompanyDetailsScreen({
+  route,
   name,
   image,
   description,
@@ -28,6 +29,18 @@ function CompanyDetailsScreen({
   staff,
 }) {
   const navigation = useNavigation();
+
+  function renderStaffItem(itemData) {
+    return (
+      <TouchableOpacity onPress={() => navigation.navigate('BookingScreen')}>
+        <StaffItem
+          id={itemData.item.id}
+          staffPhoto={itemData.item.staffPhoto}
+          staffName={itemData.item.staffName}
+        />
+      </TouchableOpacity>
+    );
+  }
 
   return (
     <View style={styles.root}>
@@ -76,35 +89,17 @@ function CompanyDetailsScreen({
               </TouchableOpacity>
             </View>
             <View style={{flexDirection: 'row'}}>
-              <ScrollView horizontal={true}>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('BookingScreen')}>
-                  <View style={styles.staffImageTextContainer}>
-                    <Image style={styles.profileImage} source={profilePic1} />
-                    <Text style={styles.staffName}>Annoying</Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('BookingScreen')}>
-                  <View style={styles.staffImageTextContainer}>
-                    <Image style={styles.profileImage} source={profilePic2} />
-                    <Text style={styles.staffName}>Mommy 1</Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('BookingScreen')}>
-                  <View style={styles.staffImageTextContainer}>
-                    <Image style={styles.profileImage} source={profilePic3} />
-                    <Text style={styles.staffName}>Mommy 2</Text>
-                  </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => navigation.navigate('BookingScreen')}>
-                  <View style={styles.staffImageTextContainer}>
-                    <Image style={styles.profileImage} source={profilePic4} />
-                    <Text style={styles.staffName}>God</Text>
-                  </View>
-                </TouchableOpacity>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={true}
+                scrollEventThrottle={200}
+                decelerationRate={'normal'}>
+                <FlatList
+                  data={STAFFDATA}
+                  keyExtractor={item => item.id}
+                  renderItem={renderStaffItem}
+                  numColumns={4}
+                />
               </ScrollView>
             </View>
           </View>

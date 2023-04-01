@@ -28,10 +28,13 @@ import NotificationsScreen from './screens/NotificationsScreen';
 import SettingsScreen from './screens/SettingsScreen';
 
 import BookingScreen from './screens/BookingScreen';
+import DatesAvailableScreen from './screens/DatesAvailableScreen';
+import TimesAvailableScreen from './screens/TimesAvailableScreen';
 import CompanyDetailsScreen from './screens/CompanyDetailsScreen';
 import BookingOverviewScreen from './screens/BookingOverviewScreen';
 
 import {Colours} from './constants/styles';
+import LoginScreen from './screens/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -107,7 +110,7 @@ function HomeTabs() {
         />
         <Tab.Screen
           name="Notifications"
-          component={NotificationsScreen}
+          component={NotificationStack}
           options={{
             tabBarIcon: ({focused}) =>
               focused ? (
@@ -133,11 +136,24 @@ function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Group>
-        <Stack.Screen name="Home2" component={HomeScreen} />
-        <Stack.Screen name="Settings" component={SettingsScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
         <Stack.Screen
           name="CompanyDetailsScreen"
           component={CompanyDetailsScreen}
+        />
+        <Stack.Screen name="BookingScreen" component={BookingScreen} />
+        <Stack.Screen
+          name="DatesAvailableScreen"
+          component={DatesAvailableScreen}
+        />
+        <Stack.Screen
+          name="TimesAvailableScreen"
+          component={TimesAvailableScreen}
+        />
+        <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
         />
       </Stack.Group>
     </Stack.Navigator>
@@ -154,6 +170,18 @@ function SearchStack() {
           component={CompanyDetailsScreen}
         />
         <Stack.Screen name="BookingScreen" component={BookingScreen} />
+        <Stack.Screen
+          name="DatesAvailableScreen"
+          component={DatesAvailableScreen}
+        />
+        <Stack.Screen
+          name="TimesAvailableScreen"
+          component={TimesAvailableScreen}
+        />
+        <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -169,6 +197,18 @@ function FavouritesStack() {
           component={CompanyDetailsScreen}
         />
         <Stack.Screen name="BookingScreen" component={BookingScreen} />
+        <Stack.Screen
+          name="DatesAvailableScreen"
+          component={DatesAvailableScreen}
+        />
+        <Stack.Screen
+          name="TimesAvailableScreen"
+          component={TimesAvailableScreen}
+        />
+        <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
+        />
       </Stack.Group>
     </Stack.Navigator>
   );
@@ -182,6 +222,19 @@ function CalendarStack() {
         <Stack.Screen
           name="BookingOverviewScreen"
           component={BookingOverviewScreen}
+        />
+      </Stack.Group>
+    </Stack.Navigator>
+  );
+}
+
+function NotificationStack() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Group>
+        <Stack.Screen
+          name="NotificationsScreen"
+          component={NotificationsScreen}
         />
       </Stack.Group>
     </Stack.Navigator>

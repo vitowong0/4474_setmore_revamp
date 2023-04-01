@@ -1,7 +1,7 @@
 class Overview {
-  constructor(id, postImage, companyName, detailText, timeAgo) {
+  constructor(id, image, companyName, detailText, timeAgo) {
     this.id = id;
-    this.postImage = postImage;
+    this.image = image;
     this.companyName = companyName;
     this.detailText = detailText;
     this.timeAgo = timeAgo;
