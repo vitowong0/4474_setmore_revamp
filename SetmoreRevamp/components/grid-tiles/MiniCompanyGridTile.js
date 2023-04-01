@@ -11,8 +11,6 @@ import {Colours} from '../../constants/styles';
 import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
-// import whiteheartfill from '../../assets/icons/white_heart_fill.png';
-// import whiteheartoutline from '../../assets/icons/white_heart_outline.png';
 
 function MiniCompanyGridTile({
   id,

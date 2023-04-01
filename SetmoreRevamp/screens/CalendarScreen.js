@@ -7,10 +7,10 @@ import {
   Dimensions,
   FlatList,
 } from 'react-native';
-import Calendar from '../components/Calendar';
+import Calendar from '../components/calendar/Calendar';
 
-import {Colours} from '../constants/styles';
 import Header from '../components/headers/Header';
+import {Colours} from '../constants/styles';
 
 import BookedAppointmentItem from '../components/BookedAppointmentItem';
 import {BOOKEDAPPOINTMENTS} from '../components/data/DummyBookedAppointments';
@@ -64,6 +64,10 @@ function CalendarScreen() {
           />
         </View>
         <View style={styles.bottomContainer}>
+          <View
+            style={{paddingHorizontal: 10, paddingTop: 10, paddingBottom: 5}}>
+            <Text style={styles.upcomingText}>Upcoming appointments</Text>
+          </View>
           <FlatList
             data={BOOKEDAPPOINTMENTS}
             keyExtractor={item => item.id}
@@ -126,6 +130,13 @@ const styles = StyleSheet.create({
 
   bottomContainer: {
     flex: 1,
+  },
+
+  upcomingText: {
+    fontWeight: 700,
+    fontSize: 18,
+
+    color: Colours.westerngrey,
   },
 });
 

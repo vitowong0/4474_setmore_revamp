@@ -42,7 +42,7 @@ function HomeScreen() {
       <View style={styles.header}>{<HomeHeader first_name={'fname'} />}</View>
       <View style={styles.bodyContainer}>
         <View style={styles.topContainer}>
-          <View style={(style = styles.topTextContainer)}>
+          <View style={styles.topTextContainer}>
             <Text style={styles.bigGreyText}>Available now</Text>
             <TouchableOpacity
               onPress={() => {

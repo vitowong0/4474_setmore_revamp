@@ -13,21 +13,20 @@ import SubHeader from '../components/headers/SubHeader';
 import CustomButton from '../components/CustomButton';
 import TimeButton from '../components/TimeButton';
 
+import staff from '../assets/images/briar.png';
+
 function BookingOverviewScreen() {
   return (
     <View style={styles.rootContainer}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Your appointment'} />
+        <SubHeader headerTitle={'Booking Overview'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bodyTextContainer}>
           <Text style={styles.boldText}>Booking with</Text>
           <View style={styles.staffContainer}>
-            <Image
-              source={require('../assets/images/briar.png')}
-              style={styles.image}
-            />
+            <Image source={staff} style={styles.image} />
             <Text style={styles.smallBoldText}>Briar</Text>
           </View>
 

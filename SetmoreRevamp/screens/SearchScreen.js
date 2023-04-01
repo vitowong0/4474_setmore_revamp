@@ -21,6 +21,8 @@ import NearbyCompanyItem from '../components/NearbyCompanyItem';
 import {NEARBYCOMPANYDATA} from '../components/data/DummyNearbyCompanyData';
 
 function SearchScreen() {
+  const navigation = useNavigation();
+
   function renderNearbyCompanyItem(itemData) {
     return (
       <NearbyCompanyItem
@@ -60,16 +62,17 @@ function SearchScreen() {
         </View>
 
         <View style={styles.topContainer}>
-          <View
-            style={{paddingHorizontal: 10, paddingTop: 10, paddingBottom: 5}}>
-            <Text style={styles.nearbyText}>7 companies nearby</Text>
-          </View>
           <ScrollView>
-            <FlatList
-              data={NEARBYCOMPANYDATA}
-              keyExtractor={item => item.id}
-              renderItem={renderNearbyCompanyItem}
-            />
+            <View style={styles.nearbyCompanyContainer}>
+              <Text style={styles.nearbyText}>7 companies nearby</Text>
+            </View>
+            <ScrollView>
+              <FlatList
+                data={NEARBYCOMPANYDATA}
+                keyExtractor={item => item.id}
+                renderItem={renderNearbyCompanyItem}
+              />
+            </ScrollView>
           </ScrollView>
         </View>
       </View>
@@ -112,53 +115,19 @@ const styles = StyleSheet.create({
 
   topContainer: {
     flex: 1,
+    paddingBottom: 10,
+  },
+
+  nearbyCompanyContainer: {
+    paddingHorizontal: 10,
+    paddingTop: 10,
+    paddingBottom: 5,
   },
 
   nearbyText: {
     fontWeight: 700,
     fontSize: 18,
-
     color: Colours.westerngrey,
-  },
-
-  bottomContainer: {
-    paddingTop: 10,
-    paddingBottom: 20,
-
-    borderColor: 'blue',
-    borderWidth: 1,
-  },
-
-  bodyText: {
-    fontWeight: 'bold',
-    fontSize: 18,
-    color: Colours.darkturqouise,
-    paddingHorizontal: 20,
-    textAlign: 'center',
-  },
-
-  topTextContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 5,
-    paddingBottom: 10,
-    paddingHorizontal: 20,
-
-    // borderColor: 'blue',
-    // borderWidth: 1,
-  },
-
-  bigGreyText: {
-    fontSize: 20,
-    fontWeight: 800,
-    color: Colours.westerngrey,
-  },
-
-  smallGreenText: {
-    fontSize: 16,
-    fontWeight: 700,
-    color: Colours.darkturqouise,
   },
 });
 

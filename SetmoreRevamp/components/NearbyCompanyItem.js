@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import starIcon from '../assets/icons/star.png';
 import locationIcon from '../assets/icons/location-icon.png';
@@ -17,6 +18,8 @@ function NearbyCompanyItem({
   style,
   timesAvailable,
 }) {
+  const navigation = useNavigation();
+
   function renderTimeButton(time) {
     return (
       <TouchableOpacity key={time} onPress={() => console.log(time)}>
@@ -60,12 +63,17 @@ function NearbyCompanyItem({
         </View>
 
         <View style={styles.timesContainer}>
-          <Text>{renderTimeButtons(timesAvailable)}</Text>
+          <ScrollView horizontal={true}>
+            <Text>{renderTimeButtons(timesAvailable)}</Text>
+          </ScrollView>
         </View>
       </View>
 
       <View style={styles.rightContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('CompanyDetailsScreen');
+          }}>
           <Image style={styles.companyImage} source={image} />
         </TouchableOpacity>
       </View>
@@ -87,7 +95,6 @@ const styles = StyleSheet.create({
 
   ratingContainer: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     alignItems: 'center',
 
     marginVertical: 2,
@@ -101,7 +108,6 @@ const styles = StyleSheet.create({
 
   priceContainer: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
     marginVertical: 2,
   },
 
@@ -114,13 +120,10 @@ const styles = StyleSheet.create({
   individualTime: {
     alignItems: 'center',
     marginRight: 7,
-    paddingHorizontal: 5,
-    paddingVertical: 5,
+    marginVertical: 5,
+    padding: 5,
     backgroundColor: Colours.darkturqouise,
     borderRadius: 7,
-
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
 
   timeText: {
@@ -130,9 +133,8 @@ const styles = StyleSheet.create({
   },
 
   leftContainer: {
-    // flex: 1,
-    // borderColor: 'green',
-    // borderWidth: 1,
+    flex: 1,
+    marginRight: 10,
   },
 
   name: {
@@ -154,7 +156,6 @@ const styles = StyleSheet.create({
   companyImage: {
     width: 115,
     height: 115,
-
     borderRadius: 20,
   },
 });
