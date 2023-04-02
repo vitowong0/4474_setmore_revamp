@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 15,
     marginHorizontal: 6,
+    paddingRight: 10,
     paddingVertical: 15,
 
     borderColor: Colours.westerngrey,
@@ -56,12 +57,12 @@ const styles = StyleSheet.create({
   companyName: {
     fontWeight: '700',
     paddingVertical: 3,
-    fontSize: 12,
+    fontSize: 16,
   },
 
   detailText: {
     fontWeight: '300',
     paddingVertical: 3,
-    fontSize: 14,
+    fontSize: 16,
   },
 });

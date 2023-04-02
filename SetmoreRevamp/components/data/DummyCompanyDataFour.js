@@ -34,7 +34,7 @@ export const COMPANYDATAFOUR = [
   ),
   new Overview(
     3,
-    'Manhattan Mavens LLC ',
+    'Manhattan Mavens',
     salon3,
     'A personal styling service that caters to busy professionals looking to elevate their wardrobe.',
     4.3,
@@ -47,7 +47,7 @@ export const COMPANYDATAFOUR = [
   ),
   new Overview(
     4,
-    'Central Park Chic Co. ',
+    'Central Park Chic',
     salon4,
     'A luxury lifestyle brand that offers high-end home decor, accessories, and clothing for the refined individual.',
     4.3,

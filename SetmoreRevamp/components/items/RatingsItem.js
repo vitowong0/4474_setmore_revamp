@@ -36,8 +36,8 @@ export default RatingsItem;
 const styles = StyleSheet.create({
   ratingsItemContainer: {
     // flex: 1,
-    marginBottom: 20,
-    paddingBottom: 10,
+    marginBottom: 10,
+    paddingVertical: 15,
     borderBottomColor: Colours.westerngrey,
     borderBottomWidth: 0.5,
   },
@@ -61,23 +61,26 @@ const styles = StyleSheet.create({
 
   scoreText: {
     color: 'gold',
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: 800,
   },
 
   star: {
-    width: 20,
-    height: 20,
+    width: 16,
+    height: 16,
   },
 
   nameText: {
-    fontSize: 22,
-    fontWeight: 800,
+    fontSize: 18,
+    fontWeight: 700,
     color: Colours.darkturqouise,
+    // fontWeight: '700',
+    // paddingVertical: 3,
+    // fontSize: 18,
   },
 
   reviewText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 600,
     color: Colours.westerngrey,
   },

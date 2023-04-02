@@ -17,11 +17,14 @@ import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
 import profilePic from '../assets/images/boywhatthehell.png';
 import details from '../assets/icons/details.png';
-import communications from '../assets/icons/communications.png';
+import communications from '../assets/icons/communication.png';
 import paymentMethods from '../assets/icons/paymentMethods.png';
 import help from '../assets/icons/help.png';
 import terms from '../assets/icons/terms.png';
 import language from '../assets/icons/language.png';
+import tutorial from '../assets/icons/tutorial.png';
+import issue from '../assets/icons/issue.png';
+import livechat from '../assets/icons/communications.png';
 import rightarrow from '../assets/icons/right-arrow.png';
 
 function SettingsScreen() {
@@ -166,7 +169,7 @@ function SettingsScreen() {
                   alignItems: 'center',
                 }}>
                 <View style={styles.iconContainer}>
-                  <Image style={styles.settingIcons} source={language} />
+                  <Image style={styles.settingIcons} source={tutorial} />
                 </View>
                 <Text style={styles.settingsText}>App Tutorial</Text>
               </View>
@@ -183,7 +186,7 @@ function SettingsScreen() {
                   alignItems: 'center',
                 }}>
                 <View style={styles.iconContainer}>
-                  <Image style={styles.settingIcons} source={language} />
+                  <Image style={styles.settingIcons} source={issue} />
                 </View>
                 <Text style={styles.settingsText}>Report Issue</Text>
               </View>
@@ -200,7 +203,7 @@ function SettingsScreen() {
                   alignItems: 'center',
                 }}>
                 <View style={styles.iconContainer}>
-                  <Image style={styles.settingIcons} source={language} />
+                  <Image style={styles.settingIcons} source={livechat} />
                 </View>
                 <Text style={styles.settingsText}>Live Chat</Text>
               </View>
@@ -247,6 +250,7 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 7,
     paddingHorizontal: 20,
+    paddingTop: 10,
     // paddingVertical: 10,
     justifyContent: 'center',
   },

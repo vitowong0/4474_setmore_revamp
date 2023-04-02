@@ -36,6 +36,7 @@ import BookingOverviewScreen from './screens/BookingOverviewScreen';
 import AllCompaniesScreen from './screens/AllCompaniesScreen';
 import AllStaffScreen from './screens/AllStaffScreen';
 import AllRatingsScreen from './screens/AllRatingsScreen';
+import BookingCancelledScreen from './screens/BookingCancelledScreen';
 
 import {Colours} from './constants/styles';
 import LoginScreen from './screens/LoginScreen';
@@ -160,6 +161,10 @@ function HomeStack() {
           component={BookingOverviewScreen}
         />
         <Stack.Screen
+          name="BookingCancelledScreen"
+          component={BookingCancelledScreen}
+        />
+        <Stack.Screen
           name="AllCompaniesScreen"
           component={AllCompaniesScreen}
         />
@@ -187,10 +192,18 @@ function SearchStack() {
         <Stack.Screen
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
+        />{' '}
+        <Stack.Screen
+          name="BookingCancelledScreen"
+          component={BookingCancelledScreen}
         />
         <Stack.Screen
           name="BookingOverviewScreen"
           component={BookingOverviewScreen}
+        />
+        <Stack.Screen
+          name="BookingCancelledScreen"
+          component={BookingCancelledScreen}
         />
         <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
         <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
@@ -221,6 +234,10 @@ function FavouritesStack() {
           name="BookingOverviewScreen"
           component={BookingOverviewScreen}
         />
+        <Stack.Screen
+          name="BookingCancelledScreen"
+          component={BookingCancelledScreen}
+        />
         <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
         <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
       </Stack.Group>
@@ -236,6 +253,10 @@ function CalendarStack() {
         <Stack.Screen
           name="BookingOverviewScreen"
           component={BookingOverviewScreen}
+        />
+        <Stack.Screen
+          name="BookingCancelledScreen"
+          component={BookingCancelledScreen}
         />
       </Stack.Group>
     </Stack.Navigator>
