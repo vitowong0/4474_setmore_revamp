@@ -25,21 +25,14 @@ function TimesAvailableScreen() {
     Alert.alert('Book appointment?', '', [
       {
         text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed. Appointment not booked'),
+        onPress: () => console.log('APPOINTMENT NOT BOOKED: Cancel Pressed'),
         style: 'cancel',
       },
       {
         text: 'Confirm',
         onPress: () => {
-          console.log(
-            'Confirm pressed. Appointment booked. Jumping to BookingOverview',
-          ),
-            navigation.navigate('BookingOverviewScreen', {
-              screen: 'Calendar',
-              params: {
-                screen: 'BookingOverviewScreen',
-              },
-            });
+          console.log('APPOINTMENT BOOKED: Going to BookingOverviewScreen'),
+            navigation.navigate('BookingOverviewScreen');
         },
       },
     ]);

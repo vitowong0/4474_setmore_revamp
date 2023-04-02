@@ -156,6 +156,10 @@ function HomeStack() {
           component={TimesAvailableScreen}
         />
         <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
+        />
+        <Stack.Screen
           name="AllCompaniesScreen"
           component={AllCompaniesScreen}
         />
@@ -184,6 +188,10 @@ function SearchStack() {
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
         />
+        <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
+        />
         <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
         <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />
       </Stack.Group>
@@ -208,6 +216,10 @@ function FavouritesStack() {
         <Stack.Screen
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
+        />
+        <Stack.Screen
+          name="BookingOverviewScreen"
+          component={BookingOverviewScreen}
         />
         <Stack.Screen name="AllStaffScreen" component={AllStaffScreen} />
         <Stack.Screen name="AllRatingsScreen" component={AllRatingsScreen} />

@@ -7,7 +7,7 @@ import {
   Text,
 } from 'react-native';
 
-import NotificationItem from '../components/notifications/NotificationItem';
+import NotificationItem from '../components/items/NotificationItem';
 import {NOTIFICATIONSDATA} from '../components/data/DummyNotificationData';
 
 import {Colours} from '../constants/styles';

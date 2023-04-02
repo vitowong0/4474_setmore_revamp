@@ -17,6 +17,8 @@ import {Colours} from '../constants/styles';
 
 import StaffItem from '../components/items/StaffItem';
 import {STAFFDATA} from '../components/data/DummyStaff';
+import RatingsItem from '../components/items/RatingsItem';
+import {ALLRATINGS} from '../components/data/DummyRatingsData';
 
 function AllRatingsScreen() {
   const navigation = useNavigation();
@@ -31,6 +33,17 @@ function AllRatingsScreen() {
     );
   }
 
+  function renderRatingItem(itemData) {
+    return (
+      <RatingsItem
+        id={itemData.item.id}
+        score={itemData.item.score}
+        name={itemData.item.name}
+        review={itemData.item.review}
+      />
+    );
+  }
+
   return (
     <View style={styles.root}>
       <View style={styles.header}>
@@ -38,9 +51,9 @@ function AllRatingsScreen() {
       </View>
       <View style={styles.bodyContainer}>
         <FlatList
-          data={STAFFDATA}
+          data={ALLRATINGS}
           keyExtractor={item => item.id}
-          renderItem={renderStaffItem}
+          renderItem={renderRatingItem}
           numColumns={1}
         />
       </View>
@@ -64,6 +77,7 @@ const styles = StyleSheet.create({
     flex: 7,
     backgroundColor: Colours.white,
     paddingHorizontal: 20,
+    paddingTop: 20,
 
     borderTopWidth: 1,
     borderTopColor: 'red',

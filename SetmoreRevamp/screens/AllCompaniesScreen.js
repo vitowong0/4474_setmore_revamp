@@ -15,10 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
 
-import CompanyGridTile from '../components/grid-tiles/CompanyGridTile';
-import {COMPANYDATATWO} from '../components/data/DummyCompanyDataTwo';
-import {COMPANYDATATHREE} from '../components/data/DummyCompanyDataThree';
-import {COMPANYDATAFOUR} from '../components/data/DummyCompanyDataFour';
+import AllCompaniesGridTile from '../components/grid-tiles/AllCompaniesGridTile';
 import {ALLCOMPANYDATA} from '../components/data/DummyAllCompaniesData';
 
 function AllCompaniesScreen() {
@@ -26,7 +23,7 @@ function AllCompaniesScreen() {
 
   function renderCompanyGridTile(itemData) {
     return (
-      <CompanyGridTile
+      <AllCompaniesGridTile
         id={itemData.item.id}
         name={itemData.item.name}
         image={itemData.item.image}

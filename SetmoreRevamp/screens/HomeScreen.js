@@ -73,7 +73,7 @@ function HomeScreen() {
               <Text style={styles.bigGreyText}>Recommended for you</Text>
               <TouchableOpacity
                 onPress={() => {
-                  alert('bringing you to View all page');
+                  navigation.navigate('AllCompaniesScreen');
                 }}>
                 <Text style={styles.smallGreenText}>View all</Text>
               </TouchableOpacity>
