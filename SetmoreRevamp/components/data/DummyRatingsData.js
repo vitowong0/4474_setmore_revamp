@@ -21,8 +21,20 @@ export const ALLRATINGS = [
   ),
   new Overview(
     4,
-    5.0,
+    4.5,
     'Mike Wilcox',
     "The ambianace was nice and soothing. The masseuse was a little crazy but hell, I'm not complaining.",
+  ),
+  new Overview(
+    5,
+    4.2,
+    'Johnny Blaze',
+    'The Sizzle Spot really knows how to turn up the heat! I think my taste buds just got a hot date.',
+  ),
+  new Overview(
+    6,
+    3.9,
+    'Peter Parker',
+    "The Thrill Factory was a web-slinging good time! I don't know what got my spider-senses tingling more, the rides or the snacks.",
   ),
 ];

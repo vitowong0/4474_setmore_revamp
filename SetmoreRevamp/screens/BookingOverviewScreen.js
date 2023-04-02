@@ -24,19 +24,16 @@ function BookingOverviewScreen() {
     Alert.alert('Modify appointment', 'Are you sure?', [
       {
         text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
+        onPress: () => console.log('APPOINTMENT NOT MODIFIED: Cancel Pressed'),
         style: 'cancel',
       },
       {
         text: 'OK',
         onPress: () => {
-          console.log('OK Pressed. Jumping to modify appointment.'),
-            navigation.navigate('TimesAvailableScreen', {
-              screen: 'Home',
-              params: {
-                screen: 'TimesAvailableScreen',
-              },
-            });
+          console.log(
+            'MODIFYING APPOINTMENT: Jumping to DatesAvailableScreen.',
+          ),
+            navigation.navigate('DatesAvailableScreen');
         },
       },
     ]);
@@ -45,12 +42,12 @@ function BookingOverviewScreen() {
     Alert.alert('Cancel appointment', 'Are you sure?', [
       {
         text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
+        onPress: () => console.log('APPOINTMENT NOT CANCELLED: Cancel Pressed'),
         style: 'cancel',
       },
       {
         text: 'OK',
-        onPress: () => console.log('OK Pressed. Appointment cancelled.'),
+        onPress: () => console.log('APPOINTMENT CANCELLED: Ok Pressed'),
       },
     ]);
 

@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import dotdotdot from '../../assets/icons/dotdotdot.png';
 
-function CompanyGridTile({
+function AllCompaniesGridTile({
   id,
   name,
   image,
@@ -41,7 +41,7 @@ function CompanyGridTile({
     ]);
 
   const favouritesButtonAlert = () => {
-    Alert.alert('Remove from favourites?', '', [
+    Alert.alert('Add to favourites?', '', [
       {
         text: 'Cancel',
         onPress: () => console.log('Cancel Pressed'),
@@ -49,7 +49,7 @@ function CompanyGridTile({
       },
       {
         text: 'OK',
-        onPress: () => console.log('OK Pressed. Removing from favourites.'),
+        onPress: () => console.log('ADDING TO FAVOURITES: OK Pressed'),
       },
     ]);
   };
@@ -83,7 +83,7 @@ function CompanyGridTile({
   );
 }
 
-export default CompanyGridTile;
+export default AllCompaniesGridTile;
 
 const styles = StyleSheet.create({
   root: {

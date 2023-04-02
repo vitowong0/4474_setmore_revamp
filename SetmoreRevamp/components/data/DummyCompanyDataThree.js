@@ -8,9 +8,9 @@ import heartoutline from '../../assets/icons/white_heart_outline.png';
 export const COMPANYDATATHREE = [
   new Overview(
     1,
-    'Company3',
+    'Black Widow Inc.',
     salon1,
-    'blah blah description 1',
+    'A high-end fashion line that specializes in all-black clothing with a seductive edge.',
     4.5,
     ['Manicure', 'Pedicure', 'Nail Art'],
     ['Sarah', 'Emily', 'Alex'],
@@ -21,9 +21,9 @@ export const COMPANYDATATHREE = [
   ),
   new Overview(
     2,
-    'Serenity Spa',
+    'Dreamy Nights Ltd.',
     salon2,
-    'blah blah description 2',
+    "A brand that offers high-quality sleepwear, from silk robes to satin pajamas, for a comfortable and stylish night's sleep.",
     4.0,
     ['Facial', 'Massage', 'Body Treatment'],
     ['Jessica', 'Bella', 'John'],
@@ -34,9 +34,9 @@ export const COMPANYDATATHREE = [
   ),
   new Overview(
     3,
-    'Skin Medical Aesthetics',
+    'Temptation Lounge Ltd. ',
     salon3,
-    'blah blah description 3',
+    'An exclusive club where patrons can indulge in their desires in a discreet and sophisticated atmosphere.',
     4.3,
     ['Hydra Facial', 'PRP', 'Cool Peel'],
     ['Sae Eun', 'Alyssa', 'Rachel'],
@@ -47,9 +47,9 @@ export const COMPANYDATATHREE = [
   ),
   new Overview(
     4,
-    "Vito's Mystery Restaurant",
+    'Raven & Rose Inc. ',
     salon4,
-    "enjoy vito's delicious meat for free",
+    'A fashion brand that combines dark and romantic elements to create elegant and mysterious clothing.',
     4.3,
     ['Facial', 'Massage', 'Back Breaking'],
     ['Vito'],
