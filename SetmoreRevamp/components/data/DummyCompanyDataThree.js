@@ -34,7 +34,7 @@ export const COMPANYDATATHREE = [
   ),
   new Overview(
     3,
-    'Temptation Lounge Ltd. ',
+    'Temptation Lounge',
     salon3,
     'An exclusive club where patrons can indulge in their desires in a discreet and sophisticated atmosphere.',
     4.3,
@@ -47,7 +47,7 @@ export const COMPANYDATATHREE = [
   ),
   new Overview(
     4,
-    'Raven & Rose Inc. ',
+    'Raven & Rose Inc.',
     salon4,
     'A fashion brand that combines dark and romantic elements to create elegant and mysterious clothing.',
     4.3,

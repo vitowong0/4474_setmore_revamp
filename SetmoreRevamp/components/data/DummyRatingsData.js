@@ -10,8 +10,8 @@ export const ALLRATINGS = [
   new Overview(
     2,
     2.5,
-    'Anonymous Capybara',
-    'The place smelt like seafood even though it was a spa. The smell lingered for a few hours. Would not recommend.',
+    'Luxe Resident',
+    'The place smelt like seafood even though it was a spa. The smell lingered on me for a few hours. Would not recommend.',
   ),
   new Overview(
     3,
@@ -27,14 +27,14 @@ export const ALLRATINGS = [
   ),
   new Overview(
     5,
-    4.2,
-    'Johnny Blaze',
-    'The Sizzle Spot really knows how to turn up the heat! I think my taste buds just got a hot date.',
+    3.9,
+    'Peter Parker',
+    "The Thrill Factory was a web-slinging good time! I don't know what got my spider-senses tingling more, the rides or the snacks.",
   ),
   new Overview(
     6,
     3.9,
-    'Peter Parker',
-    "The Thrill Factory was a web-slinging good time! I don't know what got my spider-senses tingling more, the rides or the snacks.",
+    'Bread Cat Owner',
+    'My cats had a really fun time here. They enjoyed the stuffed animals, treats, and napping area. Hup hup!',
   ),
 ];

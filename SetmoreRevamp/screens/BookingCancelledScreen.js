@@ -3,63 +3,68 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
-  ScrollView,
   TouchableOpacity,
+  StatusBar,
+  Image,
   Alert,
+  ScrollView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import SubHeader from '../components/headers/SubHeader';
 import {Colours} from '../constants/styles';
+import SubHeader from '../components/headers/SubHeader';
+import Header from '../components/headers/Header';
+import CustomButton from '../components/buttons/CustomButton';
 import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
-import CustomButton from '../components/buttons/CustomButton';
-import CustomImageButton from '../components/buttons/CustomImageButton';
-import bell_white from '../assets/icons/bell_white.png';
 
-function TimesAvailableScreen() {
+function BookingCancelledScreen({route}) {
   const navigation = useNavigation();
 
-  const bookAppointmentAlert = () =>
-    Alert.alert('Book appointment', 'Are you sure?', [
+  const modifyButtonAlert = () =>
+    Alert.alert('Modify appointment', 'Are you sure?', [
       {
         text: 'Cancel',
-        onPress: () => console.log('APPOINTMENT NOT BOOKED: Cancel Pressed'),
+        onPress: () => console.log('APPOINTMENT NOT MODIFIED: Cancel Pressed'),
         style: 'cancel',
       },
       {
-        text: 'Confirm',
+        text: 'OK',
         onPress: () => {
-          console.log('APPOINTMENT BOOKED: Going to BookingOverviewScreen'),
-            navigation.navigate('BookingOverviewScreen');
+          console.log(
+            'MODIFYING APPOINTMENT: Jumping to DatesAvailableScreen.',
+          ),
+            navigation.navigate('DatesAvailableScreen');
         },
       },
     ]);
 
-  const contactButtonAlert = () =>
-    Alert.alert('Contact staff', 'Briar', [
-      {
-        text: 'Open iMessage',
-        onPress: () => console.log('Open messages pressed'),
-      },
+  const cancelButtonAlert = () =>
+    Alert.alert('Cancel appointment', 'Are you sure?', [
       {
         text: 'Cancel',
-        onPress: () => console.log('Cancel Pressed'),
+        onPress: () => console.log('APPOINTMENT NOT CANCELLED: Cancel Pressed'),
         style: 'cancel',
       },
-      {text: 'Open Mail', onPress: () => console.log('Open mail pressed')},
+      {
+        text: 'OK',
+        onPress: () => {
+          console.log('APPOINTMENT CANCELLED: Jumping back.'),
+            navigation.goBack();
+        },
+      },
     ]);
 
   return (
     <View style={styles.root}>
+      <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Times Available'} />
+        <Header headerTitle={'Booking Cancelled'} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>
           <View style={styles.bookingWithContainer}>
-            <Text style={styles.boldGrey}>Booking with:</Text>
+            <Text style={styles.boldGrey}>Booked with</Text>
             <View style={styles.imageAndTextContainer}>
               <View>
                 <View style={{alignItems: 'center'}}>
@@ -69,7 +74,6 @@ function TimesAvailableScreen() {
               </View>
             </View>
           </View>
-
           <View style={styles.serviceSelectionContainer}>
             <Text style={styles.boldGrey}>Selected services</Text>
             <View
@@ -86,47 +90,35 @@ function TimesAvailableScreen() {
               elation.
             </Text>
           </View>
+          <View style={styles.dateTimeContainer}>
+            <Text style={styles.boldGreyDateTime}>Date selected</Text>
+            <Text style={styles.boldTurquoise}>Friday, April 7th, 2023</Text>
+            <Text style={styles.boldGreyDateTime}>Time selected</Text>
 
-          <View style={styles.bottomContainer}>
-            <View style={styles.dateTimeContainer}>
-              <Text style={styles.boldGreyDateTime}>Date selected</Text>
-              <Text style={styles.boldTurquoise}>Friday, April 7th, 2023</Text>
-              <Text style={styles.boldGreyDateTime}>Available times</Text>
+            <View style={styles.timeContainer}>
+              <TimeButton time={'4:20 PM'} disableButton={false} />
+            </View>
+          </View>
 
-              <View style={styles.timeContainer}>
-                <ScrollView horizontal={true}>
-                  <TimeButton time={'9:30 AM'} disableButton={false} />
-                  <TimeButton time={'12:30 PM'} disableButton={false} />
-                  <TimeButton time={'4:20 PM'} disableButton={false} />
-                  <TimeButton time={'5:00 PM'} disableButton={false} />
-                </ScrollView>
-              </View>
-
-              <View style={styles.bookAppointmentContainer}>
-                <TouchableOpacity onPress={bookAppointmentAlert}>
-                  <CustomButton
-                    text={'Book appointment'}
-                    textColour={Colours.white}
-                    backgroundColour={Colours.pastelgreen}
-                    buttonWidth={200}
-                  />
-                </TouchableOpacity>
-              </View>
-
-              <View style={styles.unavailableTimeContainer}>
-                <Text style={styles.smallBoldTextTwo}>
-                  Need a time that isn't available?
-                </Text>
-                <TouchableOpacity onPress={contactButtonAlert}>
-                  <CustomImageButton
-                    image={bell_white}
-                    text={'Contact staff'}
-                    textColour={Colours.white}
-                    backgroundColour={Colours.pastelorange}
-                    buttonWidth={180}
-                  />
-                </TouchableOpacity>
-              </View>
+          <View style={styles.buttonContainer}>
+            <CustomButton
+              text={'This booking has been cancelled'}
+              textColour={Colours.white}
+              backgroundColour={Colours.buttoncancel}
+              buttonWidth={330}
+            />
+            <View style={{paddingTop: 25}}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('HomeScreen');
+                }}>
+                <CustomButton
+                  text={'Go Home'}
+                  textColour={Colours.westerngrey}
+                  backgroundColour={Colours.pastelturquoise}
+                  buttonWidth={120}
+                />
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>
@@ -135,7 +127,7 @@ function TimesAvailableScreen() {
   );
 }
 
-export default TimesAvailableScreen;
+export default BookingCancelledScreen;
 
 const styles = StyleSheet.create({
   root: {
@@ -176,32 +168,23 @@ const styles = StyleSheet.create({
     backgroundColor: Colours.pastelturquoise,
   },
 
-  bottomContainer: {
-    paddingBottom: 20,
-  },
-
   dateTimeContainer: {
-    paddingVertical: 20,
+    paddingTop: 20,
     paddingHorizontal: 15,
   },
 
   timeContainer: {
-    flexDirection: 'row',
     paddingTop: 15,
     paddingLeft: 10,
   },
 
-  bookAppointmentContainer: {
+  buttonContainer: {
     paddingTop: 30,
-    flexDirection: 'row',
+    // flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingLeft: 10,
     justifyContent: 'space-evenly',
-  },
-
-  unavailableTimeContainer: {
-    paddingTop: 35,
-    paddingLeft: 10,
-    alignItems: 'center',
   },
 
   boldGrey: {
@@ -252,26 +235,9 @@ const styles = StyleSheet.create({
     color: Colours.westerngrey,
   },
 
-  smallBoldTextTwo: {
-    fontSize: 14,
-    fontWeight: '600',
-    paddingLeft: 5,
-    paddingTop: 10,
-    paddingBottom: 5,
-    color: Colours.westerngrey,
-  },
-
   employee: {
     fontSize: 14,
     color: Colours.westerngrey,
     fontWeight: 800,
-  },
-
-  bell: {
-    width: 50,
-    height: 50,
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 });

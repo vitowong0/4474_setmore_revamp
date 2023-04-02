@@ -3,6 +3,7 @@ class Overview {
     id,
     name,
     image,
+    description,
     rating,
     numReviews,
     distance,
@@ -13,6 +14,7 @@ class Overview {
     this.id = id;
     this.name = name;
     this.image = image;
+    this.description = description;
     this.rating = rating;
     this.numReviews = numReviews;
     this.distance = distance;

@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
   },
 
   unavailableView: {
-    backgroundColor: Colours.westernpurple,
+    backgroundColor: Colours.pastelturquoise,
+    opacity: 0.5,
   },
 });

@@ -116,9 +116,6 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 7,
     backgroundColor: Colours.white,
-
-    borderTopWidth: 1,
-    borderTopColor: 'red',
   },
 
   bookingWithContainer: {

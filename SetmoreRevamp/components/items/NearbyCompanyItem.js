@@ -11,6 +11,7 @@ function NearbyCompanyItem({
   id,
   name,
   image,
+  description,
   rating,
   numReviews,
   distance,
@@ -25,7 +26,18 @@ function NearbyCompanyItem({
       <TouchableOpacity
         key={time}
         onPress={() => {
-          navigation.navigate('CompanyDetailsScreen');
+          navigation.navigate('CompanyDetailsScreen', {
+            id: id,
+            name: name,
+            image: image,
+            description: description,
+            rating: rating,
+            numReviews: numReviews,
+            distance: distance,
+            dollarSign: dollarSign,
+            style: style,
+            timesAvailable: timesAvailable,
+          });
           console.log(`SELECTED TIME: ${time}`);
         }}>
         <View style={styles.individualTime}>
@@ -43,7 +55,6 @@ function NearbyCompanyItem({
     <View style={styles.nearbyCompanyContainer}>
       <View style={styles.leftContainer}>
         <Text style={styles.name}>{name}</Text>
-
         <View style={styles.ratingContainer}>
           <View
             style={{
@@ -76,7 +87,18 @@ function NearbyCompanyItem({
       <View style={styles.rightContainer}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('CompanyDetailsScreen');
+            navigation.navigate('CompanyDetailsScreen', {
+              id: id,
+              name: name,
+              image: image,
+              description: description,
+              rating: rating,
+              numReviews: numReviews,
+              distance: distance,
+              dollarSign: dollarSign,
+              style: style,
+              timesAvailable: timesAvailable,
+            });
             console.log(`SELECTED COMPANY: ${name}`);
           }}>
           <Image style={styles.companyImage} source={image} />

@@ -17,11 +17,24 @@ import CustomButton from '../components/buttons/CustomButton';
 import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
 
-function BookingOverviewScreen() {
+function BookingOverviewScreen({route}) {
+  // const {
+  //   id,
+  //   name,
+  //   image,
+  //   description,
+  //   rating,
+  //   services,
+  //   staff,
+  //   timesAvailable,
+  //   duration,
+  //   cost,
+  //   heartIcon,
+  // } = route.params;
   const navigation = useNavigation();
 
   const modifyButtonAlert = () =>
-    Alert.alert('Modify appointment', 'Are you sure?', [
+    Alert.alert('Modify appointment', 'Select a new date and time', [
       {
         text: 'Cancel',
         onPress: () => console.log('APPOINTMENT NOT MODIFIED: Cancel Pressed'),
@@ -47,7 +60,12 @@ function BookingOverviewScreen() {
       },
       {
         text: 'OK',
-        onPress: () => console.log('APPOINTMENT CANCELLED: Ok Pressed'),
+        onPress: () => {
+          console.log(
+            'APPOINTMENT CANCELLED: Jumping to BookingCancelledScreen.',
+          ),
+            navigation.navigate('BookingCancelledScreen');
+        },
       },
     ]);
 
@@ -135,9 +153,6 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 7,
     backgroundColor: Colours.white,
-
-    borderTopWidth: 1,
-    borderTopColor: 'red',
   },
 
   bookingWithContainer: {
@@ -179,9 +194,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: 10,
     justifyContent: 'space-evenly',
-
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
 
   boldGrey: {

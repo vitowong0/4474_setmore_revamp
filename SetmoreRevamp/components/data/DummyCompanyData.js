@@ -34,7 +34,7 @@ export const COMPANYDATA = [
   ),
   new Overview(
     3,
-    'Skin Medical Aesthetics',
+    'Skin Medical Inc.',
     salon3,
     'Our medical aesthetics team offers a variety of advanced skin treatments, customized to meet the unique needs of each client.',
     4.3,
@@ -47,9 +47,9 @@ export const COMPANYDATA = [
   ),
   new Overview(
     4,
-    "Vito's Mystery Restaurant",
+    "Vito's Restaurant",
     salon4,
-    "Enjoy an unforgettable dining experience at Vito's Mystery Restaurant, where every dish is a surprise and every visit is a new adventure.",
+    "Enjoy an unforgettable dining experience at Vito's Restaurant, where every dish is a surprise and every visit is a new adventure.",
     4.3,
     ['Facial', 'Massage', 'Back Breaking'],
     ['Vito'],

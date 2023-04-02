@@ -19,22 +19,39 @@ import {STAFFDATA} from '../components/data/DummyStaff';
 import salon1 from '../assets/images/place-A7.png';
 import star from '../assets/icons/star.png';
 
-function CompanyDetailsScreen({
-  route,
-  name,
-  image,
-  description,
-  rating,
-  services,
-  staff,
-}) {
+function CompanyDetailsScreen({route}) {
+  const {
+    // id,
+    name,
+    image,
+    description,
+    rating,
+    services,
+    staff,
+    timesAvailable,
+    duration,
+    cost,
+    heartIcon,
+  } = route.params;
   const navigation = useNavigation();
 
   function renderStaffItem(itemData) {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('BookingScreen');
+          navigation.navigate('BookingScreen', {
+            // id: id,
+            name: name,
+            image: image,
+            description: description,
+            rating: rating,
+            services: services,
+            staff: staff,
+            timesAvailable: timesAvailable,
+            duration: duration,
+            cost: cost,
+            heartIcon: heartIcon,
+          });
           console.log(`SELECTED STAFF: ${itemData.item.staffName}`);
         }}>
         <StaffItem
@@ -49,25 +66,21 @@ function CompanyDetailsScreen({
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <SubHeader headerTitle={'Company Details'} />
+        <SubHeader headerTitle={name} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>
           <View style={styles.imageContainer}>
-            <Image style={styles.image} source={salon1} />
+            <Image style={styles.image} source={image} />
           </View>
           <View style={styles.aboutDescriptionContainer}>
             <Text style={styles.headerText}>About</Text>
-            <Text style={styles.descriptionText}>
-              A café, a restaurant, a spa, an apothecary. Linnaean is a
-              multi-hyphenate gathering place for the surrounding neighbourhood
-              in Nine Elms and beyond. {description}
-            </Text>
+            <Text style={styles.descriptionText}>{description}</Text>
           </View>
           <View style={styles.ratingContainer}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={styles.headerText}>Ratings</Text>
-              <Text style={styles.ratingNumberText}>4.5{rating}</Text>
+              <Text style={styles.ratingNumberText}>{rating}</Text>
               <Image
                 style={{width: 20, height: 20, marginLeft: 3, marginBottom: 2}}
                 source={star}
@@ -129,9 +142,6 @@ const styles = StyleSheet.create({
     flex: 7,
     backgroundColor: Colours.white,
     // padding: 20,
-
-    borderColor: 'red',
-    borderTopWidth: 1,
   },
 
   imageContainer: {

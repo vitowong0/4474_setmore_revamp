@@ -14,7 +14,7 @@ import {useNavigation} from '@react-navigation/native';
 
 import {Colours} from '../constants/styles';
 import SubHeader from '../components/headers/SubHeader';
-import staff from '../assets/images/briar.png';
+import staffPic from '../assets/images/briar.png';
 
 import SelectServiceItem from '../components/items/SelectServiceItem';
 import {SERVICESDATA} from '../components/data/DummyServices';
@@ -22,7 +22,20 @@ import {SERVICESDATA} from '../components/data/DummyServices';
 import AvailableServiceItem from '../components/items/AvailableServiceItem';
 import {SERVICESAVAILABLEDATA} from '../components/data/DummyServicesAvailable';
 
-function BookingScreen() {
+function BookingScreen({route}) {
+  const {
+    id,
+    name,
+    image,
+    description,
+    rating,
+    services,
+    staff,
+    timesAvailable,
+    duration,
+    cost,
+    heartIcon,
+  } = route.params;
   const navigation = useNavigation();
 
   function renderSelectServiceItem(itemData) {
@@ -61,7 +74,7 @@ function BookingScreen() {
           <View style={styles.imageAndTextContainer}>
             <View>
               <View style={{alignItems: 'center'}}>
-                <Image style={styles.staffImage} source={staff} />
+                <Image style={styles.staffImage} source={staffPic} />
                 <Text style={styles.employee}>Briar</Text>
               </View>
             </View>
@@ -108,9 +121,6 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 7,
     backgroundColor: 'white',
-
-    borderTopColor: 'red',
-    borderTopWidth: 1,
   },
 
   bookingWithContainer: {

@@ -42,7 +42,7 @@ function HomeScreen() {
   return (
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
-      <View style={styles.header}>{<HomeHeader first_name={'fname'} />}</View>
+      <View style={styles.header}>{<HomeHeader first_name={'Vito'} />}</View>
       <View style={styles.bodyContainer}>
         <ScrollView>
           <View style={styles.topContainer}>
@@ -112,17 +112,10 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
-
-    borderColor: 'red',
-    borderTopWidth: 1,
   },
 
   topContainer: {
-    // flex: 1,
     paddingVertical: 10,
-
-    // borderColor: 'green',
-    // borderWidth: 1,
   },
 
   topTextContainer: {
@@ -132,9 +125,6 @@ const styles = StyleSheet.create({
     marginTop: 5,
     paddingVertical: 10,
     paddingHorizontal: 20,
-
-    // borderColor: 'blue',
-    // borderWidth: 1,
   },
 
   bigGreyText: {
@@ -151,9 +141,6 @@ const styles = StyleSheet.create({
 
   bottomContainer: {
     paddingVertical: 10,
-
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
 
   bodyTextContainer: {
