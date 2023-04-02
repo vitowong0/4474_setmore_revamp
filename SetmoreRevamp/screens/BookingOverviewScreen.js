@@ -135,9 +135,6 @@ const styles = StyleSheet.create({
   bodyContainer: {
     flex: 7,
     backgroundColor: Colours.white,
-
-    borderTopWidth: 1,
-    borderTopColor: 'red',
   },
 
   bookingWithContainer: {
@@ -179,9 +176,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingLeft: 10,
     justifyContent: 'space-evenly',
-
-    // borderColor: 'red',
-    // borderWidth: 1,
   },
 
   boldGrey: {

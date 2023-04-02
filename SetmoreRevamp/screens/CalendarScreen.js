@@ -87,9 +87,6 @@ const styles = StyleSheet.create({
     flex: 7,
     flexDirection: 'column',
     backgroundColor: 'white',
-
-    borderColor: 'red',
-    borderTopWidth: 1,
   },
 
   legendContainer: {

@@ -129,9 +129,6 @@ const styles = StyleSheet.create({
     flex: 7,
     backgroundColor: Colours.white,
     // padding: 20,
-
-    borderColor: 'red',
-    borderTopWidth: 1,
   },
 
   imageContainer: {

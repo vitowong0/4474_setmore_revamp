@@ -78,8 +78,5 @@ const styles = StyleSheet.create({
     backgroundColor: Colours.white,
     paddingHorizontal: 20,
     paddingTop: 20,
-
-    borderTopWidth: 1,
-    borderTopColor: 'red',
   },
 });

@@ -212,7 +212,7 @@ function SettingsScreen() {
             </View>
             <View style={styles.settingsRow}>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View style={styles.iconContainer}>
+                <View style={{paddingHorizontal: 15, marginRight: 15}}>
                   <Switch
                     trackColor={{false: '#767577', true: '#807F83'}}
                     thumbColor={isEnabled ? '#5E5E5E' : '#f4f3f4'}
@@ -249,9 +249,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     // paddingVertical: 10,
     justifyContent: 'center',
-
-    borderTopColor: 'red',
-    borderTopWidth: 1,
   },
 
   personContainer: {
@@ -294,10 +291,6 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
 
-  // buttonContainer: {
-  //   width: 140,
-  // },
-
   settingsContainer: {
     backgroundColor: Colours.lightgrey,
     borderRadius: 30,
@@ -323,20 +316,14 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    paddingHorizontal: 20,
+    paddingHorizontal: 15,
     marginRight: 25,
-
-    borderWidth: 1,
-    borderColor: 'red',
   },
 
   settingsText: {
     fontWeight: 700,
     fontSize: 16,
     color: Colours.westerngrey,
-
-    borderColor: 'orange',
-    borderWidth: 1,
   },
 
   settingIcons: {
