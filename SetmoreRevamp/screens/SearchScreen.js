@@ -43,6 +43,7 @@ function SearchScreen() {
         id={itemData.item.id}
         name={itemData.item.name}
         image={itemData.item.image}
+        description={itemData.item.description}
         rating={itemData.item.rating}
         numReviews={itemData.item.numReviews}
         distance={itemData.item.distance}

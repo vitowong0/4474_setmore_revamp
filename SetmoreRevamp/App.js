@@ -192,10 +192,6 @@ function SearchStack() {
         <Stack.Screen
           name="TimesAvailableScreen"
           component={TimesAvailableScreen}
-        />{' '}
-        <Stack.Screen
-          name="BookingCancelledScreen"
-          component={BookingCancelledScreen}
         />
         <Stack.Screen
           name="BookingOverviewScreen"
