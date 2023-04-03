@@ -59,7 +59,7 @@ function BookingCancelledScreen({route}) {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Booking Cancelled'} />
+        <Header headerTitle={'Booking cancelled'} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>

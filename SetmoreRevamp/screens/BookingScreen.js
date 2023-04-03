@@ -66,7 +66,7 @@ function BookingScreen({route}) {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Booking Screen'} />
+        <SubHeader headerTitle={'Select service'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.bookingWithContainer}>

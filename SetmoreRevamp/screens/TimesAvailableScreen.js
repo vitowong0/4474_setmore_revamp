@@ -54,7 +54,7 @@ function TimesAvailableScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <SubHeader headerTitle={'Times Available'} />
+        <SubHeader headerTitle={'Select time'} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>
