@@ -24,7 +24,7 @@ function DatesAvailableScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <SubHeader headerTitle={'Dates Available'} />
+        <SubHeader headerTitle={'Select date'} />
       </View>
 
       <View style={styles.bodyContainer}>

@@ -58,7 +58,7 @@ function SearchScreen() {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <Header headerTitle={'Get to Booking'} />
+        <Header headerTitle={'Get to booking'} />
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.searchContainer}>

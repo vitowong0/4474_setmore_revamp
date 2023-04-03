@@ -73,7 +73,7 @@ function BookingOverviewScreen({route}) {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Booking Overview'} />
+        <SubHeader headerTitle={'Booking confirmed'} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>
