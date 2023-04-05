@@ -79,7 +79,7 @@ function CompanyDetailsScreen({route}) {
           </View>
           <View style={styles.ratingContainer}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={styles.headerText}>Ratings</Text>
+              <Text style={styles.headerText}>Reviews</Text>
               <Text style={styles.ratingNumberText}>{rating}</Text>
               <Image
                 style={{width: 20, height: 20, marginLeft: 3, marginBottom: 2}}
