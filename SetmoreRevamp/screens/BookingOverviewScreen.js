@@ -16,6 +16,7 @@ import SubHeader from '../components/headers/SubHeader';
 import CustomButton from '../components/buttons/CustomButton';
 import TimeButton from '../components/buttons/TimeButton';
 import staff from '../assets/images/briar.png';
+import Header from '../components/headers/Header';
 
 function BookingOverviewScreen({route}) {
   // const {
@@ -73,7 +74,7 @@ function BookingOverviewScreen({route}) {
     <View style={styles.root}>
       <StatusBar barStyle={'dark-content'} />
       <View style={styles.header}>
-        <SubHeader headerTitle={'Booking confirmed'} />
+        <Header headerTitle={'Booking confirmed'} />
       </View>
       <View style={styles.bodyContainer}>
         <ScrollView>
@@ -114,13 +115,21 @@ function BookingOverviewScreen({route}) {
             </View>
           </View>
 
+          <View style={styles.aptBookedContainer}>
+            <CustomButton
+              text={'This booking is confirmed'}
+              textColour={Colours.white}
+              backgroundColour={Colours.pastelgreen}
+              buttonWidth={330}
+            />
+          </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={modifyButtonAlert}>
               <CustomButton
                 text={'Modify'}
                 textColour={Colours.westerngrey}
                 backgroundColour={Colours.lightergrey}
-                buttonWidth={160}
+                buttonWidth={140}
               />
             </TouchableOpacity>
             <TouchableOpacity onPress={cancelButtonAlert}>
@@ -128,7 +137,7 @@ function BookingOverviewScreen({route}) {
                 text={'Cancel'}
                 textColour={Colours.white}
                 backgroundColour={Colours.buttoncancel}
-                buttonWidth={160}
+                buttonWidth={140}
               />
             </TouchableOpacity>
           </View>
@@ -189,8 +198,15 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
 
-  buttonContainer: {
+  aptBookedContainer: {
     paddingTop: 30,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    paddingLeft: 10,
+  },
+
+  buttonContainer: {
+    paddingTop: 25,
     flexDirection: 'row',
     paddingLeft: 10,
     justifyContent: 'space-evenly',
