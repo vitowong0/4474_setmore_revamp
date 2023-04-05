@@ -70,7 +70,19 @@ function AllCompaniesGridTile({
         <View style={styles.imageContainer}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('CompanyDetailsScreen');
+              navigation.navigate('CompanyDetailsScreen', {
+                id: id,
+                name: name,
+                image: image,
+                description: description,
+                rating: rating,
+                services: services,
+                staff: staff,
+                timesAvailable: timesAvailable,
+                duration: duration,
+                cost: cost,
+                heartIcon: heartIcon,
+              });
             }}>
             <Image style={styles.image} source={image} />
             <TouchableOpacity onPress={favouritesButtonAlert}>
