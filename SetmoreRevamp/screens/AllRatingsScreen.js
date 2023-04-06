@@ -47,7 +47,7 @@ function AllRatingsScreen() {
   return (
     <View style={styles.root}>
       <View style={styles.header}>
-        <SubHeader headerTitle={'All ratings'} />
+        <SubHeader headerTitle={'All reviews'} />
       </View>
       <View style={styles.bodyContainer}>
         <FlatList
