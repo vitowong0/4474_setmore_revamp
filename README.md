@@ -21,7 +21,7 @@ Ensure the test app _AwesomeProject_ is functional before moving onto the next s
 
 3. Your simulator should begin and our app should launch onto its Home screen.
 
-## Credits
+## Credits (Group 20)
 1. Vito Wong
 2. Xiaoyun Bonato
 3. Chris Gonzalez
