@@ -10,7 +10,7 @@ import {
   Alert,
   FlatList,
 } from 'react-native';
-import SearchBar from 'react-native-dynamic-search-bar';
+// TODO: import SearchBar from 'react-native-dynamic-search-bar';
 import {useNavigation} from '@react-navigation/native';
 import {ScrollView} from 'react-native-virtualized-view';
 
@@ -62,10 +62,10 @@ function SearchScreen() {
       </View>
       <View style={styles.bodyContainer}>
         <View style={styles.searchContainer}>
-          <SearchBar
-            placeholder="Search Setmore"
-            onChangeText={text => console.log(text)}
-          />
+          {/*<SearchBar*/}
+          {/*  placeholder="Search Setmore"*/}
+          {/*  onChangeText={text => console.log(text)}*/}
+          {/*/>*/}
           <TouchableOpacity onPress={scanQRAlert}>
             <View>
               <Image style={styles.scanIcon} source={scanIcon} />

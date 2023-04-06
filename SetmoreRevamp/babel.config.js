@@ -1,3 +1,14 @@
 module.exports = {
-  presets: ['module:metro-react-native-babel-preset'],
+  presets: ['@babel/preset-react'],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        alias: {
+          '^react-native$': 'react-native-web',
+        },
+      },
+    ],
+    '@babel/plugin-syntax-jsx',
+  ],
 };
